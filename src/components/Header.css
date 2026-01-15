@@ -1,83 +1,86 @@
 .header {
-  padding: 10px 0;
-  background: rgba(15, 20, 25, 0.95);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  height: 72px;
   z-index: 1000;
+  background: rgba(9, 9, 11, 0.8);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
 }
 
-.header-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 40px;
+.header-inner {
+  height: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  height: 70px;
+  justify-content: space-between;
 }
 
 .logo {
-  font-size: 26px;
-  font-weight: 800;
-  background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   letter-spacing: -0.5px;
+}
+
+.logo-symbol {
+  color: var(--accent);
+  letter-spacing: -2px;
+  font-weight: 900;
 }
 
 .nav {
   display: flex;
-  gap: 40px;
-  align-items: center;
+  gap: 32px;
 }
 
 .nav a {
-  color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
+  color: var(--text-secondary);
+  font-size: 14px;
   font-weight: 500;
-  font-size: 15px;
-  transition: all 0.3s;
-  position: relative;
+  transition: color 0.2s;
 }
 
 .nav a:hover {
-  color: #3B82F6;
+  color: #fff;
 }
 
-.nav a::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: #3B82F6;
-  transition: width 0.3s;
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
-.nav a:hover::after {
-  width: 100%;
-}
-
-.header-btn {
-  padding: 12px 28px;
+.btn-text {
+  background: none;
+  border: none;
+  color: #fff;
   font-size: 14px;
-  background: #3B82F6;
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  cursor: pointer;
+  padding: 8px 16px;
 }
 
-.progress-bar {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 2px;
-  background: linear-gradient(90deg, #3B82F6, #2563EB);
-  box-shadow: 0 0 10px rgba(59, 130, 246, 0.6);
+.btn-primary {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
 }
 
-@media (max-width: 768px) {
-  .nav { display: none; }
-  .header-container { padding: 0 20px; }
+.btn-primary:hover {
+  background-color: #e4e4e7;
+}
+
+.btn-primary.small {
+  padding: 8px 16px;
 }

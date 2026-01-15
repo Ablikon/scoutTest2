@@ -1,89 +1,46 @@
 import './Integrations.css'
-import { IoCheckmarkCircleOutline, IoShieldCheckmarkOutline, IoLinkOutline, IoGlobeOutline, IoFlagOutline } from 'react-icons/io5'
+import { IoCartOutline, IoReaderOutline, IoPhonePortraitOutline } from 'react-icons/io5'
 
 function Integrations() {
   return (
     <section className="integrations">
       <div className="container">
-        <div className="section-header">
-          <h2>Поддерживаемые платформы</h2>
-          <p className="section-desc">Работаем с крупнейшими маркетплейсами Казахстана и международных рынков</p>
+        <div className="integrations-header">
+          <h2>Работа с данными</h2>
+          <p className="subtitle">Удобное управление ценами</p>
         </div>
 
-        <div className="platforms-grid">
-          <div className="platform-card main">
-            <div className="platform-badge primary">
-              <IoShieldCheckmarkOutline />
-              <span>Основная платформа</span>
+        <div className="platforms-wrapper">
+          <div className="platform-card featured">
+            <div className="card-header">
+              <IoCartOutline className="icon" />
+              <span>Маркетплейс</span>
             </div>
-            <div className="platform-logo kaspi">Kaspi.kz</div>
-            <div className="platform-stat">80% онлайн-торговли Казахстана</div>
-            <p>Полная интеграция со всеми функциями: автоматизация цен, аналитика, уведомления в реальном времени</p>
-            <div className="platform-features">
-              <span>
-                <IoCheckmarkCircleOutline />
-                Проверка каждые 3 мин
-              </span>
-              <span>
-                <IoCheckmarkCircleOutline />
-                Защита от демпинга
-              </span>
-              <span>
-                <IoLinkOutline />
-                Интеграция с 1С
-              </span>
+            <div className="card-list">
+              <div className="list-item">Kaspi.kz</div>
+              <div className="list-item dimmed">Полная совместимость</div>
             </div>
           </div>
 
           <div className="platform-card">
-            <div className="platform-logo">HalykMarket</div>
-            <div className="platform-stat">Проект Halyk Bank</div>
-            <p>Автоматическое управление ценами и синхронизация остатков</p>
-          </div>
-
-          <div className="platform-card">
-            <div className="platform-logo">Jmart</div>
-            <div className="platform-stat">Маркетплейс Jusan Bank</div>
-            <p>Мониторинг конкурентов и динамическое ценообразование</p>
-          </div>
-
-          <div className="platform-card international">
-            <div className="platform-badge international">
-              <IoGlobeOutline />
-              <span>Международный</span>
+             <div className="card-header">
+              <IoReaderOutline className="icon" />
+              <span>Массовая загрузка</span>
             </div>
-            <div className="platform-logo noon">Noon</div>
-            <div className="platform-stat">Крупнейший маркетплейс ОАЭ</div>
-            <p>Полный функционал автоматизации для международного рынка</p>
-            <div className="platform-features">
-              <span>
-                <IoFlagOutline />
-                ОАЭ
-              </span>
-              <span>
-                <IoCheckmarkCircleOutline />
-                Растущий рынок
-              </span>
+            <div className="card-list">
+              <div className="list-item">Excel (XLSX)</div>
+              <div className="list-item">Загрузка прайс-листов</div>
             </div>
           </div>
-        </div>
-
-        <div className="coming-soon">
-          <h3>Скоро</h3>
-          <div className="coming-platforms">
-            <div className="coming-item">
-              <div className="coming-flag">BR</div>
-              <span>Бразилия</span>
+          
+           <div className="platform-card">
+             <div className="card-header">
+              <IoPhonePortraitOutline className="icon" />
+              <span>Уведомления</span>
             </div>
-            <div className="coming-item">
-              <div className="coming-flag">SA</div>
-              <span>GCC регион</span>
-            </div>
-            <div className="coming-item">
-              <div className="coming-flag">
-                <IoGlobeOutline />
-              </div>
-              <span>Новые рынки СНГ</span>
+            <div className="card-list">
+              <div className="list-item">SMS авторизация</div>
+              <div className="list-item">Личный кабинет</div>
             </div>
           </div>
         </div>

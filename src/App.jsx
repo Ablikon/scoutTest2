@@ -1,30 +1,44 @@
-import './App.css'
 import Header from './components/Header'
 import Hero from './components/Hero'
-import Timeline from './components/Timeline'
 import Problem from './components/Problem'
 import Solution from './components/Solution'
-import Integrations from './components/Integrations'
 import HowItWorks from './components/HowItWorks'
-import Pricing from './components/Pricing'
+import Integrations from './components/Integrations'
+import Timeline from './components/Timeline'
 import Results from './components/Results'
+import Pricing from './components/Pricing'
 import FAQ from './components/FAQ'
 import CTA from './components/CTA'
+import Footer from './components/Footer'
+import './App.css'
 
 function App() {
   return (
     <div className="app">
       <Header />
-      <Hero />
-      <Timeline />
-      <Problem />
-      <Solution />
-      <Integrations />
-      <HowItWorks />
-      <Pricing />
-      <Results />
-      <FAQ />
-      <CTA />
+      <main>
+        <Hero />
+        <Problem />
+        <div id="technology">
+          <Solution />
+        </div>
+        <HowItWorks />
+        <Timeline />
+        <div id="integration">
+          <Integrations />
+        </div>
+        <div id="results">
+          <Results />
+        </div>
+        <div id="pricing">
+          <Pricing />
+        </div>
+        <div id="faq">
+          <FAQ />
+        </div>
+        <CTA />
+      </main>
+      <Footer />
     </div>
   )
 }

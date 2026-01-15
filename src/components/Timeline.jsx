@@ -1,84 +1,59 @@
 import './Timeline.css'
-import { IoRocketOutline, IoTrophyOutline, IoGlobeOutline, IoTrendingUpOutline, IoFlashOutline } from 'react-icons/io5'
+import { IoRocketOutline, IoPeopleOutline, IoStatsChartOutline, IoCheckmarkCircleOutline } from 'react-icons/io5'
 
 function Timeline() {
   return (
     <section className="timeline">
       <div className="container">
         <div className="section-header">
-          <h2>Эволюция автоматизации</h2>
-          <p className="section-desc">Как технология изменила подход к ценообразованию на маркетплейсах</p>
+          <h2>История AlgoSeller</h2>
+          <p className="section-subtitle">Мы растем вместе с нашими клиентами</p>
         </div>
 
         <div className="timeline-track">
           <div className="timeline-item">
-            <div className="timeline-marker">
+            <div className="timeline-node">
               <IoRocketOutline />
             </div>
             <div className="timeline-content">
-              <div className="timeline-year">2020</div>
-              <h3>Появление технологии</h3>
-              <p>Первые продавцы начали использовать скрипты для автоматического мониторинга цен. Результаты превзошли все ожидания — продажи выросли в несколько раз.</p>
-              <div className="timeline-stat">
-                <IoFlashOutline />
-                <span>Рост продаж до 300%</span>
-              </div>
+              <span className="timeline-date">Март 2022</span>
+              <h3>Запуск сервиса</h3>
+              <p>Официальный старт. Первая оплата прошла 20 марта 2022 года. Мы заявили о себе рынку как о надежном инструменте.</p>
             </div>
           </div>
 
           <div className="timeline-item">
-            <div className="timeline-marker">
-              <IoTrophyOutline />
+            <div className="timeline-node">
+              <IoStatsChartOutline />
             </div>
             <div className="timeline-content">
-              <div className="timeline-year">2021</div>
-              <h3>Массовое внедрение</h3>
-              <p>Автоматизация стала доступна широкому кругу продавцов. Облачные сервисы заменили сложные технические решения.</p>
-              <div className="timeline-stat success">
-                <IoTrophyOutline />
-                <span>Тысячи активных пользователей</span>
-              </div>
+              <span className="timeline-date">2023</span>
+              <h3>Активный рост</h3>
+              <p>Ежемесячно к нам присоединяется 70+ новых магазинов. Мы оптимизировали алгоритмы проверки цен до 3-х минут.</p>
             </div>
           </div>
 
           <div className="timeline-item">
-            <div className="timeline-marker">
-              <IoGlobeOutline />
+            <div className="timeline-node">
+              <IoPeopleOutline />
             </div>
             <div className="timeline-content">
-              <div className="timeline-year">2022</div>
-              <h3>Выход на новые рынки</h3>
-              <p>Технология начала распространяться на международные маркетплейсы. Интеграция с банковскими экосистемами.</p>
-              <div className="timeline-stat">
-                <IoGlobeOutline />
-                <span>Поддержка 10+ платформ</span>
-              </div>
+              <span className="timeline-date">Начало 2024</span>
+              <h3>1000+ Магазинов</h3>
+              <p>Преодолели отметку в 1000 активных клиентов. Сервис стал стандартом индустрии для профессиональных продавцов на Kaspi.</p>
             </div>
           </div>
 
-          <div className="timeline-item">
-            <div className="timeline-marker">
-              <IoTrendingUpOutline />
+          <div className="timeline-item current">
+            <div className="timeline-node active">
+              <IoCheckmarkCircleOutline />
             </div>
             <div className="timeline-content">
-              <div className="timeline-year">2025</div>
-              <h3>Искусственный интеллект</h3>
-              <p>Внедрение AI и машинного обучения для предсказательной аналитики и оптимизации стратегий ценообразования.</p>
-              <div className="timeline-stat highlight">
-                <IoTrendingUpOutline />
-                <span>Миллиарды в обороте</span>
-              </div>
+              <span className="timeline-date">Сегодня</span>
+              <h3>4000+ Магазинов</h3>
+              <p>Более 4000 предпринимателей доверяют нам свои продажи. Мы продолжаем улучшать скорость и стабильность работы.</p>
             </div>
           </div>
-        </div>
-
-        <div className="future-vision">
-          <div className="vision-badge">
-            <IoRocketOutline />
-            <span>Будущее</span>
-          </div>
-          <h3>Что дальше?</h3>
-          <p>Полная автоматизация торговли • Персональные AI-ассистенты • Предсказательная аналитика спроса</p>
         </div>
       </div>
     </section>

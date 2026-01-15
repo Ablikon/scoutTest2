@@ -1,130 +1,70 @@
 import './Pricing.css'
-import { useState } from 'react'
-import { IoCheckmarkCircleOutline, IoFlashOutline, IoRocketOutline, IoTrophyOutline } from 'react-icons/io5'
+import { IoCheckmark } from 'react-icons/io5'
 
 function Pricing() {
-  const [hoveredCard, setHoveredCard] = useState(null)
-
-  const plans = [
+  const tiers = [
     {
-      name: "Мини",
+      name: "Start",
       price: "35 000",
-      period: "месяц",
-      icon: IoFlashOutline,
-      color: "#3B82F6",
-      features: [
-        "До 50 товаров",
-        "Проверяет в 2 раза чаще",
-        "Все возможности робота",
-        "Простая статистика"
-      ],
-      badge: null
+      desc: "Для небольших магазинов",
+      features: ["До 50 товаров мониторинга", "Проверка каждые 3 мин", "Техподдержка", "История цен"]
     },
     {
-      name: "Стандарт",
+      name: "Standard",
       price: "50 000",
-      period: "месяц",
-      icon: IoRocketOutline,
-      color: "#2563EB",
-      features: [
-        "До 500 товаров",
-        "История ваших продаж",
-        "Для небольших магазинов",
-        "Помощь по почте"
-      ],
-      badge: null
+      desc: "Оптимальный для роста",
+      features: ["До 500 товаров мониторинга", "Проверка каждые 3 мин", "Массовое управление", "Приоритетная поддержка"],
+      highlight: true
     },
     {
-      name: "Бизнес",
+      name: "Pro",
       price: "80 000",
-      period: "месяц",
-      icon: IoTrophyOutline,
-      color: "#3B82F6",
-      features: [
-        "До 800 товаров",
-        "Расширенная статистика",
-        "Помогаем быстрее",
-        "Личный менеджер"
-      ],
-      badge: "Выбирают чаще всего"
+      desc: "Для крупных игроков",
+      features: ["До 800 товаров мониторинга", "Проверка каждые 3 мин", "Персональный менеджер", "Все функции бота"]
     },
     {
-      name: "PRO",
-      price: "100 000",
-      period: "месяц",
-      icon: IoTrophyOutline,
-      color: "#1D4ED8",
-      features: [
-        "До 1300 товаров",
-        "Для опытных продавцов",
-        "Помощь 24/7",
-        "Настроим как вам нужно"
-      ],
-      badge: null
+      name: "Индивидуальный",
+      price: "Custom",
+      desc: "Более 1300 товаров?",
+      features: ["Безлимит товаров", "Скорость x2 (опционально)", "Скидки при оплате за год", "Скидка на 2-й магазин"]
     }
   ]
 
   return (
-    <section className="pricing-new">
-      <div className="pricing-bg">
-        <div className="pricing-glow"></div>
-      </div>
-
+    <section className="pricing">
       <div className="container">
         <div className="pricing-header">
-          <h2>Выберите тариф для себя</h2>
-          <p className="pricing-intro">Все тарифы защищают от блокировки, умеют фильтровать и синхронизировать остатки</p>
+          <h2>Тарифы</h2>
+          <p className="subtitle">
+            Честная цена за рост продаж. Платите только за то количество товаров, которое нужно мониторить.
+            <br/>Скидки при оплате за 3, 6 и 12 месяцев.
+          </p>
         </div>
 
-        <div className="plans-grid">
-          {plans.map((plan, index) => {
-            const IconComponent = plan.icon
-            return (
-              <div 
-                key={index}
-                className={`plan-card ${plan.badge ? 'popular' : ''} ${hoveredCard === index ? 'hovered' : ''}`}
-                onMouseEnter={() => setHoveredCard(index)}
-                onMouseLeave={() => setHoveredCard(null)}
-                style={{'--plan-color': plan.color}}
-              >
-                {plan.badge && <div className="plan-badge">{plan.badge}</div>}
-                
-                <div className="plan-icon" style={{background: `linear-gradient(135deg, ${plan.color}22, ${plan.color}11)`}}>
-                  <IconComponent style={{color: plan.color}} />
-                </div>
-
-                <h3 className="plan-name">{plan.name}</h3>
-                
-                <div className="plan-price-wrapper">
-                  <div className="plan-price" style={{color: plan.color}}>
-                    {plan.price}
-                    <span className="currency">₸</span>
-                  </div>
-                  <div className="plan-period">в {plan.period}</div>
-                </div>
-
-                <ul className="plan-features">
-                  {plan.features.map((feature, idx) => (
-                    <li key={idx}>
-                      <IoCheckmarkCircleOutline style={{color: plan.color}} />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <button className="plan-btn" style={{background: plan.color}}>
-                  Попробовать бесплатно
-                </button>
-
-                <div className="plan-shine"></div>
+        <div className="pricing-grid">
+          {tiers.map((tier, index) => (
+            <div key={index} className={`pricing-card ${tier.highlight ? 'highlight' : ''}`}>
+              <div className="tier-header">
+                <h3>{tier.name}</h3>
+                <p>{tier.desc}</p>
               </div>
-            )
-          })}
-        </div>
-
-        <div className="pricing-footer">
-          <p>Не знаете какой выбрать? <strong>Поможем разобраться!</strong></p>
-          <button className="consult-btn">Задать вопрос</button>
+              <div className="tier-price">
+                <span className="amount">{tier.price}</span>
+                {tier.price !== 'Custom' && <span className="currency">₸ / мес</span>}
+              </div>
+              <div className="tier-features">
+                {tier.features.map((feature, idx) => (
+                  <div key={idx} className="feature-item">
+                    <IoCheckmark className="check-icon" />
+                    <span>{feature}</span>
+                  </div>
+                ))}
+              </div>
+              <button className={`tier-btn ${tier.highlight ? 'primary' : 'outline'}`}>
+                {tier.price === 'Custom' ? 'Связаться' : 'Выбрать'}
+              </button>
+            </div>
+          ))}
         </div>
       </div>
     </section>

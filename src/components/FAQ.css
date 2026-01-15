@@ -1,6 +1,7 @@
 .faq {
-  padding: 120px 0;
-  background: linear-gradient(180deg, #0F1419 0%, #1A1F2E 100%);
+  padding: 100px 0;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border);
   width: 100%;
 }
 
@@ -11,55 +12,50 @@
 }
 
 .faq h2 {
-  text-align: center;
-  margin-bottom: 80px;
-  font-size: 48px;
-  font-weight: 800;
-  letter-spacing: -1.5px;
-  color: white;
-  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255,255,255,0.7) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-size: 32px;
+  color: #fff;
+  margin-bottom: 64px;
+  text-align: left;
 }
 
 .faq-list {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
 }
 
 .faq-item {
-  padding: 40px 44px;
-  background: rgba(26, 31, 46, 0.6);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: all 0.4s;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--border);
 }
 
-.faq-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(59, 130, 246, 0.15);
-  border-color: rgba(59, 130, 246, 0.3);
+.faq-item:last-child, .faq-item:nth-last-child(2) {
+  /* Убираем бордер для последних элементов в гриде */
+  border-bottom: 1px solid var(--border); 
 }
 
 .faq-item h4 {
-  margin-bottom: 16px;
-  font-size: 20px;
-  color: white;
-  font-weight: 700;
-  letter-spacing: -0.3px;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 12px;
+  font-weight: 600;
 }
 
 .faq-item p {
-  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
   margin: 0;
-  font-size: 16px;
-  line-height: 1.7;
 }
 
 @media (max-width: 600px) {
   .faq .container { padding: 0 20px; }
   .faq h2 { font-size: 36px; }
   .faq-item { padding: 32px 28px; }
+}
+
+@media (max-width: 768px) {
+  .faq-list {
+    grid-template-columns: 1fr;
+  }
 }

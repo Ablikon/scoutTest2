@@ -1,136 +1,64 @@
 import './Problem.css'
-import { useState } from 'react'
-import { IoTrendingDownOutline, IoTimeOutline, IoPersonOutline, IoMoonOutline, IoWarningOutline } from 'react-icons/io5'
+import { IoTimerOutline, IoPersonOutline, IoAlertCircleOutline, IoCashOutline } from 'react-icons/io5'
 
 function Problem() {
-  const [activeCard, setActiveCard] = useState(0)
-  
   const problems = [
     {
-      title: "Кто дешевле — тот и продаёт",
-      stat: "90%",
-      description: "покупателей выбирают первого в списке",
-      details: "Пока вы спите, конкурент стал на 1₸ дешевле и забрал ВСЕ заказы. На Kaspi работает просто: самый дешёвый = первый в списке. Второй = никто.",
-      icon: IoTrendingDownOutline,
-      lost: "До 500 заказов в день"
+      title: "Человеческий фактор",
+      metric: "Сон и еда",
+      desc: "Менеджер не может мониторить цены 24/7. Он устает, заболевает или уходит на выходные. Бот работает всегда.",
+      icon: IoPersonOutline
     },
     {
-      title: "Время — это потерянные деньги",
-      stat: "2-3ч",
-      description: "чтобы поменять цены на 100 товарах",
-      details: "Пока вы 2 часа сидите и меняете цены, конкуренты с роботами уже 40 раз обновили свои. Человек физически не может так быстро.",
-      icon: IoTimeOutline,
-      lost: "40+ обновлений пропущено"
+      title: "Выпадаете из ТОПа",
+      metric: "95%",
+      desc: "Покупателей забирает тот продавец, который стоит первым в списке. Если ваша цена выше на 1 тенге — вы теряете клиента.",
+      icon: IoAlertCircleOutline
     },
     {
-      title: "Люди устают и ошибаются",
-      stat: "100%",
-      description: "рано или поздно будет ошибка",
-      details: "Менеджер устал, забыл про товар, ушёл на обед, ошибся в нуле. Пока он отдыхает, конкуренты с роботами работают без перерыва и ошибок.",
-      icon: IoPersonOutline,
-      lost: "Риск простоя каждый день"
+      title: "Медленная реакция",
+      metric: "3-4 часа",
+      desc: "Пока менеджер заметит снижение цены конкурента и поменяет вручную, вы уже потеряли десятки заказов.",
+      icon: IoTimerOutline
     },
     {
-      title: "Ночью покупают больше всего",
-      stat: "18-23",
-      description: "пик покупок на Kaspi",
-      details: "После работы все садятся за телефоны и покупают. В 22:00 конкурент снизил цены и получил 100 заказов. Вы про это узнаете только утром.",
-      icon: IoMoonOutline,
-      lost: "40% упущенной прибыли"
+      title: "Дороговизна",
+      metric: "Расходы",
+      desc: "Зарплата менеджера, налоги, рабочее место и кофе обходятся в разы дороже, чем подписка на сервис.",
+      icon: IoCashOutline
     }
   ]
 
   return (
-    <section className="problem-new">
-      <div className="problem-bg">
-        <div className="warning-glow"></div>
-      </div>
-
+    <section className="problem">
       <div className="container">
-        <div className="problem-header">
-          <div className="alert-badge">
-            <IoWarningOutline className="alert-icon-svg" />
-            <span>Важная проблема</span>
-          </div>
-          <h2>Почему вы теряете деньги каждый день?</h2>
-          <p className="problem-intro">
-            4 причины, почему конкуренты зарабатывают больше вас
+        <div className="section-header">
+          <h2>Почему ручное управление не работает?</h2>
+          <p className="section-subtitle">
+            На маркетплейсах единая карточка товара. Чтобы продавать, нужно быть первым в списке. Вручную удерживать лидерство невозможно.
           </p>
         </div>
 
-        {/* Интерактивные карточки */}
-        <div className="problems-interactive">
-          {problems.map((problem, index) => {
-            const IconComponent = problem.icon
-            return (
-              <div 
-                key={index}
-                className={`problem-item ${activeCard === index ? 'active' : ''}`}
-                onMouseEnter={() => setActiveCard(index)}
-              >
-                <div className="problem-icon-large">
-                  <IconComponent />
-                </div>
-                
-                <div className="problem-stat-big">
-                  <div className="stat-number">{problem.stat}</div>
-                  <div className="stat-description">{problem.description}</div>
-                </div>
-
-                <h3>{problem.title}</h3>
-                <p className="problem-details">{problem.details}</p>
-
-                <div className="problem-impact">
-                  <span className="impact-label">Потеря:</span>
-                  <span className="impact-value">{problem.lost}</span>
-                </div>
-
-                <div className="problem-graph">
-                  <div className="graph-line" style={{width: `${100 - index * 15}%`}}></div>
-                </div>
+        <div className="problems-grid">
+          {problems.map((item, index) => (
+            <div key={index} className="problem-card">
+              <div className="problem-icon">
+                <item.icon />
               </div>
-            )
-          })}
+              <div className="problem-content">
+                <div className="problem-metric">{item.metric}</div>
+                <h3>{item.title}</h3>
+                <p>{item.desc}</p>
+              </div>
+            </div>
+          ))}
         </div>
 
-        {/* Визуализация потерь */}
-        <div className="losses-visualization">
-          <h3>Сколько вы теряете без робота</h3>
-          <div className="losses-bars">
-            <div className="loss-bar-item">
-              <div className="loss-bar-label">Понедельник</div>
-              <div className="loss-bar-fill" style={{width: '75%'}}>
-                <span>-75% заказов</span>
-              </div>
-            </div>
-            <div className="loss-bar-item">
-              <div className="loss-bar-label">Вторник</div>
-              <div className="loss-bar-fill" style={{width: '68%'}}>
-                <span>-68% заказов</span>
-              </div>
-            </div>
-            <div className="loss-bar-item">
-              <div className="loss-bar-label">Среда</div>
-              <div className="loss-bar-fill" style={{width: '82%'}}>
-                <span>-82% заказов</span>
-              </div>
-            </div>
-            <div className="loss-bar-item">
-              <div className="loss-bar-label">Четверг</div>
-              <div className="loss-bar-fill" style={{width: '70%'}}>
-                <span>-70% заказов</span>
-              </div>
-            </div>
-            <div className="loss-bar-item">
-              <div className="loss-bar-label">Пятница</div>
-              <div className="loss-bar-fill" style={{width: '85%'}}>
-                <span>-85% заказов</span>
-              </div>
-            </div>
-          </div>
-          <div className="losses-summary">
-            <IoWarningOutline className="summary-icon" />
-            <span>В среднем за неделю теряете: <strong>~76% возможной прибыли</strong></span>
+        <div className="loss-stat">
+           <div className="loss-label">Без сервиса вы теряете прибыль:</div>
+           <div className="loss-bar-container">
+            <div className="loss-bar-filled" style={{width: '60%'}}></div>
+            <span className="loss-value">До 50% заказов уходит конкурентам</span>
           </div>
         </div>
       </div>

@@ -1,38 +1,61 @@
 import './HowItWorks.css'
-import { IoRocketOutline, IoBriefcaseOutline, IoTimeOutline } from 'react-icons/io5'
+import { IoFlashOutline, IoShieldCheckmarkOutline, IoTimerOutline } from 'react-icons/io5'
 
 function HowItWorks() {
   return (
-    <section className="how-it-works">
+    <section className="capabilities">
       <div className="container">
         <div className="section-header">
-          <h2>Подходит для любого бизнеса</h2>
-          <p className="section-desc">Помогаем на любом этапе — от первого товара до большого магазина</p>
+          <h2>Арсенал для победы на Kaspi</h2>
+          <p className="section-subtitle">
+            Ничего лишнего. Только инструменты для удержания первой позиции в карточке товара.
+          </p>
         </div>
 
-        <div className="use-cases-grid">
-          <div className="use-case-card">
-            <div className="case-icon"><IoRocketOutline /></div>
-            <h3>Только начинаете продавать?</h3>
-            <p>Наши специалисты подберут <strong>популярные товары</strong>, которые хорошо продаются. Поможем выбрать нишу и сделать первые шаги.</p>
-            <p className="small-text">Консультация по выбору товаров совершенно бесплатна</p>
-            <button className="text-btn">Получить помощь</button>
+        <div className="capabilities-grid">
+          <div className="cap-card">
+            <div className="cap-icon">
+              <IoFlashOutline />
+            </div>
+            <h3>Автоматический демпинг</h3>
+            <p>
+              Бот видит цену конкурента и ставит вашу на 1 тенге ниже (или на любой другой шаг). 
+              Вы всегда стоите первым в списке продавцов и забираете 95% заказов.
+            </p>
+            <div className="cap-meta">
+              <span>Шаг 1 ₸</span>
+              <span>Борьба за ТОП-1</span>
+            </div>
           </div>
-          
-          <div className="use-case-card">
-            <div className="case-icon"><IoBriefcaseOutline /></div>
-            <h3>Большой магазин?</h3>
-            <p>Личный менеджер подключит робота к вашей программе учёта быстро и без лишних затрат.</p>
-            <p className="small-text">Бонус: проверим ваш склад и подскажем, что лучше продавать</p>
-            <button className="text-btn">Обсудить подключение</button>
+
+          <div className="cap-card">
+            <div className="cap-icon">
+              <IoShieldCheckmarkOutline />
+            </div>
+            <h3>Защита от убытка</h3>
+            <p>
+              Вы задаете минимальную цену (себестоимость + ваша прибыль). 
+              Бот будет снижать цену, но никогда не опустится ниже этого порога. Торговля в минус исключена.
+            </p>
+            <div className="cap-meta">
+              <span>Контроль маржи</span>
+              <span>Безопасно</span>
+            </div>
           </div>
-          
-          <div className="use-case-card">
-            <div className="case-icon"><IoTimeOutline /></div>
-            <h3>Работаете с предзаказами?</h3>
-            <p>Легко настроить сроки доставки для каждого товара через простой интерфейс. Не нужно разбираться в таблицах и прайс-листах.</p>
-            <p className="small-text">Робот меняет только цены, сроки доставки остаются как вы установили</p>
-            <button className="text-btn">Настроить робота</button>
+
+          <div className="cap-card">
+            <div className="cap-icon">
+              <IoTimerOutline />
+            </div>
+            <h3>Мгновенная реакция</h3>
+            <p>
+              Полный цикл проверки занимает всего 3 минуты. Пока конкурент меняет цену вручную или спит, 
+              вы уже забрали покупателя. Работает 24 часа в сутки.
+            </p>
+            <div className="cap-meta">
+              <span>Каждые 3 мин</span>
+              <span>Режим 24/7</span>
+            </div>
           </div>
         </div>
       </div>
