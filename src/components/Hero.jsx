@@ -1,5 +1,5 @@
 import './Hero.css'
-import { IoRocketOutline } from 'react-icons/io5'
+import { IoRocketOutline, IoTrendingUpOutline } from 'react-icons/io5'
 
 function Hero() {
   return (
@@ -41,14 +41,24 @@ function Hero() {
           <div className="stat-desc">Суммарный оборот клиентов за последние 30 дней</div>
         </div>
 
-        <div className="analogy-box">
-          <div className="analogy-visual">
-            <div className="pie-chart">
-              <div className="pie-slice main"></div>
-              <div className="pie-slice small"></div>
+        <div className="market-share-box">
+          <div className="share-header">
+            <IoTrendingUpOutline />
+            <h3>Распределение заказов на Kaspi</h3>
+          </div>
+          <div className="share-visual">
+            <div className="share-bar">
+              <div className="share-segment salescout" data-value="80%">
+                <span className="segment-label">Клиенты SaleScout</span>
+                <span className="segment-value">80%</span>
+              </div>
+              <div className="share-segment others" data-value="20%">
+                <span className="segment-label">Остальные продавцы</span>
+                <span className="segment-value">20%</span>
+              </div>
             </div>
           </div>
-          <p><strong>Представь торт</strong> — это все заказы за день. Клиенты SaleScout забирают <strong>80% торта</strong>, остальные продавцы делят между собой уже остатки.</p>
+          <p className="share-desc">Магазины с автоматизацией получают подавляющее большинство заказов в своей категории</p>
         </div>
       </div>
     </section>

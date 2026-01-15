@@ -124,6 +124,32 @@
   font-weight: 400;
 }
 
+.loss-indicator {
+  margin: 20px 0;
+  padding: 0 8px;
+}
+
+.loss-bar {
+  height: 8px;
+  background: linear-gradient(90deg, #EF4444 0%, #DC2626 100%);
+  border-radius: 4px;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.2);
+  animation: growBar 1s ease-out;
+}
+
+@keyframes growBar {
+  from { width: 0; }
+}
+
+.loss-text {
+  font-size: 11px;
+  font-weight: 700;
+  color: #EF4444;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
 @media (max-width: 1024px) {
   .problems-grid { grid-template-columns: repeat(2, 1fr); }
 }

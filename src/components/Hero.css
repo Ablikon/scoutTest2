@@ -303,37 +303,100 @@
   /* padding: 48px 56px; */
 }
 
-.analogy-box {
-  max-width: 700px;
+.market-share-box {
+  max-width: 800px;
   margin: 0 auto;
-  padding: 32px 40px;
-  background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
+  padding: 40px 48px;
+  background: white;
   border-radius: 20px;
+  border: 1px solid #E5E7EB;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.share-header {
   display: flex;
   align-items: center;
-  gap: 32px;
-  border: 1px solid #FCD34D;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 32px;
 }
 
-.analogy-visual {
-  flex-shrink: 0;
+.share-header svg {
+  font-size: 28px;
+  color: #3B82F6;
 }
 
-.pie-chart {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  position: relative;
-  background: conic-gradient(#F59E0B 0deg 288deg, #FCD34D 288deg 360deg);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.analogy-box p {
+.share-header h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111827;
   margin: 0;
-  font-size: 16px;
-  color: #92400E;
+}
+
+.share-visual {
+  margin-bottom: 24px;
+}
+
+.share-bar {
+  height: 80px;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.share-segment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.share-segment:hover {
+  transform: scale(1.02);
+  z-index: 1;
+}
+
+.share-segment.salescout {
+  width: 80%;
+  background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+  color: white;
+}
+
+.share-segment.others {
+  width: 20%;
+  background: linear-gradient(135deg, #F3F4F6 0%, #E5E7EB 100%);
+  color: #6B7280;
+}
+
+.segment-label {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  text-align: center;
+}
+
+.segment-value {
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+.share-desc {
+  text-align: center;
+  color: #6B7280;
+  font-size: 14px;
   line-height: 1.6;
-  text-align: left;
+  margin: 0;
+}
+
+.analogy-box,
+.analogy-visual,
+.pie-chart {
+  display: none;
 }
 
 .trust-section {
