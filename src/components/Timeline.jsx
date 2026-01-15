@@ -1,43 +1,45 @@
 import './Timeline.css'
-import { IoLockClosedOutline, IoShieldCheckmarkOutline, IoEyeOffOutline } from 'react-icons/io5'
+import { IoCalculatorOutline, IoMapOutline, IoCubeOutline } from 'react-icons/io5'
 
 function Timeline() {
   return (
     <section className="timeline security-section">
       <div className="container">
         <div className="section-header">
-          <h2>Безопасность данных</h2>
-          <p className="section-subtitle">Мы понимаем важность защиты вашего бизнеса. AlgoSeller работает прозрачно и безопасно.</p>
+          <h2>Тонкая настройка</h2>
+          <p className="section-subtitle">
+            Инструменты для тех, кто хочет контролировать любую деталь продаж.
+          </p>
         </div>
 
         <div className="security-grid">
           <div className="security-card">
             <div className="sec-icon">
-              <IoLockClosedOutline />
+              <IoCalculatorOutline />
             </div>
-            <h3>Официальный доступ</h3>
+            <h3>Калькулятор маржи</h3>
             <p>
-              Бот работает через кабинет продавца так же, как живой человек. Мы не взламываем маркетплейс и не используем серые методы.
+               Не нужно считать вручную. Введите себестоимость, комиссию и желаемую прибыль — система сама рассчитает безопасную минимальную цену, чтобы вы не ушли в минус.
             </p>
           </div>
 
           <div className="security-card">
             <div className="sec-icon">
-              <IoShieldCheckmarkOutline />
+              <IoMapOutline />
             </div>
-            <h3>Только управление</h3>
+            <h3>Разные города</h3>
             <p>
-              Нам не нужны ЭЦП, доступ к банковским счетам или картам. Бот только меняет цены. Деньги клиента в безопасности.
+              Конкуренция в регионах отличается. Вы можете задать отдельные лимиты минимальной цены для Алматы, Астаны и других городов внутри одного кабинета.
             </p>
           </div>
 
           <div className="security-card">
             <div className="sec-icon">
-               <IoEyeOffOutline />
+               <IoCubeOutline />
             </div>
-            <h3>Права доступа</h3>
+            <h3>Учет остатков</h3>
             <p>
-              Вы можете создать отдельного "Электронного менеджера" в кабинете Kaspi с ограниченными правами и дать доступ только ему.
+              Бот видит ваши заказы и списывает товар с остатка. Если товар закончится физически, бот автоматически снимет его с витрины, спасая от штрафов за отмену.
             </p>
           </div>
         </div>
