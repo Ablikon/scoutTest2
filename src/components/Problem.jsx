@@ -1,46 +1,55 @@
 import './Problem.css'
-import { IoPersonRemoveOutline, IoTrendingDownOutline, IoTimeOutline, IoWalletOutline } from 'react-icons/io5'
+import { IoAlertCircleOutline, IoRocketOutline, IoGitNetworkOutline } from 'react-icons/io5'
 
 function Problem() {
   return (
     <section className="problem">
       <div className="container">
         <div className="section-header">
-          <h2>Почему ручное управление не работает?</h2>
+          <h2>Реальность рынка</h2>
           <p className="section-subtitle">
-            Невозможно 24/7 следить за ценами и быть быстрее алгоритмов.
+            Kaspi — это не просто витрина, а жесткая алгоритмическая система. <br/>Выигрывает тот, кто понимает правила.
           </p>
         </div>
 
-        <div className="pain-grid">
-           <div className="pain-item">
-             <div className="pain-icon"><IoPersonRemoveOutline /></div>
-             <h3>Человеческий фактор</h3>
-             <p>Менеджер спит, ест и болеет. Бот работает всегда.</p>
-           </div>
-           
-           <div className="pain-item">
-             <div className="pain-icon"><IoTrendingDownOutline /></div>
-             <h3>Выпадаете из ТОПа</h3>
-             <p>95% покупателей берут у первого продавца. 2 место = 0 продаж.</p>
-           </div>
+        <div className="reality-list">
+          
+          <div className="reality-item">
+            <div className="r-icon danger">
+              <IoAlertCircleOutline />
+            </div>
+            <div className="r-content">
+              <h3>2-е место = 0 продаж</h3>
+              <p>
+                Покупатель почти никогда не открывает список всех продавцов. 95% заказов забирает тот, кто стоит первым и светится на главной кнопке. Быть вторым — значит быть невидимым.
+              </p>
+            </div>
+          </div>
 
-           <div className="pain-item">
-             <div className="pain-icon"><IoTimeOutline /></div>
-             <h3>Медленная реакция</h3>
-             <p>Пока вы меняете цену, конкурент уже забрал заказ.</p>
-           </div>
+          <div className="reality-item">
+            <div className="r-icon accent">
+              <IoRocketOutline />
+            </div>
+            <div className="r-content">
+              <h3>Скорость важнее демпинга</h3>
+              <p>
+                Не обязательно ставить самую низкую цену на весь день и терять моржу. Достаточно быть дешевле конкурента на 1 тенге именно в тот момент, когда клиент зашел на сайт.
+              </p>
+            </div>
+          </div>
 
-           <div className="pain-item">
-             <div className="pain-icon"><IoWalletOutline /></div>
-             <h3>Расходы</h3>
-             <p>Зарплата сотрудника в разы выше стоимости сервиса.</p>
-           </div>
-        </div>
+          <div className="reality-item">
+            <div className="r-icon warning">
+              <IoGitNetworkOutline />
+            </div>
+            <div className="r-content">
+              <h3>Война алгоритмов</h3>
+              <p>
+                Ваши конкуренты уже автоматизировали процессы. Пытаться обогнать бота вручную, постоянно обновляя страницу — это как бежать наперегонки с автомобилем.
+              </p>
+            </div>
+          </div>
 
-        <div className="loss-banner">
-          <span className="loss-val">~50%</span>
-          <span className="loss-text">прибыли теряет продавец ежесуточно без автоснижения цен</span>
         </div>
       </div>
     </section>

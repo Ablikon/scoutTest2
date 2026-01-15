@@ -59,7 +59,8 @@
 .faq-body {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease-out;
+  /* Ускорили анимацию (было 0.3s) и сделали резче */
+  transition: max-height 0.15s cubic-bezier(0, 0, 0.2, 1);
   padding: 0 24px;
 }
 

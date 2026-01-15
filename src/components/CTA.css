@@ -147,6 +147,91 @@
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+.cta-slim {
+  padding: 40px 0;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border);
+}
+
+.cta-bar {
+  background: linear-gradient(90deg, #1e3a8a 0%, #2563eb 100%);
+  border-radius: 16px;
+  padding: 32px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.2);
+}
+
+/* Декоративный паттерн */
+.cta-bar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 50%;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.3;
+}
+
+.cta-text {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+  text-align: left;
+}
+
+.cta-text h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+  background: none;
+  -webkit-text-fill-color: initial;
+}
+
+.cta-text p {
+  font-size: 16px;
+  color: rgba(255,255,255,0.9);
+  margin: 0;
+  max-width: none;
+}
+
+.cta-action {
+  position: relative;
+  z-index: 1;
+  display: block;
+  margin: 0;
+}
+
+.cta-action button {
+  background: #fff;
+  color: #2563eb;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border: none;
+  min-width: auto;
+}
+
+.cta-action button:hover {
+  background: #f8fafc;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  opacity: 1;
+}
+
 @media (max-width: 768px) {
   .cta h2 { font-size: 40px; }
   .cta p { font-size: 18px; }
@@ -155,6 +240,21 @@
     width: 100%; 
     max-width: 360px;
     min-width: unset;
+  }
+  
+  .cta-bar {
+    flex-direction: column;
+    text-align: center;
+    padding: 32px 24px;
+  }
+  
+  .cta-text { 
+    text-align: center; 
+  }
+  
+  .cta-action button {
+    width: 100%;
+    justify-content: center;
   }
 }
 

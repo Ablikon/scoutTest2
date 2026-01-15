@@ -101,8 +101,9 @@
   font-family: monospace;
   color: var(--accent);
   background: rgba(37, 99, 235, 0.1);
-  padding: 4px 8px;
-  border-radius: 4px;
+  padding: 4px 12px;
+  border-color: var(--accent);
+  border-radius: 100px;
   align-self: flex-start;
 }
 

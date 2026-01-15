@@ -1,60 +1,54 @@
 import './HowItWorks.css'
-import { IoFlashOutline, IoShieldCheckmarkOutline, IoTimerOutline } from 'react-icons/io5'
+import { IoScanOutline, IoGitNetworkOutline, IoLockClosedOutline } from 'react-icons/io5'
 
 function HowItWorks() {
   return (
     <section className="capabilities">
       <div className="container">
         <div className="section-header">
-          <h2>Арсенал для победы на Kaspi</h2>
+          <h2>Технологии AlgoSeller</h2>
           <p className="section-subtitle">
-            Ничего лишнего. Только инструменты для удержания первой позиции в карточке товара.
+            Мы используем умные алгоритмы для безопасного управления ценами.
           </p>
         </div>
 
         <div className="capabilities-grid">
           <div className="cap-card">
             <div className="cap-icon">
-              <IoFlashOutline />
+              <IoScanOutline />
             </div>
-            <h3>Автоматический демпинг</h3>
+            <h3>Умный мониторинг</h3>
             <p>
-              Бот видит цену конкурента и ставит вашу на 1 тенге ниже (или на любой другой шаг). 
-              Вы всегда стоите первым в списке продавцов и забираете 95% заказов.
+              Система сканирует цены конкурентов каждые 3 минуты. Это обеспечивает мгновенную реакцию на любые изменения рынка.
             </p>
             <div className="cap-meta">
-              <span>Шаг 1 ₸</span>
-              <span>Борьба за ТОП-1</span>
+              <span>Скорость: 3 мин</span>
             </div>
           </div>
 
           <div className="cap-card">
             <div className="cap-icon">
-              <IoShieldCheckmarkOutline />
+              <IoGitNetworkOutline />
             </div>
-            <h3>Защита от убытка</h3>
+            <h3>Алгоритм снижения</h3>
             <p>
-              Вы задаете минимальную цену (себестоимость + ваша прибыль). 
-              Бот будет снижать цену, но никогда не опустится ниже этого порога. Торговля в минус исключена.
+              Мы не просто копируем цену. Бот "подрезает" конкурента ровно на 1 тенге (или ваш заданный шаг), чтобы занять первое место с минимальными потерями маржи.
             </p>
             <div className="cap-meta">
-              <span>Контроль маржи</span>
-              <span>Безопасно</span>
+              <span>Шаг: 1 ₸</span>
             </div>
           </div>
 
           <div className="cap-card">
             <div className="cap-icon">
-              <IoTimerOutline />
+              <IoLockClosedOutline />
             </div>
-            <h3>Мгновенная реакция</h3>
+            <h3>Stop-Loss защита</h3>
             <p>
-              Полный цикл проверки занимает всего 3 минуты. Пока конкурент меняет цену вручную или спит, 
-              вы уже забрали покупателя. Работает 24 часа в сутки.
+              Встроенный предохранитель. Если конкуренты начнут демпинговую войну и опустят цены ниже вашей себестоимости, бот автоматически остановится на вашей минимальной цене.
             </p>
             <div className="cap-meta">
-              <span>Каждые 3 мин</span>
-              <span>Режим 24/7</span>
+              <span>Защита капитала</span>
             </div>
           </div>
         </div>

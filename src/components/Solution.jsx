@@ -1,14 +1,14 @@
 import './Solution.css'
-import { IoSettingsOutline, IoTrendingUpOutline, IoShieldCheckmarkOutline } from 'react-icons/io5'
+import { IoLogInOutline, IoOptionsOutline, IoRocketOutline } from 'react-icons/io5'
 
 function Solution() {
   return (
     <section className="solution">
       <div className="container">
         <div className="section-header center">
-          <h2>Как работает AlgoSeller</h2>
+          <h2>Как начать работать?</h2>
           <p className="section-subtitle">
-            Простая настройка за 10 минут. Мы не взламываем маркетплейсы, а делаем работу менеджера, только в сотни раз быстрее.
+             Запуск занимает 10 минут. Вам не нужно устанавливать программы — всё работает в облаке через браузер.
           </p>
         </div>
 
@@ -18,13 +18,13 @@ function Solution() {
             <div className="step-number">01</div>
             <div className="card-inner">
               <div className="icon-box">
-                <IoSettingsOutline />
+                <IoLogInOutline />
               </div>
               <h3>Подключение</h3>
               <p>
-                Регистрируетесь на сайте, добавляете свой магазин Kaspi. Товары загружаются автоматически из вашего кабинета.
+                Регистрируетесь в AlgoSeller и добавляете свой магазин Kaspi. Товары подгружаются автоматически.
               </p>
-              <div className="tech-tag">Безопасно</div>
+              <div className="tech-tag">Синхронизация</div>
             </div>
           </div>
 
@@ -35,13 +35,13 @@ function Solution() {
             <div className="step-number">02</div>
             <div className="card-inner">
               <div className="icon-box">
-                <IoShieldCheckmarkOutline />
+                <IoOptionsOutline />
               </div>
-              <h3>Настройка защиты</h3>
+              <h3>Настройка</h3>
               <p>
-                Указываете минимальную цену для каждого товара (себестоимость + ваша маржа). Бот никогда не опустит цену ниже этого порога.
+                 Устанавливаете "Минимальную цену" для товаров — порог, ниже которого бот не имеет права опускаться.
               </p>
-              <div className="tech-tag">Защита от убытка</div>
+              <div className="tech-tag">Безопасность</div>
             </div>
           </div>
 
@@ -52,13 +52,13 @@ function Solution() {
             <div className="step-number">03</div>
             <div className="card-inner">
               <div className="icon-box">
-                <IoTrendingUpOutline />
+                <IoRocketOutline />
               </div>
-              <h3>Рост продаж</h3>
+              <h3>Автопилот</h3>
               <p>
-                Бот каждые 3 минуты проверяет конкурентов. Если кто-то снизил цену, мы снижаем на 1 тенге и забираем покупателя.
+                Включаете бота. Теперь он сам следит за ценами и удерживает вас в топе продаж 24/7.
               </p>
-              <div className="tech-tag">Автоматически</div>
+              <div className="tech-tag">Результат</div>
             </div>
           </div>
         </div>
