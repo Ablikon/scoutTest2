@@ -7,12 +7,11 @@ function Hero() {
       <div className="container">
         <div className="hero-grid">
           <div className="hero-content">
-            <div className="hero-badge">Работает с 2022 года</div>
             <h1 className="hero-title">
               Забирайте 95% продаж на Kaspi.kz
             </h1>
             <p className="hero-subtitle">
-              AlgoSeller — это бот автоснижения цен. Он проверяет конкурентов каждые 3 минуты и ставит вашу цену на 1 тенге ниже, чтобы вы всегда были первыми в списке продавцов. Без участия человека, 24/7.
+              Наш сервис — это бот автоснижения цен. Он проверяет конкурентов каждые 3 минуты и ставит вашу цену на 1 тенге ниже, чтобы вы всегда были первыми в списке продавцов. Без участия человека, 24/7.
             </p>
             
             <div className="hero-actions">
@@ -24,7 +23,7 @@ function Hero() {
               </button>
             </div>
 
-            <div className="hero-stats">
+            {/* <div className="hero-stats">
               <div className="stat-item">
                 <span className="stat-num">4000+</span>
                 <span className="stat-desc">Магазинов</span>
@@ -39,7 +38,7 @@ function Hero() {
                 <span className="stat-num">24/7</span>
                 <span className="stat-desc">Работает пока вы спите</span>
               </div>
-            </div>
+            </div> */}
           </div>
 
           <div className="hero-visual">
