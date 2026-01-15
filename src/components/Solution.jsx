@@ -1,107 +1,182 @@
 import './Solution.css'
+import { useState, useEffect } from 'react'
 import { IoSearchOutline, IoPricetagOutline, IoRocketOutline, IoCheckmarkCircleOutline, IoMoonOutline, IoStorefrontOutline, IoEyeOutline, IoStatsChartOutline } from 'react-icons/io5'
 
 function Solution() {
+  const [activeStep, setActiveStep] = useState(0)
+  const [checkedCount, setCheckedCount] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCheckedCount(prev => (prev >= 480 ? 0 : prev + 8))
+    }, 100)
+    return () => clearInterval(interval)
+  }, [])
+
+  const steps = [
+    {
+      icon: IoSearchOutline,
+      title: "Непрерывный мониторинг",
+      description: "Робот сканирует цены конкурентов каждые 180 секунд. Работает без остановок, праздников и сна.",
+      metric: `${checkedCount}/480 проверок за сутки`,
+      color: "#3B82F6"
+    },
+    {
+      icon: IoPricetagOutline,
+      title: "Мгновенная реакция",
+      description: "Обнаружили снижение? Система моментально корректирует вашу цену, опережая ручных операторов на часы.",
+      metric: "Реакция < 3 минут",
+      color: "#2563EB"
+    },
+    {
+      icon: IoRocketOutline,
+      title: "Умная маржа",
+      description: "Когда рынок позволяет, цены растут автоматически. Больше прибыли при той же конкурентоспособности.",
+      metric: "До +40% к марже",
+      color: "#1D4ED8"
+    }
+  ]
+
   return (
-    <section className="solution">
+    <section className="solution-new">
+      <div className="solution-bg">
+        <div className="glow-circle"></div>
+      </div>
+
       <div className="container">
-        <div className="section-header">
-          <h2>Принцип работы системы</h2>
-          <p className="section-desc">Три автоматических действия, которые ставят вас на первое место</p>
+        <div className="solution-header">
+          <div className="success-badge">
+            <span className="badge-pulse"></span>
+            <span>Проверено временем</span>
+          </div>
+          <h2>Как система приносит результат?</h2>
+          <p className="solution-intro">
+            Три взаимосвязанных процесса работают параллельно 24/7
+          </p>
         </div>
 
-        <div className="workflow-visual">
-          <div className="workflow-step">
-            <div className="workflow-icon"><IoSearchOutline /></div>
-            <div className="workflow-label">Мониторинг</div>
-            <div className="workflow-arrow">→</div>
-          </div>
-          <div className="workflow-step">
-            <div className="workflow-icon"><IoPricetagOutline /></div>
-            <div className="workflow-label">Корректировка</div>
-            <div className="workflow-arrow">→</div>
-          </div>
-          <div className="workflow-step">
-            <div className="workflow-icon"><IoRocketOutline /></div>
-            <div className="workflow-label">Лидерство</div>
+        {/* Интерактивный процесс */}
+        <div className="process-flow">
+          {steps.map((step, index) => (
+            <div 
+              key={index}
+              className={`flow-step ${activeStep === index ? 'active' : ''}`}
+              onMouseEnter={() => setActiveStep(index)}
+            >
+              <div className="step-visual">
+                <div className="step-ring" style={{borderColor: step.color}}>
+                  <step.icon className="step-icon" style={{color: step.color}} />
+                </div>
+                <div className="step-line"></div>
+              </div>
+              
+              <div className="step-content">
+                <h3>{step.title}</h3>
+                <p>{step.description}</p>
+                <div className="step-metric-box">
+                  <IoStatsChartOutline />
+                  <span>{step.metric}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Живая демонстрация */}
+        <div className="live-demo">
+          <h3>Посмотрите, как это работает в реальности</h3>
+          <div className="demo-timeline">
+            <div className="timeline-event">
+              <div className="event-time">00:00</div>
+              <div className="event-card start">
+                <div className="event-status">Старт мониторинга</div>
+                <div className="event-detail">Ваша цена: 45,000 ₸</div>
+              </div>
+            </div>
+            
+            <div className="timeline-event">
+              <div className="event-time">00:03</div>
+              <div className="event-card danger">
+                <div className="event-status">Обнаружено изменение</div>
+                <div className="event-detail">Конкурент снизил до: 44,990 ₸</div>
+              </div>
+            </div>
+            
+            <div className="timeline-event">
+              <div className="event-time">00:04</div>
+              <div className="event-card success">
+                <div className="event-status">Цена скорректирована</div>
+                <div className="event-detail">Новая цена: 44,980 ₸ | Вы первый!</div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="steps-container">
-          <div className="step-card">
-            <div className="step-number">1</div>
-            <div className="step-icon-wrapper">
-              <IoSearchOutline />
+        {/* Преимущества с визуализацией */}
+        <div className="advantages-showcase">
+          <h3>Почему SaleScout лучше ручного управления</h3>
+          <div className="advantages-grid">
+            <div className="advantage-card">
+              <div className="advantage-icon">
+                <IoCheckmarkCircleOutline />
+              </div>
+              <h4>Топ 20+ часов</h4>
+              <div className="advantage-visual">
+                <div className="time-bars">
+                  <div className="time-bar salescout" style={{width: '83%'}}>
+                    <span>SaleScout</span>
+                  </div>
+                  <div className="time-bar manual" style={{width: '17%'}}>
+                    <span>Ручное</span>
+                  </div>
+                </div>
+              </div>
+              <p>Вы в лидерах почти круглосуточно. Конкуренты физически не успевают.</p>
             </div>
-            <h3>Мониторинг рынка</h3>
-            <p>Система каждые 3 минуты сканирует цены всех конкурентов по вашим товарным позициям. Работает круглосуточно без перерывов.</p>
-            <div className="step-metric">
-              <IoStatsChartOutline />
-              <span>480 проверок в сутки</span>
-            </div>
-          </div>
 
-          <div className="step-card">
-            <div className="step-number">2</div>
-            <div className="step-icon-wrapper">
-              <IoPricetagOutline />
+            <div className="advantage-card">
+              <div className="advantage-icon">
+                <IoMoonOutline />
+              </div>
+              <h4>Работа без выходных</h4>
+              <div className="advantage-visual">
+                <div className="days-grid">
+                  {['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС'].map(day => (
+                    <div key={day} className="day-cell active">{day}</div>
+                  ))}
+                </div>
+              </div>
+              <p>Система не знает праздников. Каждый день = деньги.</p>
             </div>
-            <h3>Умная корректировка</h3>
-            <p>При обнаружении более низкой цены алгоритм автоматически снижает вашу стоимость на минимальный шаг.</p>
-            <div className="step-metric">
-              <IoStatsChartOutline />
-              <span>Защита от убытков</span>
-            </div>
-          </div>
 
-          <div className="step-card">
-            <div className="step-number">3</div>
-            <div className="step-icon-wrapper">
-              <IoRocketOutline />
+            <div className="advantage-card">
+              <div className="advantage-icon">
+                <IoStorefrontOutline />
+              </div>
+              <h4>Все магазины сразу</h4>
+              <div className="advantage-visual">
+                <div className="stores-stack">
+                  <div className="store-layer"></div>
+                  <div className="store-layer"></div>
+                  <div className="store-layer"></div>
+                </div>
+              </div>
+              <p>Управляйте неограниченным количеством точек из одной панели.</p>
             </div>
-            <h3>Динамическая маржа</h3>
-            <p>Когда конкуренты повышают стоимость, система синхронно поднимает и ваши цены.</p>
-            <div className="step-metric">
-              <IoStatsChartOutline />
-              <span>Максимум прибыли</span>
-            </div>
-          </div>
-        </div>
 
-        <div className="benefits-section">
-          <h3>Преимущества автоматизации</h3>
-          <div className="benefits-grid">
-            <div className="benefit-box">
-              <div className="benefit-icon"><IoCheckmarkCircleOutline /></div>
-              <h4>Лидерство 24/7</h4>
-              {/* <div className="benefit-progress">
-                <div className="progress-fill" style={{width: '83%'}}></div>
-              </div> */}
-              <p>Вы первые более 20 часов в сутки. Конкуренты не успевают за темпом анализа каждые 180 секунд.</p>
-            </div>
-            <div className="benefit-box">
-              <div className="benefit-icon"><IoMoonOutline /></div>
-              <h4>Работа в режиме нон-стоп</h4>
-              {/* <div className="benefit-progress">
-                <div className="progress-fill" style={{width: '100%'}}></div>
-              </div> */}
-              <p>Система не знает выходных, праздников и сна. Алгоритм защищает ваши позиции круглосуточно.</p>
-            </div>
-            <div className="benefit-box">
-              <div className="benefit-icon"><IoStorefrontOutline /></div>
-              <h4>Единая панель</h4>
-              {/* <div className="benefit-progress">
-                <div className="progress-fill" style={{width: '95%'}}></div>
-              </div> */}
-              <p>Контроль всех торговых точек и ассортимента из одного интерфейса.</p>
-            </div>
-            <div className="benefit-box">
-              <div className="benefit-icon"><IoEyeOutline /></div>
-              <h4>Мониторинг конкурентов</h4>
-              {/* <div className="benefit-progress">
-                <div className="progress-fill" style={{width: '90%'}}></div>
-              </div> */}
-              <p>Прозрачная аналитика ценовых стратегий других продавцов в реальном времени.</p>
+            <div className="advantage-card">
+              <div className="advantage-icon">
+                <IoEyeOutline />
+              </div>
+              <h4>Рентген конкурентов</h4>
+              <div className="advantage-visual">
+                <div className="competitor-radar">
+                  <div className="radar-ring"></div>
+                  <div className="radar-ring"></div>
+                  <div className="radar-ping"></div>
+                </div>
+              </div>
+              <p>Видите действия соперников в режиме реального времени.</p>
             </div>
           </div>
         </div>

@@ -8,6 +8,7 @@
 .logo {
   height: 6em;
   padding: 1.5em;
+ margin-top: 28px;
   will-change: filter;
   transition: filter 300ms;
 }
@@ -43,7 +44,7 @@
 
 .app {
   min-height: 100vh;
-  background: #ffffff;
+  background: #0F1419;
   width: 100%;
 }
 
