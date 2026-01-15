@@ -31,15 +31,18 @@
 
 .cap-card {
   padding: 32px;
-  background: transparent;
-  border-left: 1px solid var(--border);
-  transition: background 0.2s;
+  background: var(--bg-card); /* Теперь есть фон */
+  border: 1px solid var(--border); /* Теперь есть рамка */
+  border-radius: 12px; /* Скругление */
+  transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
 }
 
 .cap-card:hover {
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--bg-card);
+  border-color: #fff;
+  transform: translateY(-4px);
 }
 
 .cap-icon {
@@ -51,9 +54,9 @@
   justify-content: center;
   width: 48px;
   height: 48px;
-  background: #18181b;
-  border-radius: 8px;
-  border: 1px solid var(--border);
+  background: #27272a; /* Темный фон иконки как в Solution */
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.05);
 }
 
 .cap-card h3 {
@@ -89,12 +92,6 @@
 @media (max-width: 900px) {
   .capabilities-grid {
     grid-template-columns: 1fr;
-  }
-  
-  .cap-card {
-    border-left: none;
-    border-top: 1px solid var(--border);
-    padding: 32px 0;
   }
 }
 
@@ -325,62 +322,6 @@
   background: linear-gradient(135deg, #2563EB, #1D4ED8);
   transform: translateY(-2px);
   box-shadow: 0 12px 28px rgba(59, 130, 246, 0.4);
-}
-
-.capabilities {
-  padding: 100px 0;
-  background: var(--bg-primary);
-  border-bottom: 1px solid var(--border);
-}
-
-.capabilities-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-}
-
-.cap-card {
-  padding: 32px;
-  background: transparent;
-  border-left: 1px solid var(--border); /* Акцент на вертикальный разделитель */
-  transition: background 0.2s;
-}
-
-.cap-card:hover {
-  background: rgba(255, 255, 255, 0.02);
-}
-
-.cap-icon {
-  font-size: 24px;
-  color: #fff;
-  margin-bottom: 24px;
-}
-
-.cap-card h3 {
-  font-size: 20px;
-  font-weight: 600;
-  color: #fff;
-  margin-bottom: 16px;
-}
-
-.cap-card p {
-  font-size: 15px;
-  color: var(--text-secondary);
-  line-height: 1.6;
-  margin-bottom: 32px;
-}
-
-.cap-meta {
-  display: flex;
-  gap: 16px;
-}
-
-.cap-meta span {
-  font-size: 12px;
-  color: var(--text-secondary);
-  border: 1px solid var(--border);
-  padding: 4px 12px;
-  border-radius: 100px;
 }
 
 @media (max-width: 900px) {

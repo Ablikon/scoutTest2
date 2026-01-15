@@ -36,7 +36,9 @@ function Results() {
             <div key={index} className="case-card">
               <div className="case-header">
                 <span className="case-role">{item.role}</span>
-                <item.icon className="case-icon" />
+                <div className="res-icon">
+                  <item.icon />
+                </div>
               </div>
               <div className="case-result">{item.result}</div>
               <p className="case-desc">{item.desc}</p>

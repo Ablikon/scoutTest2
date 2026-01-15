@@ -1,5 +1,5 @@
 .solution {
-  padding: 120px 0;
+  padding: 100px 0; /* Было 120px */
   background: var(--bg-primary);
   border-bottom: 1px solid var(--border);
 }
@@ -29,7 +29,7 @@
   display: flex;
   justify-content: space-between;
   align-items: stretch;
-  gap: 24px;
+  gap: 32px; /* Было 24px, приводим к стандарту */
   position: relative;
 }
 
@@ -37,14 +37,14 @@
   flex: 1;
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 12px; /* Было 8px */
   position: relative;
   overflow: hidden;
-  transition: transform 0.2s, border-color 0.2s;
+  transition: all 0.3s ease; /* Стандартная анимация */
 }
 
 .process-card:hover {
-  border-color: rgba(255, 255, 255, 0.2);
+  border-color: #fff;
   transform: translateY(-4px);
 }
 
@@ -70,7 +70,7 @@
   width: 48px;
   height: 48px;
   background: #27272a;
-  border-radius: 8px;
+  border-radius: 12px; /* Было 8px, унификация */
   display: flex;
   align-items: center;
   justify-content: center;

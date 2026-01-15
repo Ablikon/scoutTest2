@@ -1,5 +1,5 @@
 .timeline {
-  padding: 120px 0;
+  padding: 100px 0; /* Было 120px */
   background: var(--bg-primary);
   border-bottom: 1px solid var(--border);
   position: relative;
@@ -16,11 +16,12 @@
   background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.3), transparent);
 }
 
-.timeline .container {
+/* Удаляем специфичный контейнер, чтобы использовался стандартный (1280px) как везде */
+/* .timeline .container {
   max-width: 1000px;
   margin: 0 auto;
   padding: 0 40px;
-}
+} */
 
 .timeline .section-header {
   margin-bottom: 64px;
@@ -240,33 +241,44 @@
 }
 
 .security-card {
-  background: #18181b; /* Очень легкий синий оттенок */
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--bg-card); /* Было жестко #18181b */
+  border: 1px solid var(--border);
   border-radius: 12px;
-  padding: 32px;
-  text-align: center;
+  padding: 32px; /* Унификация */
+  text-align: left; /* В других блоках текст слева, выравниваем */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  transition: transform 0.2s;
+  align-items: flex-start; /* В других блоках слева */
+  transition: all 0.3s ease;
 }
 
 .security-card:hover {
   transform: translateY(-4px);
-  background: rgba(37, 99, 235, 0.06);
+  border-color: #fff;
+  background: var(--bg-card); 
 }
 
 .sec-icon {
-  font-size: 40px;
+  font-size: 24px; /* Уменьшаем до 24 как везде */
   color: #ffffff;
   margin-bottom: 24px;
+  width: 48px;
+  height: 48px;
+  background: #27272a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.05);
+  box-sizing: border-box; 
+  padding: 0;
 }
 
 .security-card h3 {
   font-size: 20px;
   color: #fff;
   margin-bottom: 16px;
-  font-weight: 600;
+  font-weight: 700; /* Жирность как везде */
 }
 
 .security-card p {

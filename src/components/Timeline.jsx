@@ -12,7 +12,9 @@ function Timeline() {
 
         <div className="security-grid">
           <div className="security-card">
-            <IoLockClosedOutline className="sec-icon" />
+            <div className="sec-icon">
+              <IoLockClosedOutline />
+            </div>
             <h3>Официальный доступ</h3>
             <p>
               Бот работает через кабинет продавца так же, как живой человек. Мы не взламываем маркетплейс и не используем серые методы.
@@ -20,7 +22,9 @@ function Timeline() {
           </div>
 
           <div className="security-card">
-            <IoShieldCheckmarkOutline className="sec-icon" />
+            <div className="sec-icon">
+              <IoShieldCheckmarkOutline />
+            </div>
             <h3>Только управление</h3>
             <p>
               Нам не нужны ЭЦП, доступ к банковским счетам или картам. Бот только меняет цены. Деньги клиента в безопасности.
@@ -28,7 +32,9 @@ function Timeline() {
           </div>
 
           <div className="security-card">
-            <IoEyeOffOutline className="sec-icon" />
+            <div className="sec-icon">
+               <IoEyeOffOutline />
+            </div>
             <h3>Права доступа</h3>
             <p>
               Вы можете создать отдельного "Электронного менеджера" в кабинете Kaspi с ограниченными правами и дать доступ только ему.

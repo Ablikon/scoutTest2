@@ -26,56 +26,59 @@
   line-height: 1.6;
 }
 
-/* Новый стиль списка Reality List */
+/* Стандартизация под сетку карточек */
 .reality-list {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
 }
 
 .reality-item {
   background: var(--bg-card);
   border: 1px solid var(--border);
   padding: 32px;
-  border-radius: 16px;
+  border-radius: 12px;
   display: flex;
+  flex-direction: column; /* Иконка сверху */
   align-items: flex-start;
   gap: 24px;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
 }
 
 .reality-item:hover {
-  border-color: rgba(255,255,255,0.2);
-  transform: translateX(8px); /* Сдвиг вправо при наведении */
-  background: linear-gradient(90deg, #18181b 0%, rgba(255,255,255,0.02) 100%);
+  border-color: #fff;
+  transform: translateY(-4px);
+  background: var(--bg-card); /* Убираем специфичные градиенты */
 }
 
 .r-icon {
-  flex-shrink: 0;
-  width: 56px;
-  height: 56px;
+  width: 48px;
+  height: 48px;
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 28px;
+  font-size: 24px;
+  border: 1px solid rgba(255,255,255,0.05);
+  background: #27272a; /* Единый темный фон */
+  color: #fff; /* Единый белый цвет */
 }
 
+/* Убираем цветные фоны, оставляем только цвет иконки или убираем и его для полной унификации */
+/* Если нужно оставить цвет самой иконки (svg), раскомментируйте color ниже */
+
 .r-icon.danger {
-  background: rgba(239, 68, 68, 0.1);
-  color: #ef4444;
+  /* color: #ef4444; */
 }
 
 .r-icon.accent {
-  background: rgba(37, 99, 235, 0.1);
-  color: #3b82f6;
+  /* color: #3b82f6; */
 }
 
 .r-icon.warning {
-  background: rgba(234, 179, 8, 0.1);
-  color: #eab308;
+  /* color: #eab308; */
 }
 
 .r-content {
@@ -86,7 +89,7 @@
   font-size: 20px;
   font-weight: 700;
   color: #fff;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   letter-spacing: -0.5px;
 }
 
@@ -97,15 +100,8 @@
   margin: 0;
 }
 
-@media (max-width: 600px) {
-  .reality-item {
-    flex-direction: column;
-    padding: 24px;
-  }
-  
-  .r-icon {
-    width: 48px;
-    height: 48px;
-    font-size: 24px;
+@media (max-width: 900px) {
+  .reality-list {
+    grid-template-columns: 1fr;
   }
 }

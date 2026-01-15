@@ -25,18 +25,43 @@
 .platform-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 12px; /* Было 8px */
   padding: 32px;
-  transition: all 0.2s;
+  transition: all 0.3s ease;
 }
 
 .platform-card:hover {
   border-color: #fff;
+  transform: translateY(-4px); /* Добавляем движение */
+  background: var(--bg-card); /* Убираем специфичный фон */
 }
 
 .platform-card.featured {
+  /* Убираем акцентный бордер в спокойном состоянии, чтобы не выбивалось, 
+     либо оставляем как единственный "актив" */
   border-color: rgba(255, 255, 255, 0.2);
   background: rgba(255, 255, 255, 0.02);
+}
+
+.int-icon {
+  width: 48px;
+  height: 48px;
+  background: #27272a;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 24px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.platform-card h3 {
+  color: #fff;
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 24px;
 }
 
 .card-header {

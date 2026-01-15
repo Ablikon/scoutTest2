@@ -12,10 +12,10 @@ function Integrations() {
 
         <div className="platforms-wrapper">
           <div className="platform-card featured">
-            <div className="card-header">
-              <IoCartOutline className="icon" />
-              <span>Маркетплейс</span>
+            <div className="int-icon">
+              <IoCartOutline />
             </div>
+            <h3>Маркетплейс</h3>
             <div className="card-list">
               <div className="list-item">Kaspi.kz</div>
               <div className="list-item dimmed">Полная совместимость</div>
@@ -23,10 +23,10 @@ function Integrations() {
           </div>
 
           <div className="platform-card">
-             <div className="card-header">
-              <IoReaderOutline className="icon" />
-              <span>Массовые операции</span>
+             <div className="int-icon">
+              <IoReaderOutline />
             </div>
+            <h3>Массовые операции</h3>
             <div className="card-list">
               <div className="list-item">Excel (XLSX)</div>
               <div className="list-item">Импорт / Экспорт прайс листов</div>
@@ -34,10 +34,10 @@ function Integrations() {
           </div>
           
            <div className="platform-card">
-             <div className="card-header">
-              <IoListOutline className="icon" />
-              <span>История и Отчеты</span>
+             <div className="int-icon">
+              <IoListOutline />
             </div>
+            <h3>История и Отчеты</h3>
             <div className="card-list">
               <div className="list-item">История изменений</div>
               <div className="list-item">Фильтр по статусам</div>

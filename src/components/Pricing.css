@@ -47,16 +47,17 @@
 .pricing-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 12px; /* Было 8px */
   padding: 32px 24px;
   display: flex;
   flex-direction: column;
-  transition: transform 0.2s;
+  transition: all 0.3s ease;
   position: relative;
 }
 
 .pricing-card:hover {
   transform: translateY(-4px);
+  border-color: #fff;
 }
 
 .pricing-card.popular {
