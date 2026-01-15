@@ -1,5 +1,5 @@
 import './CTA.css'
-import { IoArrowForward } from 'react-icons/io5'
+import { IoLogoWhatsapp } from 'react-icons/io5'
 
 function CTA() {
   return (
@@ -7,12 +7,12 @@ function CTA() {
       <div className="container">
         <div className="cta-bar">
           <div className="cta-text">
-            <h3>Протестируйте бесплатно</h3>
-            <p>Первые 3 дня — полный доступ ко всем функциям без привязки карты.</p>
+            <h3>Остались вопросы перед стартом?</h3>
+            <p>Напишите нам в WhatsApp. Менеджер бесплатно проконсультирует и поможет настроить стратегию под вашу нишу.</p>
           </div>
           <div className="cta-action">
             <button className="btn-primary">
-              Начать тест сейчас <IoArrowForward />
+              <IoLogoWhatsapp style={{ fontSize: '1.2em' }} /> Написать менеджеру
             </button>
           </div>
         </div>
