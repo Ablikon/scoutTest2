@@ -1,8 +1,8 @@
 .header {
   padding: 0px 0;
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: saturate(180%) blur(20px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: saturate(180%) blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -20,27 +20,13 @@
 }
 
 .logo {
-  font-size: 26px;
-  font-weight: 900;
-  background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  letter-spacing: -1px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #0066FF;
+  letter-spacing: -0.5px;
   flex-shrink: 0;
   position: relative;
 }
-
-/* .logo::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 30%;
-  height: 3px;
-  background: linear-gradient(90deg, #4F46E5, transparent);
-  border-radius: 2px;
-} */
 
 .nav {
   display: flex;
@@ -51,7 +37,7 @@
 }
 
 .nav a {
-  color: #64748b;
+  color: #334155;
   text-decoration: none;
   font-weight: 600;
   font-size: 15px;
@@ -61,7 +47,7 @@
 }
 
 .nav a:hover {
-  color: #4F46E5;
+  color: #0066FF;
 }
 
 .nav a::after {
@@ -72,7 +58,7 @@
   transform: translateX(-50%) scaleX(0);
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, #4F46E5, #7C3AED);
+  background: #0066FF;
   transition: transform 0.3s ease;
   border-radius: 2px;
 }
@@ -85,12 +71,13 @@
   padding: 12px 28px;
   font-size: 14px;
   flex-shrink: 0;
-  background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
-  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.25);
+  background: #0066FF;
+  box-shadow: 0 2px 8px rgba(0, 102, 255, 0.2);
 }
 
 .header-btn:hover {
-  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.35);
+  background: #0052CC;
+  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.3);
 }
 
 @media (max-width: 768px) {
@@ -103,7 +90,7 @@
   bottom: 0;
   left: 0;
   height: 3px;
-  background: linear-gradient(90deg, #4F46E5 0%, #7C3AED 100%);
+  background: #0066FF;
   transition: width 0.1s ease-out;
-  box-shadow: 0 0 10px rgba(79, 70, 229, 0.4);
+  box-shadow: 0 0 8px rgba(0, 102, 255, 0.4);
 }

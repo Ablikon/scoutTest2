@@ -1,5 +1,5 @@
 .cta {
-  padding: 140px 0;
+  padding: 40px 0;
   background: 
     radial-gradient(ellipse 60% 40% at 50% 50%, rgba(79, 70, 229, 0.08) 0%, transparent 70%),
     linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
@@ -68,15 +68,21 @@
 
 .secondary {
   background: white;
-  color: #4F46E5;
-  border: 2px solid #4F46E5;
-  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.15);
+  color: #0066FF;
+  border: 2px solid #0066FF;
+  box-shadow: 0 4px 14px rgba(0, 102, 255, 0.15);
 }
 
 .secondary:hover {
-  background: linear-gradient(135deg, rgba(79, 70, 229, 0.08) 0%, rgba(124, 58, 237, 0.08) 100%);
+  background: linear-gradient(135deg, rgba(0, 102, 255, 0.08) 0%, rgba(0, 82, 204, 0.08) 100%);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.25);
+  box-shadow: 0 6px 20px rgba(0, 102, 255, 0.25);
+}
+
+.sub-desc {
+  font-size: 16px;
+  color: #6B7280;
+  margin-bottom: 40px;
 }
 
 .footer-note {
@@ -95,9 +101,7 @@
 }
 
 .footer-note::before {
-  content: '💬';
-  font-size: 22px;
-  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.1));
+  display: none;
 }
 
 .copyright {

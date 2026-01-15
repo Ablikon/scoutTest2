@@ -1,5 +1,5 @@
 .results {
-  padding: 120px 0;
+  padding: 40px 0;
   background: white;
   width: 100%;
 }
@@ -19,7 +19,7 @@
 }
 
 .rt-item {
-  background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+  background: linear-gradient(135deg, #0066FF 0%, #0052CC 100%);
   padding: 48px 56px;
   border-radius: 28px;
   text-align: center;
@@ -73,6 +73,17 @@
   font-weight: 500;
 }
 
+.rt-label {
+  font-size: 12px;
+  opacity: 0.85;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 1;
+  font-weight: 600;
+}
+
 .results h2 {
   font-size: 52px;
   font-weight: 900;
@@ -85,7 +96,7 @@
 .testimonials {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  gap: 24px;
   margin-bottom: 40px;
 }
 
@@ -141,7 +152,7 @@
   content: '✓';
   width: 22px;
   height: 22px;
-  background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+  background: linear-gradient(135deg, #0066FF 0%, #0052CC 100%);
   color: white;
   border-radius: 50%;
   display: inline-flex;
@@ -150,7 +161,7 @@
   font-size: 11px;
   font-weight: bold;
   flex-shrink: 0;
-  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.25);
+  box-shadow: 0 2px 8px rgba(0, 102, 255, 0.25);
 }
 
 @media (max-width: 900px) {

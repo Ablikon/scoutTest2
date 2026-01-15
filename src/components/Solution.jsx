@@ -1,86 +1,62 @@
 import './Solution.css'
+import { IoSearchOutline, IoPricetagOutline, IoTrophyOutline, IoCheckmarkCircleOutline, IoTimeOutline, IoStorefrontOutline, IoEyeOutline } from 'react-icons/io5'
 
 function Solution() {
   return (
     <section className="solution">
       <div className="container">
         <div className="section-header">
-          <span className="section-badge success">Решение</span>
-          <h2>Как SaleScout делает тебя №1?</h2>
-          <p className="section-desc">Три простых шага — и ты всегда первый в списке продавцов</p>
+          <h2>Как это работает?</h2>
         </div>
 
-        <div className="how-it-works-visual">
-          <div className="work-step">
-            <div className="step-visual">
-              <div className="step-icon">🔍</div>
-              <div className="step-line"></div>
+        <div className="steps-container">
+          <div className="step-card">
+            <div className="step-icon-wrapper">
+              <IoSearchOutline />
             </div>
-            <div className="step-content">
-              <div className="step-label">Шаг 1</div>
-              <h3>Смотрим на конкурентов</h3>
-              <p>Каждые <strong>3 минуты</strong> проверяем цены всех продавцов твоего товара на Kaspi. Работаем 24/7 без выходных.</p>
-              <div className="step-benefit">
-                <span className="benefit-icon">⚡</span>
-                <span>480 проверок в сутки</span>
-              </div>
-            </div>
+            <h3>Проверка цен и товаров</h3>
+            <p>Бот каждые 3 минуты заходит на Kaspi и проверяет каждый ваш товар.</p>
           </div>
 
-          <div className="work-step">
-            <div className="step-visual">
-              <div className="step-icon">💰</div>
-              <div className="step-line"></div>
+          <div className="step-card">
+            <div className="step-icon-wrapper">
+              <IoPricetagOutline />
             </div>
-            <div className="step-content">
-              <div className="step-label">Шаг 2</div>
-              <h3>Делаем тебя дешевле</h3>
-              <p>Если кто-то дешевле — мы <strong>сразу снижаем твою цену на 1₸</strong>. Но не ниже твоего минимума, который ты сам установил.</p>
-              <div className="step-benefit">
-                <span className="benefit-icon">🛡️</span>
-                <span>Защита от убытков</span>
-              </div>
-            </div>
+            <h3>Вывод на первое место</h3>
+            <p>Если ваш магазин не первый в списке продавцов, то бот смотрит на вашу минимальную цену и, если может, то снижает цену на Kaspi. Как только Kaspi применит новую цену, вы будете первым среди продавцов.</p>
           </div>
 
-          <div className="work-step">
-            <div className="step-visual">
-              <div className="step-icon">🎯</div>
+          <div className="step-card">
+            <div className="step-icon-wrapper">
+              <IoTrophyOutline />
             </div>
-            <div className="step-content">
-              <div className="step-label">Шаг 3</div>
-              <h3>Ты становишься первым</h3>
-              <p>Покупатели видят тебя первым → выбирают тебя. Если конкуренты поднимут цену — мы тоже поднимем, увеличив твою прибыль.</p>
-              <div className="step-benefit">
-                <span className="benefit-icon">📈</span>
-                <span>Больше заказов + больше прибыли</span>
-              </div>
-            </div>
+            <h3>Автообновление цен</h3>
+            <p>Если ваши конкуренты поднимут цену, бот тоже автоматически поднимет цену, увеличив маржу и оставив вас первым.</p>
           </div>
         </div>
 
-        <div className="benefits-showcase">
-          <h3>Что ты получаешь?</h3>
+        <div className="benefits-section">
+          <h3>Увеличьте заказы минимум в 2 раза за счет</h3>
           <div className="benefits-grid">
-            <div className="benefit-card">
-              <div className="benefit-icon-large">🏆</div>
+            <div className="benefit-box">
+              <div className="benefit-icon"><IoCheckmarkCircleOutline /></div>
               <h4>Всегда первый</h4>
-              <p>Ты в топе 20+ часов в сутки. Конкуренты не успевают за нашей скоростью.</p>
+              <p>SaleScout анализирует ваши товары каждые 3 минуты и снижает цену на 1 тенге от конкурента. При чем ниже вашей минимальной допустимой цены мы не упадем. Никаких убытков.</p>
             </div>
-            <div className="benefit-card">
-              <div className="benefit-icon-large">😴</div>
-              <h4>Работает без тебя</h4>
-              <p>Спи спокойно — бот следит за ценами даже ночью и не делает ошибок.</p>
+            <div className="benefit-box">
+              <div className="benefit-icon"><IoTimeOutline /></div>
+              <h4>Не спим</h4>
+              <p>SaleScout никогда не спит и поэтому даже ночью он анализирует ваши товары и ставит вас на 1 место. Даже ночью вы не пропустите покупателей.</p>
             </div>
-            <div className="benefit-card">
-              <div className="benefit-icon-large">🏪</div>
-              <h4>Все магазины сразу</h4>
-              <p>Управляй всеми товарами из всех магазинов в одном окне. Удобно и быстро.</p>
+            <div className="benefit-box">
+              <div className="benefit-icon"><IoStorefrontOutline /></div>
+              <h4>Несколько магазинов</h4>
+              <p>Теперь вы можете в одном окне управлять товарами всех своих магазинов. Это крайне удобно и экономит много времени.</p>
             </div>
-            <div className="benefit-card">
-              <div className="benefit-icon-large">💎</div>
-              <h4>Умная маржа</h4>
-              <p>Цена поднимается автоматически, если конкуренты дороже — ты зарабатываешь больше.</p>
+            <div className="benefit-box">
+              <div className="benefit-icon"><IoEyeOutline /></div>
+              <h4>Конкуренты</h4>
+              <p>Вы можете наблюдать за тем, как ваши конкуренты спускают цены. Удобно. Прикольно.</p>
             </div>
           </div>
         </div>
