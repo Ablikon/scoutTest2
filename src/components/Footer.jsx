@@ -8,7 +8,7 @@ function Footer() {
         <div className="footer-top">
           <div className="footer-brand">
             <div className="footer-logo">
-              <span className="logo-symbol">///</span> AlgoSeller
+              <span className="logo-symbol">///</span> TopPrice
             </div>
             <p className="footer-desc">
                 Сервис управления продажами на маркетплейсах
@@ -38,7 +38,7 @@ function Footer() {
         
         <div className="footer-bottom">
           <div className="copyright">
-            © 2024 AlgoSeller. Все права защищены.
+            © 2025 TopPrice. Все права защищены.
           </div>
           <div className="legal-links">
             <a href="#">Публичная оферта</a>

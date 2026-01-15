@@ -103,9 +103,9 @@
 }
 
 .list-item.dimmed {
-  opacity: 0.5;
   font-style: italic;
-  color: var(--text-secondary)
+  /* Убираем явное переопределение цвета, наследуем от .list-item или родителя */
+  color: var(--text-secondary); 
 }
 
 @media (max-width: 900px) {
