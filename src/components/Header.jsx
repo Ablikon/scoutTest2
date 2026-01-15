@@ -19,7 +19,7 @@ function Header() {
   return (
     <header className="header">
       <div className="header-container">
-        <div className="logo">SaleScout</div>
+        <div className="logo">SmartSolutions</div>
         <nav className="nav">
           <a href="#analytics">Аналитика</a>
           <a href="#reviews">Отзывы</a>

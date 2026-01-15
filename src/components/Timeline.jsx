@@ -6,8 +6,8 @@ function Timeline() {
     <section className="timeline">
       <div className="container">
         <div className="section-header">
-          <h2>Путь к успеху</h2>
-          <p className="section-desc">От идеи во время локдауна до международной экспансии</p>
+          <h2>Эволюция автоматизации</h2>
+          <p className="section-desc">Как технология изменила подход к ценообразованию на маркетплейсах</p>
         </div>
 
         <div className="timeline-track">
@@ -17,11 +17,11 @@ function Timeline() {
             </div>
             <div className="timeline-content">
               <div className="timeline-year">2020</div>
-              <h3>Рождение идеи</h3>
-              <p>Во время пандемии Рустам Жуаспаев торговал смартфонами через ForteMarket. Заметив, что продажи идут к продавцу с минимальной ценой, попросил стажёра написать скрипт автоматизации.</p>
+              <h3>Появление технологии</h3>
+              <p>Первые продавцы начали использовать скрипты для автоматического мониторинга цен. Результаты превзошли все ожидания — продажи выросли в несколько раз.</p>
               <div className="timeline-stat">
                 <IoFlashOutline />
-                <span>Первый прототип SaleScout</span>
+                <span>Рост продаж до 300%</span>
               </div>
             </div>
           </div>
@@ -31,12 +31,12 @@ function Timeline() {
               <IoTrophyOutline />
             </div>
             <div className="timeline-content">
-              <div className="timeline-year">2022</div>
-              <h3>Запуск SaaS</h3>
-              <p>Переход от коробочной версии (300-450 тыс ₸) к облачной подписке. Регистрация компании ТОО Letostore.kz и вход в резидентуру Astana Hub.</p>
+              <div className="timeline-year">2021</div>
+              <h3>Массовое внедрение</h3>
+              <p>Автоматизация стала доступна широкому кругу продавцов. Облачные сервисы заменили сложные технические решения.</p>
               <div className="timeline-stat success">
                 <IoTrophyOutline />
-                <span>Прибыль с первого дня</span>
+                <span>Тысячи активных пользователей</span>
               </div>
             </div>
           </div>
@@ -46,12 +46,12 @@ function Timeline() {
               <IoGlobeOutline />
             </div>
             <div className="timeline-content">
-              <div className="timeline-year">2022 (ноябрь)</div>
-              <h3>Международная экспансия</h3>
-              <p>Выход на рынок ОАЭ и интеграция с крупнейшим маркетплейсом Noon. Начало переговоров с банками о включении в их экосистемы.</p>
+              <div className="timeline-year">2022</div>
+              <h3>Выход на новые рынки</h3>
+              <p>Технология начала распространяться на международные маркетплейсы. Интеграция с банковскими экосистемами.</p>
               <div className="timeline-stat">
                 <IoGlobeOutline />
-                <span>Первый международный рынок</span>
+                <span>Поддержка 10+ платформ</span>
               </div>
             </div>
           </div>
@@ -62,11 +62,11 @@ function Timeline() {
             </div>
             <div className="timeline-content">
               <div className="timeline-year">2025</div>
-              <h3>Признание и рост</h3>
-              <p>Публикация в Forbes Kazakhstan. CEO прошёл обучение в Draper University (Тим Дрейпер). Встреча с Президентом Казахстана по вопросам IT-экспорта.</p>
+              <h3>Искусственный интеллект</h3>
+              <p>Внедрение AI и машинного обучения для предсказательной аналитики и оптимизации стратегий ценообразования.</p>
               <div className="timeline-stat highlight">
                 <IoTrendingUpOutline />
-                <span>1 млрд ₸ ежедневного оборота</span>
+                <span>Миллиарды в обороте</span>
               </div>
             </div>
           </div>
@@ -77,8 +77,8 @@ function Timeline() {
             <IoRocketOutline />
             <span>Будущее</span>
           </div>
-          <h3>Планы расширения</h3>
-          <p>Внедрение AI и машинного обучения • Выход на рынки Бразилии и GCC • Новые интеграции с банковскими экосистемами</p>
+          <h3>Что дальше?</h3>
+          <p>Полная автоматизация торговли • Персональные AI-ассистенты • Предсказательная аналитика спроса</p>
         </div>
       </div>
     </section>

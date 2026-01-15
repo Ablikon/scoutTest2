@@ -18,7 +18,7 @@ function Integrations() {
             </div>
             <div className="platform-logo kaspi">Kaspi.kz</div>
             <div className="platform-stat">80% онлайн-торговли Казахстана</div>
-            <p>Полная интеграция со всеми функциями: автоматизация цен, аналитика, WhatsApp-уведомления</p>
+            <p>Полная интеграция со всеми функциями: автоматизация цен, аналитика, уведомления в реальном времени</p>
             <div className="platform-features">
               <span>
                 <IoCheckmarkCircleOutline />
@@ -54,7 +54,7 @@ function Integrations() {
             </div>
             <div className="platform-logo noon">Noon</div>
             <div className="platform-stat">Крупнейший маркетплейс ОАЭ</div>
-            <p>Запущен в ноябре 2022. Полный функционал SaleScout</p>
+            <p>Полный функционал автоматизации для международного рынка</p>
             <div className="platform-features">
               <span>
                 <IoFlagOutline />

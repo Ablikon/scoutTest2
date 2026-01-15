@@ -114,7 +114,7 @@ function Solution() {
 
         {/* Преимущества с визуализацией */}
         <div className="advantages-showcase">
-          <h3>Почему SaleScout лучше ручного управления</h3>
+          <h3>Почему автоматизация лучше ручного управления</h3>
           <div className="advantages-grid">
             <div className="advantage-card">
               <div className="advantage-icon">
@@ -124,7 +124,7 @@ function Solution() {
               <div className="advantage-visual">
                 <div className="time-bars">
                   <div className="time-bar salescout" style={{width: '83%'}}>
-                    <span>SaleScout</span>
+                    <span>Автоматизация</span>
                   </div>
                   <div className="time-bar manual" style={{width: '17%'}}>
                     <span>Ручное</span>

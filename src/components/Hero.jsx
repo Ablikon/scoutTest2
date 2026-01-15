@@ -49,11 +49,11 @@ function Hero() {
         <div className="hero-badges">
           <div className="badge-item glow">
             <IoRocketOutline />
-            <span>Резидент Astana Hub</span>
+            <span>Проверенная технология</span>
           </div>
           <div className="badge-item">
             <span className="badge-dot"></span>
-            <span>Draper University Alumni</span>
+            <span>Автоматизация 24/7</span>
           </div>
           <div className="badge-item">
             <span className="badge-dot pulse"></span>
@@ -66,16 +66,16 @@ function Hero() {
           <div className="hero-left">
             <div className="hero-tag">
               <IoRocketOutline className="tag-icon-svg" />
-              <span>Первый казахстанский SaaS для маркетплейсов</span>
+              <span>Автоматизация ценообразования для маркетплейсов</span>
             </div>
             
             <h1 className="hero-title">
-              Автопилот для<br/>
+              Умный робот для<br/>
               <span className="title-highlight">продаж на Kaspi</span>
             </h1>
             
             <p className="hero-description">
-              Пока конкуренты вручную меняют цены часами, <strong>SaleScout делает это каждые 3 минуты</strong>. 
+              Пока конкуренты вручную меняют цены часами, <strong>наш бот делает это каждые 3 минуты</strong>. 
               Результат? Вы в топе выдачи 20+ часов в сутки и забираете 80% заказов категории.
             </p>
 
@@ -135,15 +135,15 @@ function Hero() {
                 <IoTrendingUpOutline />
               </div>
               <p className="fact-text">
-                <strong>История основания:</strong> В 2020 во время пандемии Рустам торговал смартфонами и заметил: 
-                продажи уходят к тому, кто дешевле на 1₸. Попросил стажёра написать скрипт — выручка взлетела. 
-                Так родился SaleScout.
+                <strong>Как это работает:</strong> Система мониторит цены конкурентов в режиме реального времени
+                и автоматически корректирует ваши цены, чтобы вы всегда оставались на первых позициях в выдаче.
+                Никаких ручных операций — только результат.
               </p>
               <div className="fact-author">
-                <div className="author-avatar">РЖ</div>
+                <div className="author-avatar">AI</div>
                 <div className="author-info">
-                  <div className="author-name">Рустам Жуаспаев</div>
-                  <div className="author-title">CEO & Founder</div>
+                  <div className="author-name">Автоматизация</div>
+                  <div className="author-title">Работает 24/7</div>
                 </div>
               </div>
             </div>
@@ -183,7 +183,7 @@ function Hero() {
               <div className="comparison-icon-svg auto">
                 <IoFlashOutline />
               </div>
-              <div className="comparison-label">SaleScout</div>
+              <div className="comparison-label">Автоматизация</div>
               <div className="comparison-metrics">
                 <div className="metric">
                   <span className="metric-value good">3 минуты</span>
