@@ -6,46 +6,79 @@
 }
 
 .faq .container {
-  max-width: 900px;
+  max-width: 800px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 24px;
 }
 
 .faq h2 {
   font-size: 32px;
   color: #fff;
-  margin-bottom: 64px;
-  text-align: left;
+  margin-bottom: 48px;
+  text-align: center;
 }
 
-.faq-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
+.faq-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.faq-item {
-  padding-bottom: 32px;
-  border-bottom: 1px solid var(--border);
+.faq-row {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s;
 }
 
-.faq-item:last-child, .faq-item:nth-last-child(2) {
-  /* Убираем бордер для последних элементов в гриде */
-  border-bottom: 1px solid var(--border); 
+.faq-head {
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
 }
 
-.faq-item h4 {
+.faq-head h4 {
   font-size: 16px;
   color: #fff;
-  margin-bottom: 12px;
-  font-weight: 600;
+  font-weight: 500;
+  margin: 0;
+  padding-right: 20px;
 }
 
-.faq-item p {
-  font-size: 14px;
+.faq-icon {
   color: var(--text-secondary);
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.faq-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  padding: 0 24px;
+}
+
+.faq-row.open .faq-body {
+  max-height: 200px;
+  padding-bottom: 24px;
+}
+
+.faq-body p {
+  color: var(--text-secondary);
+  font-size: 14px;
   line-height: 1.6;
   margin: 0;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.faq-row:hover {
+  border-color: rgba(255,255,255,0.2);
 }
 
 @media (max-width: 600px) {

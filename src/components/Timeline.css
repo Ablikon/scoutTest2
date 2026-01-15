@@ -23,8 +23,11 @@
 }
 
 .timeline .section-header {
-  margin-bottom: 80px;
-  max-width: 600px;
+  margin-bottom: 64px;
+  text-align: center;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .timeline h2 {
@@ -226,6 +229,57 @@
   font-size: 16px;
   color: rgba(255, 255, 255, 0.7);
   line-height: 1.7;
+}
+
+.security-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.security-card {
+  background: rgba(37, 99, 235, 0.03); /* Очень легкий синий оттенок */
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  border-radius: 12px;
+  padding: 32px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s;
+}
+
+.security-card:hover {
+  transform: translateY(-4px);
+  background: rgba(37, 99, 235, 0.06);
+}
+
+.sec-icon {
+  font-size: 40px;
+  color: #3b82f6;
+  margin-bottom: 24px;
+}
+
+.security-card h3 {
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.security-card p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .security-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 768px) {
