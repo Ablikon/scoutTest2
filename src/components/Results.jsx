@@ -7,40 +7,40 @@ function Results() {
         <div className="realtime-stats">
           <div className="rt-item">
             <div className="rt-val">x3</div>
-            <div className="rt-label">средний показатель</div>
-            <div className="rt-desc">Рост продаж после внедрения автоматизации</div>
+            <div className="rt-label">средний результат</div>
+            <div className="rt-desc">Продажи растут в 3 раза после подключения</div>
           </div>
           <div className="rt-item">
             <div className="rt-val">1,3 млрд ₸</div>
-            <div className="rt-label">Данные обновляются в realtime</div>
-            <div className="rt-desc">Общий оборот пользователей системы за последние 24 часа</div>
+            <div className="rt-label">Цифры обновляются прямо сейчас</div>
+            <div className="rt-desc">Столько продали все магазины с роботом за последние сутки</div>
           </div>
         </div>
 
-        <h2>Отзывы пользователей</h2>
+        <h2>Что говорят люди</h2>
         <div className="testimonials">
           <div className="testimonial">
-            <div className="quote">Раньше тратил по 3-4 часа в день на отслеживание цен конкурентов. Теперь всё делается автоматически, продажи выросли в 8 раз. Освободилось время на развитие ассортимента.</div>
-            <div className="author">Владелец магазина электроники</div>
+            <div className="quote">Раньше сидел по 3-4 часа каждый день и менял цены. Теперь робот всё делает сам, продажи выросли в 8 раз. Освободилось время на закупки и расширение.</div>
+            <div className="author">Магазин техники</div>
           </div>
           <div className="testimonial">
-            <div className="quote">Система окупилась за первую неделю. Теперь всегда на первых позициях, заказов стало в разы больше.</div>
+            <div className="quote">Робот окупился за первую неделю. Теперь постоянно на первом месте, заказов стало намного больше.</div>
             <div className="author">Продавец на Kaspi</div>
           </div>
           <div className="testimonial">
-            <div className="quote">Попробовал бесплатный период — результат превзошёл ожидания. Забрал подписку сразу на год.</div>
-            <div className="author">Онлайн-ритейлер</div>
+            <div className="quote">Попробовал 3 дня бесплатно — результат превзошёл все ожидания. Сразу купил подписку на год.</div>
+            <div className="author">Интернет-магазин</div>
           </div>
           <div className="testimonial">
-            <div className="quote">Аналитика помогает не ошибаться с товаром. Вижу, что продаётся, закупаю правильно — доход растёт.</div>
+            <div className="quote">Теперь вижу, что продаётся хорошо, а что нет. Закупаю правильно — прибыль растёт каждый месяц.</div>
             <div className="author">Предприниматель</div>
           </div>
           <div className="testimonial">
-            <div className="quote">Конкуренты не успевают за моими ценами. Продажи стабильные каждый день.</div>
-            <div className="author">Владелец интернет-магазина</div>
+            <div className="quote">Конкуренты не успевают за моими ценами. Заказы идут стабильно каждый день.</div>
+            <div className="author">Владелец магазина</div>
           </div>
           <div className="testimonial">
-            <div className="quote">Не успеваю выполнять все заказы — нужно расширять склад!</div>
+            <div className="quote">Не успеваю обрабатывать все заказы — приходится расширять склад!</div>
             <div className="author">Продавец товаров для дома</div>
           </div>
         </div>

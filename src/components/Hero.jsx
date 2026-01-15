@@ -49,15 +49,15 @@ function Hero() {
         <div className="hero-badges">
           <div className="badge-item glow">
             <IoRocketOutline />
-            <span>Проверенная технология</span>
+            <span>Работает с 2020 года</span>
           </div>
           <div className="badge-item">
             <span className="badge-dot"></span>
-            <span>Автоматизация 24/7</span>
+            <span>Меняет цены 24/7</span>
           </div>
           <div className="badge-item">
             <span className="badge-dot pulse"></span>
-            <span>{activeUsers} активных продавцов онлайн</span>
+            <span>{activeUsers} магазинов уже пользуются</span>
           </div>
         </div>
 
@@ -66,38 +66,38 @@ function Hero() {
           <div className="hero-left">
             <div className="hero-tag">
               <IoRocketOutline className="tag-icon-svg" />
-              <span>Автоматизация ценообразования для маркетплейсов</span>
+              <span>Умный помощник для продавцов на Kaspi</span>
             </div>
             
             <h1 className="hero-title">
-              Умный робот для<br/>
-              <span className="title-highlight">продаж на Kaspi</span>
+              Робот следит за ценами<br/>
+              <span className="title-highlight">пока вы спите</span>
             </h1>
             
             <p className="hero-description">
-              Пока конкуренты вручную меняют цены часами, <strong>наш бот делает это каждые 3 минуты</strong>. 
-              Результат? Вы в топе выдачи 20+ часов в сутки и забираете 80% заказов категории.
+              Ваши конкуренты тратят часы, чтобы вручную менять цены. <strong>Наш робот делает это каждые 3 минуты сам</strong>. 
+              Результат? Вы целый день на первом месте в выдаче и получаете больше всех заказов.
             </p>
 
             <div className="hero-cta">
               <button className="btn-primary mega">
                 <IoFlashOutline className="btn-icon" />
-                <span>Протестировать 3 дня бесплатно</span>
+                <span>Попробовать 3 дня бесплатно</span>
                 <div className="btn-shine"></div>
               </button>
               
               <div className="cta-features">
                 <div className="feature-check">
                   <IoCheckmarkCircle />
-                  <span>Без карты</span>
+                  <span>Карта не нужна</span>
                 </div>
                 <div className="feature-check">
                   <IoCheckmarkCircle />
-                  <span>Готов за 5 минут</span>
+                  <span>Запустится за 5 минут</span>
                 </div>
                 <div className="feature-check">
                   <IoCheckmarkCircle />
-                  <span>Отмена в 1 клик</span>
+                  <span>Отключить можно в любой момент</span>
                 </div>
               </div>
             </div>
@@ -109,9 +109,9 @@ function Hero() {
               <div className="stat-header">
                 <span className="stat-badge live">
                   <span className="live-dot"></span>
-                  LIVE
+                  СЕЙЧАС
                 </span>
-                <span className="stat-title">Оборот за сегодня</span>
+                <span className="stat-title">Продали за сегодня</span>
               </div>
               <div className="stat-value">
                 {(revenue / 1000000).toFixed(1)}M ₸
@@ -125,7 +125,7 @@ function Hero() {
                 <div className="chart-bar" style={{height: '88%'}}></div>
               </div>
               <div className="stat-footer">
-                <span className="trend-up">↗ +847% за последний год</span>
+                <span className="trend-up">↗ В 8 раз больше чем год назад</span>
               </div>
             </div>
 
@@ -135,15 +135,15 @@ function Hero() {
                 <IoTrendingUpOutline />
               </div>
               <p className="fact-text">
-                <strong>Как это работает:</strong> Система мониторит цены конкурентов в режиме реального времени
-                и автоматически корректирует ваши цены, чтобы вы всегда оставались на первых позициях в выдаче.
-                Никаких ручных операций — только результат.
+                <strong>Как работает:</strong> Робот каждые 3 минуты проверяет цены у конкурентов
+                и сразу же меняет вашу цену, чтобы вы были первым в списке. 
+                Вам ничего делать не нужно — всё происходит само.
               </p>
               <div className="fact-author">
                 <div className="author-avatar">AI</div>
                 <div className="author-info">
-                  <div className="author-name">Автоматизация</div>
-                  <div className="author-title">Работает 24/7</div>
+                  <div className="author-name">Умный робот</div>
+                  <div className="author-title">Работает круглосуточно</div>
                 </div>
               </div>
             </div>
@@ -152,13 +152,13 @@ function Hero() {
 
         {/* Визуальное сравнение */}
         <div className="comparison-block">
-          <div className="comparison-title">Почему автоматизация побеждает ручную работу?</div>
+          <div className="comparison-title">Почему робот лучше человека?</div>
           <div className="comparison-grid">
             <div className="comparison-item manual">
               <div className="comparison-icon-svg manual">
                 <IoPersonOutline />
               </div>
-              <div className="comparison-label">Ручное управление</div>
+              <div className="comparison-label">Меняете цены сами</div>
               <div className="comparison-metrics">
                 <div className="metric">
                   <span className="metric-value bad">2-3 часа</span>
@@ -166,11 +166,11 @@ function Hero() {
                 </div>
                 <div className="metric">
                   <span className="metric-value bad">~4 часа</span>
-                  <span className="metric-label">в топе выдачи</span>
+                  <span className="metric-label">на первом месте</span>
                 </div>
                 <div className="metric">
                   <span className="metric-value bad">20%</span>
-                  <span className="metric-label">доля продаж</span>
+                  <span className="metric-label">от всех продаж</span>
                 </div>
               </div>
             </div>
@@ -183,19 +183,19 @@ function Hero() {
               <div className="comparison-icon-svg auto">
                 <IoFlashOutline />
               </div>
-              <div className="comparison-label">Автоматизация</div>
+              <div className="comparison-label">Робот делает всё сам</div>
               <div className="comparison-metrics">
                 <div className="metric">
                   <span className="metric-value good">3 минуты</span>
-                  <span className="metric-label">постоянный мониторинг</span>
+                  <span className="metric-label">следит постоянно</span>
                 </div>
                 <div className="metric">
                   <span className="metric-value good">20+ часов</span>
-                  <span className="metric-label">в топе выдачи</span>
+                  <span className="metric-label">на первом месте</span>
                 </div>
                 <div className="metric">
                   <span className="metric-value good">80%</span>
-                  <span className="metric-label">доля продаж</span>
+                  <span className="metric-label">от всех продаж</span>
                 </div>
               </div>
             </div>

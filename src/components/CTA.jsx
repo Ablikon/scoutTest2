@@ -4,17 +4,17 @@ function CTA() {
   return (
     <section className="cta">
       <div className="container">
-        <h2>Готовы увеличить продажи в 3 раза?</h2>
-        <p>Попробуйте автоматизацию прямо сейчас!</p>
-        <p className="sub-desc">Регистрация и запуск займёт ~3 минуты. Не нужны специальные навыки или технические знания.</p>
+        <h2>Хотите продавать в 3 раза больше?</h2>
+        <p>Попробуйте робота прямо сейчас!</p>
+        <p className="sub-desc">Зарегистрироваться и запустить робота можно за 3 минуты. Не нужны особые знания или навыки.</p>
         
         <div className="cta-buttons">
-          <button className="primary large">Пройти регистрацию</button>
-          <button className="secondary large">Хочу видеозвонок</button>
+          <button className="primary large">Зарегистрироваться</button>
+          <button className="secondary large">Показать в видеозвонке</button>
         </div>
         
         <div className="footer-note">
-          Остались вопросы? Проведём демонстрацию в видеозвонке — покажем все возможности и поможем с настройкой!
+          Есть вопросы? Созвонимся по видео — покажем как всё работает и поможем настроить!
         </div>
         
       </div>

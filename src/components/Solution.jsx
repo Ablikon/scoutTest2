@@ -16,23 +16,23 @@ function Solution() {
   const steps = [
     {
       icon: IoSearchOutline,
-      title: "Непрерывный мониторинг",
-      description: "Робот сканирует цены конкурентов каждые 180 секунд. Работает без остановок, праздников и сна.",
-      metric: `${checkedCount}/480 проверок за сутки`,
+      title: "Постоянно проверяет цены",
+      description: "Робот каждые 3 минуты смотрит, что делают конкуренты. Работает круглосуточно без выходных и праздников.",
+      metric: `${checkedCount}/480 проверок за день`,
       color: "#3B82F6"
     },
     {
       icon: IoPricetagOutline,
-      title: "Мгновенная реакция",
-      description: "Обнаружили снижение? Система моментально корректирует вашу цену, опережая ручных операторов на часы.",
-      metric: "Реакция < 3 минут",
+      title: "Мгновенно меняет вашу цену",
+      description: "Увидел, что кто-то стал дешевле? Сразу же делает вас ещё дешевле. Реагирует быстрее любого человека.",
+      metric: "Ответ меньше 3 минут",
       color: "#2563EB"
     },
     {
       icon: IoRocketOutline,
-      title: "Умная маржа",
-      description: "Когда рынок позволяет, цены растут автоматически. Больше прибыли при той же конкурентоспособности.",
-      metric: "До +40% к марже",
+      title: "Умеет поднимать цены",
+      description: "Когда рынок позволяет, цены растут сами. Вы зарабатываете больше при той же скорости продаж.",
+      metric: "До +40% к прибыли",
       color: "#1D4ED8"
     }
   ]
@@ -47,11 +47,11 @@ function Solution() {
         <div className="solution-header">
           <div className="success-badge">
             <span className="badge-pulse"></span>
-            <span>Проверено временем</span>
+            <span>Проверено на деле</span>
           </div>
-          <h2>Как система приносит результат?</h2>
+          <h2>Как это работает на практике?</h2>
           <p className="solution-intro">
-            Три взаимосвязанных процесса работают параллельно 24/7
+            Три процесса работают одновременно круглые сутки
           </p>
         </div>
 
@@ -84,12 +84,12 @@ function Solution() {
 
         {/* Живая демонстрация */}
         <div className="live-demo">
-          <h3>Посмотрите, как это работает в реальности</h3>
+          <h3>Смотрите, как работает в реальной жизни</h3>
           <div className="demo-timeline">
             <div className="timeline-event">
               <div className="event-time">00:00</div>
               <div className="event-card start">
-                <div className="event-status">Старт мониторинга</div>
+                <div className="event-status">Робот начал проверку</div>
                 <div className="event-detail">Ваша цена: 45,000 ₸</div>
               </div>
             </div>
@@ -97,7 +97,7 @@ function Solution() {
             <div className="timeline-event">
               <div className="event-time">00:03</div>
               <div className="event-card danger">
-                <div className="event-status">Обнаружено изменение</div>
+                <div className="event-status">Увидел изменение</div>
                 <div className="event-detail">Конкурент снизил до: 44,990 ₸</div>
               </div>
             </div>
@@ -105,7 +105,7 @@ function Solution() {
             <div className="timeline-event">
               <div className="event-time">00:04</div>
               <div className="event-card success">
-                <div className="event-status">Цена скорректирована</div>
+                <div className="event-status">Цена изменена</div>
                 <div className="event-detail">Новая цена: 44,980 ₸ | Вы первый!</div>
               </div>
             </div>
@@ -114,7 +114,7 @@ function Solution() {
 
         {/* Преимущества с визуализацией */}
         <div className="advantages-showcase">
-          <h3>Почему автоматизация лучше ручного управления</h3>
+          <h3>Почему робот лучше, чем делать самому</h3>
           <div className="advantages-grid">
             <div className="advantage-card">
               <div className="advantage-icon">

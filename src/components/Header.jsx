@@ -21,10 +21,10 @@ function Header() {
       <div className="header-container">
         <div className="logo">SmartSolutions</div>
         <nav className="nav">
-          <a href="#analytics">Аналитика</a>
-          <a href="#reviews">Отзывы</a>
-          <a href="#pricing">Цены</a>
-          <a href="#consultation">Консультация</a>
+          <a href="#analytics">Что умеет</a>
+          <a href="#reviews">Кто пользуется</a>
+          <a href="#pricing">Сколько стоит</a>
+          <a href="#consultation">Помощь</a>
           <a href="#blog">Блог</a>
         </nav>
         <button className="primary header-btn">Попробовать</button>
