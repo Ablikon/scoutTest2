@@ -84,3 +84,22 @@
 .btn-primary.small {
   padding: 8px 16px;
 }
+
+/* Scroll Progress Bar */
+.scroll-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%; /* Растягиваем на всю ширину, управляем через scaleX */
+  height: 2px;
+  background: var(--accent);
+  z-index: 1001;
+  
+  /* Ключевые изменения для плавности: */
+  transform-origin: 0 50%; /* Растет слева направо */
+  transform: scaleX(0); /* Начальное состояние 0 */
+  will-change: transform; /* Подсказка браузеру для оптимизации */
+  
+  /* Убрали transition: width, чтобы полоска реагировала мгновенно */
+  box-shadow: 0 0 10px rgba(37, 99, 235, 0.5);
+}
