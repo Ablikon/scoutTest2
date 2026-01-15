@@ -1,5 +1,5 @@
 .results {
-  padding: 40px 0;
+  padding: 120px 0;
   background: white;
   width: 100%;
 }
@@ -14,7 +14,7 @@
   display: flex;
   justify-content: center;
   gap: 28px;
-  margin-bottom: 100px;
+  margin-bottom: 120px;
   flex-wrap: wrap;
 }
 
@@ -88,7 +88,7 @@
   font-size: 52px;
   font-weight: 900;
   text-align: center;
-  margin-bottom: 70px;
+  margin-bottom: 80px;
   letter-spacing: -2px;
   color: #0f172a;
 }

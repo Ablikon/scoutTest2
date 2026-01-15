@@ -1,5 +1,5 @@
 .hero {
-  padding: 60px 0 80px;
+  padding: 100px 0 120px;
   background: linear-gradient(180deg, #F9FAFB 0%, #FFFFFF 100%);
   position: relative;
   overflow: hidden;
@@ -48,11 +48,11 @@
 .astana-hub-badge {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
   padding: 12px 24px;
   border-radius: 100px;
-  font-size: 13px;
+  font-size: 14px;
   color: #475569;
   box-shadow: 
     0 1px 3px rgba(0,0,0,0.04),
@@ -74,12 +74,12 @@
 }
 
 .hero h1 {
-  max-width: 1000px;
-  margin: 0 auto 32px;
-  font-size: 48px;
+  max-width: 900px;
+  margin: 0 auto 28px;
+  font-size: 52px;
   font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -1px;
+  line-height: 1.15;
+  letter-spacing: -1.2px;
   color: #111827;
   animation: fadeInUp 0.8s ease-out 0.1s backwards;
   text-align: center;
@@ -145,9 +145,9 @@
 }
 
 .cta-note {
-  margin-top: 20px;
-  font-size: 14px;
-  color: #94a3b8;
+  margin-top: 24px;
+  font-size: 13px;
+  color: #9CA3AF;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -174,7 +174,7 @@
   background: white;
   border: 1px solid #E5E7EB;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  padding: 48px 44px;
+  padding: 28px 44px;
   border-radius: 28px;
   box-shadow: 
     0 2px 8px rgba(15, 23, 42, 0.03),
@@ -264,6 +264,78 @@
   line-height: 1.6;
 }
 
+.social-proof {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin: 70px 0 60px;
+  padding: 50px;
+  background: white;
+  border-radius: 20px;
+  border: 1px solid #E5E7EB;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.proof-item {
+  text-align: center;
+}
+
+.proof-number {
+  font-size: 40px;
+  font-weight: 900;
+  background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+  letter-spacing: -1px;
+}
+
+.proof-text {
+  font-size: 14px;
+  color: #6B7280;
+  font-weight: 500;
+}
+
+.main-stat {
+  max-width: 100%;
+  margin: 0 auto 50px;
+  text-align: center;
+  /* padding: 48px 56px; */
+}
+
+.analogy-box {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 32px 40px;
+  background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  border: 1px solid #FCD34D;
+}
+
+.analogy-visual {
+  flex-shrink: 0;
+}
+
+.pie-chart {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  position: relative;
+  background: conic-gradient(#F59E0B 0deg 288deg, #FCD34D 288deg 360deg);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.analogy-box p {
+  margin: 0;
+  font-size: 16px;
+  color: #92400E;
+  line-height: 1.6;
+  text-align: left;
+}
+
 .trust-section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -290,9 +362,15 @@
 }
 
 @media (max-width: 768px) {
-  .hero h1 { font-size: 32px; letter-spacing: -1.5px; }
+  .hero h1 { font-size: 36px; letter-spacing: -1.5px; }
   .hero .container { padding: 0 20px; }
   .subtitle { font-size: 18px; }
   .trust-section { grid-template-columns: 1fr; }
   .large { padding: 18px 40px; font-size: 16px; white-space: normal; }
+  .social-proof { flex-direction: column; gap: 32px; padding: 32px; }
+  .analogy-box { 
+    flex-direction: column; 
+    text-align: center;
+    gap: 20px;
+  }
 }

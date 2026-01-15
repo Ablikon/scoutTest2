@@ -1,44 +1,54 @@
 import './Hero.css'
+import { IoRocketOutline } from 'react-icons/io5'
 
 function Hero() {
   return (
     <section className="hero">
       <div className="container">
         <div className="astana-hub-badge">
-          <span>Резидент <strong>Astana Hub</strong> — международного технопарка</span>
+          <IoRocketOutline />
+          <span>Резидент технопарка <strong>Astana Hub</strong></span>
         </div>
         
-        <h1>Увеличь продажи своего Kaspi магазина при помощи умной системы корректировки цен</h1>
+        <h1>Стань лидером продаж на Kaspi с автоматической корректировкой цен</h1>
         <p className="subtitle">
-          По оценке независимого аналитического сервиса, более 90% всех продаж на Kaspi делают магазины, которые стоят в списке продавцов первыми.
+          Исследования показывают: почти 9 из 10 покупателей выбирают магазины, расположенные первыми в каталоге товаров.
         </p>
         
         <div className="cta-group">
-          <button className="primary large pulse-btn">Попробовать 3 дня бесплатно</button>
+          <button className="primary large pulse-btn">Начать бесплатный тест на 3 дня</button>
+          <p className="cta-note">Карта не нужна • Настройка за 5 минут • Отмена в любой момент</p>
         </div>
 
-        <div className="hero-stats-row">
-          <div className="hero-stat-card">
-            <div className="big-stat-val">58,1 млрд ₸</div>
-            <div className="stat-desc">Общая сумма заказов клиентов SaleScout за предыдущий месяц</div>
-            <div className="stat-badge">данные обновляются каждые 10 минут</div>
+        <div className="social-proof">
+          <div className="proof-item">
+            <div className="proof-number">1000+</div>
+            <div className="proof-text">активных магазинов</div>
+          </div>
+          <div className="proof-item">
+            <div className="proof-number">20+ часов</div>
+            <div className="proof-text">в топе каждые сутки</div>
+          </div>
+          <div className="proof-item">
+            <div className="proof-number">2.5x</div>
+            <div className="proof-text">рост за первый месяц</div>
           </div>
         </div>
 
-        <div className="pie-analogy">
-          <p><strong>Представьте пирог</strong> - общее количество заказов за день в Kaspi магазине. Клиенты SaleScout съедают более 80% всего пирога заказов. Остальные 20% пирога делят между собой другие продавцы.</p>
+        <div className="hero-stat-card main-stat">
+          <div className="stat-badge">Обновляется в реальном времени</div>
+          <div className="big-stat-val">58.1 млрд ₸</div>
+          <div className="stat-desc">Суммарный оборот клиентов за последние 30 дней</div>
         </div>
 
-        <div className="trust-section">
-          <div className="trust-item">
-            <span>Магазины, подключившие SaleScout, стоят первыми в товарах более 20 часов в сутки</span>
+        <div className="analogy-box">
+          <div className="analogy-visual">
+            <div className="pie-chart">
+              <div className="pie-slice main"></div>
+              <div className="pie-slice small"></div>
+            </div>
           </div>
-          <div className="trust-item">
-            <span>Продавцы с миллионными оборотами доверяют SaleScout</span>
-          </div>
-          <div className="trust-item">
-            <span>Клиенты увеличивают свою прибыль в 2,5 раза уже в первый месяц</span>
-          </div>
+          <p><strong>Представь торт</strong> — это все заказы за день. Клиенты SaleScout забирают <strong>80% торта</strong>, остальные продавцы делят между собой уже остатки.</p>
         </div>
       </div>
     </section>
