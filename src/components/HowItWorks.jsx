@@ -6,7 +6,7 @@ function HowItWorks() {
     <section className="capabilities">
       <div className="container">
         <div className="section-header">
-          <h2>Технологии AlgoSeller</h2>
+          <h2>Технологии Сервиса</h2>
           <p className="section-subtitle">
             Мы используем умные алгоритмы для безопасного управления ценами.
           </p>

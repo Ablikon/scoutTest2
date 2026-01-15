@@ -138,6 +138,9 @@
   color: var(--accent);
   font-family: monospace;
   font-size: 16px;
+  font-variant-numeric: tabular-nums; /* Цифры не скачут по ширине */
+  min-width: 100px; /* Резервируем место под значение */
+  text-align: right;
 }
 
 input[type=range] {
@@ -170,7 +173,8 @@ input[type=range]::-webkit-slider-runnable-track {
   border: 1px solid var(--border);
   border-radius: 16px;
   padding: 32px;
-  min-width: 280px;
+  width: 350px; /* Фиксируем ширину блока, чтобы он не прыгал */
+  flex-shrink: 0; /* Запрещаем блоку сжиматься */
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -191,6 +195,8 @@ input[type=range]::-webkit-slider-runnable-track {
   font-weight: 700;
   color: #fff;
   margin-bottom: 4px;
+  font-variant-numeric: tabular-nums; /* Цифры одной ширины */
+  white-space: nowrap;
 }
 
 .loss-period {
@@ -285,6 +291,6 @@ input[type=range]::-webkit-slider-runnable-track {
     padding: 24px;
   }
   .calc-result {
-    width: 100%;
+    width: 100%; /* На мобильных возвращаем резиновую ширину */
   }
 }

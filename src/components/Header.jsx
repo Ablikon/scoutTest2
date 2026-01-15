@@ -5,7 +5,7 @@ function Header() {
     <header className="header">
       <div className="header-inner container">
         <div className="logo">
-          <span className="logo-symbol">///</span> AlgoSeller
+          <span className="logo-symbol">///</span> TopPrice
         </div>
         <nav className="nav">
           <a href="#technology">Как это работает</a>
