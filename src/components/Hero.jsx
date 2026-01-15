@@ -1,5 +1,5 @@
 import './Hero.css'
-import { IoArrowForward } from 'react-icons/io5'
+import { IoArrowForward, IoTrendingDown } from 'react-icons/io5'
 
 function Hero() {
   return (
@@ -43,43 +43,48 @@ function Hero() {
           </div>
 
           <div className="hero-visual">
-            <div className="system-diagram">
-              <div className="diagram-header">
-                <span className="dot red"></span>
-                <span className="dot yellow"></span>
-                <span className="dot green"></span>
+            <div className="pricing-simulation">
+              
+              {/* Конкурент */}
+              <div className="sim-card competitor dimmed">
+                <div className="sim-info">
+                  <span className="sim-pos">#2</span>
+                  <span className="sim-name">Конкурент</span>
+                </div>
+                <div className="sim-price">20 000 ₸</div>
               </div>
-              <div className="diagram-body">
-                <div className="code-line">
-                  <span className="code-comment">// Мониторинг рынка</span>
-                </div>
-                <div className="code-line">
-                  <span className="code-purple">if</span> (competitorPrice &lt; myPrice) &#123;
-                </div>
-                <div className="code-line indent">
-                   <span className="code-comment">// Если цена конкурента ниже</span>
-                </div>
-                <div className="code-line indent">
-                   newPrice = competitorPrice - <span className="code-yellow">1 ₸</span>;
-                </div>
-                 <div className="code-line indent">
-                   <span className="code-purple">if</span> (newPrice &gt;= minPrice) &#123;
-                </div>
-                <div className="code-line indent indent">
-                   kaspi.<span className="code-func">updatePrice</span>(newPrice);
-                </div>
-                <div className="code-line indent">
-                   &#125;
-                </div>
-                <div className="code-line">
-                  &#125;
-                </div>
-                
-                <div className="live-status">
-                  <div className="status-indicator active"></div>
-                  Статус: Вы на 1 месте (19 995 ₸)
+
+              {/* Действие бота */}
+              <div className="sim-action">
+                <div className="action-line"></div>
+                <div className="action-tag">
+                   <IoTrendingDown />
+                   Бот снижает на 1 ₸
                 </div>
               </div>
+
+              {/* Мы (Вы) */}
+              <div className="sim-card us active">
+                 <div className="sim-badge">Вы</div>
+                <div className="sim-info">
+                  <span className="sim-pos">#1</span>
+                  <span className="sim-name">Ваш магазин</span>
+                </div>
+                <div className="sim-price highlight">19 999 ₸</div>
+                <div className="live-indicator">
+                  <div className="pulse"></div> В топе
+                </div>
+              </div>
+
+               {/* Другой конкурент */}
+               <div className="sim-card competitor dimmed small">
+                <div className="sim-info">
+                  <span className="sim-pos">#3</span>
+                  <span className="sim-name">Другой продавец</span>
+                </div>
+                <div className="sim-price">20 005 ₸</div>
+              </div>
+
             </div>
           </div>
         </div>

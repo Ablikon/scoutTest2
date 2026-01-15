@@ -11,7 +11,6 @@ function CTA() {
             Тестовый период 3 дня.
           </p>
           <div className="cta-actions">
-            <button className="btn-primary">Создать аккаунт</button>
             <button className="btn-secondary">Связаться с отделом продаж</button>
           </div>
         </div>

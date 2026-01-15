@@ -14,7 +14,7 @@ function Header() {
           <a href="#faq">Вопросы</a>
         </nav>
         <div className="header-actions">
-          <button className="btn-text">Войти</button>
+
           <button className="btn-primary small">Попробовать бесплатно</button>
         </div>
       </div>

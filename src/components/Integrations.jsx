@@ -1,5 +1,5 @@
 import './Integrations.css'
-import { IoCartOutline, IoReaderOutline, IoPhonePortraitOutline } from 'react-icons/io5'
+import { IoCartOutline, IoReaderOutline, IoListOutline } from 'react-icons/io5'
 
 function Integrations() {
   return (
@@ -7,7 +7,7 @@ function Integrations() {
       <div className="container">
         <div className="integrations-header">
           <h2>Работа с данными</h2>
-          <p className="subtitle">Удобное управление ценами</p>
+          <p className="subtitle">Удобное управление ценами и аналитика</p>
         </div>
 
         <div className="platforms-wrapper">
@@ -25,22 +25,22 @@ function Integrations() {
           <div className="platform-card">
              <div className="card-header">
               <IoReaderOutline className="icon" />
-              <span>Массовая загрузка</span>
+              <span>Массовые операции</span>
             </div>
             <div className="card-list">
               <div className="list-item">Excel (XLSX)</div>
-              <div className="list-item">Загрузка прайс-листов</div>
+              <div className="list-item">Импорт / Экспорт прайс листов</div>
             </div>
           </div>
           
            <div className="platform-card">
              <div className="card-header">
-              <IoPhonePortraitOutline className="icon" />
-              <span>Уведомления</span>
+              <IoListOutline className="icon" />
+              <span>История и Отчеты</span>
             </div>
             <div className="card-list">
-              <div className="list-item">SMS авторизация</div>
-              <div className="list-item">Личный кабинет</div>
+              <div className="list-item">История изменений</div>
+              <div className="list-item">Фильтр по статусам</div>
             </div>
           </div>
         </div>

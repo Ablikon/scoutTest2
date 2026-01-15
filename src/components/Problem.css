@@ -104,44 +104,261 @@
   margin: 0;
 }
 
-.loss-stat {
-  background: #1e1e20;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 24px 32px;
+/* Компактный виджет потерь */
+.impact-widget {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: rgba(239, 68, 68, 0.08); /* Легкий красный оттенок */
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 16px;
+  padding: 20px 32px;
   display: flex;
   align-items: center;
-  gap: 32px;
-}
-
-.loss-label {
-  font-size: 14px;
-  font-weight: 600;
-  color: #fff;
-  white-space: nowrap;
-}
-
-.loss-bar-container {
-  flex: 1;
-  height: 8px;
-  background: #27272a;
-  border-radius: 4px;
+  gap: 24px;
+  transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
 }
 
-.loss-bar-filled {
-  height: 100%;
-  background: #ef4444; /* Красный для обозначения проблемы */
+.impact-widget:hover {
+  transform: translateY(-2px);
+  border-color: rgba(239, 68, 68, 0.4);
+  box-shadow: 0 12px 30px rgba(239, 68, 68, 0.1);
+  background: rgba(239, 68, 68, 0.12);
 }
 
-.loss-value {
-  position: absolute;
-  right: 0;
-  top: -24px; /* Выносим над баром или делаем рядом */
-  font-size: 12px;
+.impact-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(239, 68, 68, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #ef4444;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.impact-text {
+  flex: 1;
+}
+
+.impact-title {
+  color: #fff;
   font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.impact-subtitle {
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.impact-value {
+  color: #ef4444;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.loss-stat-container {
+  background: #18181b;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 32px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.loss-header h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.loss-visual-bar {
+  display: flex;
+  height: 64px;
+  background: #27272a;
+  border-radius: 8px;
+  overflow: visible; /* Чтобы тултип торчал */
+  position: relative;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.bar-part {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 50%;
+  transition: width 0.3s ease;
+}
+
+.bar-part.current {
+  background: rgba(37, 99, 235, 0.05); /* Легкий синий */
+  border-right: 1px dashed rgba(255,255,255,0.2);
+}
+
+.bar-part.lost {
+  background: rgba(239, 68, 68, 0.05); /* Легкий красный */
+}
+
+/* Штриховка для зоны потерь */
+.stripe-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(239, 68, 68, 0.1) 10px,
+    rgba(239, 68, 68, 0.1) 20px
+  );
+  z-index: 0;
+}
+
+.bar-val {
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.bar-val.red {
+  color: #ef4444;
+}
+
+.bar-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.lost-tooltip {
+  position: absolute;
+  top: -36px;
+  background: #ef4444;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+  animation: bounce 2s infinite;
+  z-index: 10;
+}
+
+.lost-tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #ef4444;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+/* Статистика потерь (новый компактный вариант) */
+.loss-stat {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.loss-label {
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.market-share-bar {
+  display: flex;
+  height: 56px; /* Компактная высота */
+  background: #27272a;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.1);
+  margin-bottom: 16px;
+}
+
+.share-segment {
+  flex: 1;
+  display: flex;
+  flex-direction: column; /* Текст под цифрой */
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  line-height: 1.1;
+}
+
+.share-segment.yours {
+  background: rgba(37, 99, 235, 0.1);
+  border-right: 1px solid rgba(255,255,255,0.05);
+  color: #fff;
+}
+
+.share-segment.lost {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.segment-val {
+  font-size: 18px;
+  font-weight: 700;
+  z-index: 1;
+}
+
+.segment-text {
+  font-size: 11px;
+  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  z-index: 1;
+}
+
+.segment-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 6px,
+    rgba(239, 68, 68, 0.05) 6px,
+    rgba(239, 68, 68, 0.05) 12px
+  );
+  z-index: 0;
+}
+
+.loss-hint {
+  font-size: 13px;
+  color: var(--text-secondary);
+  max-width: 480px;
+  margin: 0 auto;
 }
 
 @media (max-width: 1024px) {
@@ -154,12 +371,40 @@
   .problems-grid {
     grid-template-columns: 1fr;
   }
-  .loss-stat {
+  .loss-visual-bar {
+    height: auto;
     flex-direction: column;
-    align-items: flex-start;
+  }
+  
+  .bar-part {
+    width: 100%;
+    padding: 20px 0;
+  }
+  
+  .bar-part.current {
+    border-right: none;
+    border-bottom: 1px dashed rgba(255,255,255,0.2);
+  }
+  
+  .lost-tooltip {
+    display: none; /* Убираем на мобилке чтобы не перекрывало */
+  }
+
+  .market-share-bar {
+    height: auto;
+  }
+  .share-segment {
+    padding: 12px 0;
+  }
+  
+  .impact-widget {
+    flex-direction: column;
+    text-align: center;
+    padding: 24px;
     gap: 16px;
   }
-  .loss-bar-container {
-    width: 100%;
+  
+  .impact-value {
+    font-size: 32px;
   }
 }

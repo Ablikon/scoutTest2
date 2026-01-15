@@ -1,5 +1,5 @@
 import './Problem.css'
-import { IoTimerOutline, IoPersonOutline, IoAlertCircleOutline, IoCashOutline } from 'react-icons/io5'
+import { IoTimerOutline, IoPersonOutline, IoAlertCircleOutline, IoCashOutline, IoTrendingDownOutline } from 'react-icons/io5'
 
 function Problem() {
   const problems = [
@@ -54,12 +54,15 @@ function Problem() {
           ))}
         </div>
 
-        <div className="loss-stat">
-           <div className="loss-label">Без сервиса вы теряете прибыль:</div>
-           <div className="loss-bar-container">
-            <div className="loss-bar-filled" style={{width: '60%'}}></div>
-            <span className="loss-value">До 50% заказов уходит конкурентам</span>
+        <div className="impact-widget">
+          <div className="impact-icon">
+            <IoTrendingDownOutline />
           </div>
+          <div className="impact-text">
+            <div className="impact-title">Ежедневные потери продаж</div>
+            <div className="impact-subtitle">Покупатели уходят к конкурентам, которые используют автоснижение</div>
+          </div>
+
         </div>
       </div>
     </section>
