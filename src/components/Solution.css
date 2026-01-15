@@ -99,10 +99,10 @@
   display: inline-block;
   font-size: 12px;
   font-family: monospace;
-  color: var(--accent);
-  background: rgba(37, 99, 235, 0.1);
+  color: var(--text-secondary); /* Сделали серым как в нижних блоках */
+  background: rgba(255, 255, 255, 0.02); /* Убрали синий фон */
   padding: 4px 12px;
-  border-color: var(--accent);
+  border: 1px solid var(--border); /* Серая рамка вместо синей */
   border-radius: 100px;
   align-self: flex-start;
 }
