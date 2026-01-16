@@ -5,14 +5,15 @@ function Integrations() {
   return (
     <section className="integrations">
       <div className="container">
+        {/* Заголовок по центру сверху */}
+        <div className="integrations-header">
+          <h2>Работа с данными</h2>
+          <p className="subtitle">Полный контроль над товарами через удобный интерфейс</p>
+        </div>
+
         <div className="integrations-layout">
           {/* Левая часть с информацией */}
           <div className="integrations-content">
-            <div className="integrations-header">
-              <h2>Работа с данными</h2>
-              <p className="subtitle">Полный контроль над товарами через удобный интерфейс</p>
-            </div>
-
             <div className="data-features">
               <div className="data-feature">
                 <div className="df-icon"><IoCloudUploadOutline /></div>
