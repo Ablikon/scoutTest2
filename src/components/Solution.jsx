@@ -3,7 +3,7 @@ import { IoLogInOutline, IoOptionsOutline, IoRocketOutline } from 'react-icons/i
 
 function Solution() {
   return (
-    <section className="solution">
+    <section className="solution" id="solution-section">
       <div className="container">
         <div className="section-header center">
           <h2>Как начать работать?</h2>

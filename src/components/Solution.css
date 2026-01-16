@@ -1,5 +1,5 @@
 .solution {
-  padding: 100px 0 !important; /* Добавляем !important для гарантии */
+  padding: 100px 0;
   background: var(--bg-primary);
   border-bottom: 1px solid var(--border);
   position: relative;
