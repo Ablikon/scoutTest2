@@ -2,6 +2,7 @@
   padding: 100px 0;
   background: var(--bg-primary);
   border-bottom: 1px solid var(--border);
+  overflow: hidden;
 }
 
 .section-header {
@@ -26,13 +27,45 @@
   line-height: 1.6;
 }
 
-/* Стандартизация под сетку карточек */
-.reality-list {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+/* Карусель */
+.reality-carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+}
+
+.reality-track {
+  display: flex;
   gap: 32px;
+  animation: scroll 40s linear infinite;
+  width: fit-content;
+}
+
+.reality-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .reality-item {
@@ -41,16 +74,19 @@
   padding: 32px;
   border-radius: 12px;
   display: flex;
-  flex-direction: column; /* Иконка сверху */
+  flex-direction: column;
   align-items: flex-start;
   gap: 24px;
   transition: all 0.3s ease;
+  min-width: 380px;
+  max-width: 380px;
+  flex-shrink: 0;
 }
 
 .reality-item:hover {
-  border-color: #fff;
+  border-color: rgba(255, 255, 255, 0.3);
   transform: translateY(-4px);
-  background: var(--bg-card); /* Убираем специфичные градиенты */
+  background: rgba(39, 39, 42, 0.8);
 }
 
 .r-icon {
@@ -61,24 +97,9 @@
   align-items: center;
   justify-content: center;
   font-size: 24px;
-  border: 1px solid rgba(255,255,255,0.05);
-  background: #27272a; /* Единый темный фон */
-  color: #fff; /* Единый белый цвет */
-}
-
-/* Убираем цветные фоны, оставляем только цвет иконки или убираем и его для полной унификации */
-/* Если нужно оставить цвет самой иконки (svg), раскомментируйте color ниже */
-
-.r-icon.danger {
-  /* color: #ef4444; */
-}
-
-.r-icon.accent {
-  /* color: #3b82f6; */
-}
-
-.r-icon.warning {
-  /* color: #eab308; */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
 }
 
 .r-content {
@@ -100,8 +121,14 @@
   margin: 0;
 }
 
-@media (max-width: 900px) {
-  .reality-list {
-    grid-template-columns: 1fr;
+@media (max-width: 768px) {
+  .reality-item {
+    min-width: 320px;
+    max-width: 320px;
+    padding: 24px;
+  }
+
+  .reality-track {
+    gap: 20px;
   }
 }
