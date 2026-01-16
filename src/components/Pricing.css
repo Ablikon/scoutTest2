@@ -3,6 +3,17 @@
   background: var(--bg-primary);
   border-bottom: 1px solid var(--border);
   width: 100%;
+  position: relative;
+}
+
+.pricing::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.3), transparent);
 }
 
 .pricing .container {
