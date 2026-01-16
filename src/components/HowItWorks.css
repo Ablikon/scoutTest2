@@ -15,19 +15,7 @@
   background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.3), transparent);
 }
 
-/* Синее свечение на фоне */
-.capabilities::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 800px;
-  height: 600px;
-  background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
-  pointer-events: none;
-  z-index: 0;
-}
+/* Убираем локальное свечение — теперь оно глобальное в App.css */
 
 .capabilities > .container {
   position: relative;
