@@ -6,7 +6,10 @@
 
 .section-header {
   margin-bottom: 64px;
-  max-width: 700px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 .section-header h2 {
@@ -23,54 +26,155 @@
   line-height: 1.6;
 }
 
-.capabilities-grid {
+/* Таблица-сетка как на референсе */
+.capabilities-table {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+  grid-template-columns: repeat(2, 1fr);
+  border: 1px solid var(--border);
+  max-width: 1100px; /* Было 1000px */
+  margin: 0 auto;
+}
+
+.table-cell {
+  padding: 36px 32px;
+  border-bottom: 1px solid var(--border);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Правая граница для левых ячеек */
+.table-cell:nth-child(odd) {
+  border-right: 1px solid var(--border);
+}
+
+/* Убираем нижнюю границу у последних двух ячеек */
+.table-cell:nth-last-child(-n+2) {
+  border-bottom: none;
+}
+
+.table-cell:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.table-cell:hover .cell-icon {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.table-cell:hover h3 {
+  color: #fff;
+}
+
+.table-cell:hover p {
+  color: rgba(161, 161, 170, 1);
+}
+
+.cell-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.cell-icon {
+  font-size: 22px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.table-cell h3 {
+  font-size: 17px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+  line-height: 1.3;
+  transition: color 0.3s ease;
+}
+
+.table-cell p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .capabilities-table {
+    grid-template-columns: 1fr;
+  }
+  
+  .table-cell {
+    padding: 28px 20px;
+    border-right: none !important;
+  }
+  
+  .table-cell:last-child {
+    border-bottom: none;
+  }
+  
+  .table-cell:nth-last-child(-n+2) {
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .table-cell:last-child {
+    border-bottom: none;
+  }
 }
 
 .cap-card {
-  padding: 32px;
-  background: var(--bg-card); /* Теперь есть фон */
-  border: 1px solid var(--border); /* Теперь есть рамка */
-  border-radius: 12px; /* Скругление */
+  padding: 40px 32px;
+  background: transparent;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
+  min-height: 320px;
 }
 
 .cap-card:hover {
-  background: var(--bg-card);
-  border-color: #fff;
-  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.02);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 .cap-icon {
-  font-size: 24px;
+  font-size: 28px;
   color: #fff;
   margin-bottom: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
-  background: #27272a; /* Темный фон иконки как в Solution */
+  width: 56px;
+  height: 56px;
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
 }
 
 .cap-card h3 {
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 700;
   color: #fff;
   margin-bottom: 16px;
+  letter-spacing: -0.5px;
+  line-height: 1.3;
 }
 
 .cap-card p {
   font-size: 15px;
   color: var(--text-secondary);
-  line-height: 1.6;
-  margin-bottom: 32px;
+  line-height: 1.7;
   flex: 1;
 }
 
@@ -78,20 +182,33 @@
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+  margin-top: auto;
 }
 
 .cap-meta span {
-  font-size: 12px;
+  font-size: 13px;
+  font-family: monospace;
   color: var(--text-secondary);
   border: 1px solid var(--border);
-  padding: 4px 12px;
+  padding: 6px 14px;
   border-radius: 100px;
   background: rgba(255,255,255,0.02);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
+  .capabilities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
   .capabilities-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .cap-card {
+    padding: 32px 24px;
+    min-height: auto;
   }
 }
 
@@ -336,8 +453,9 @@
   }
   
   .cap-card {
-    border-left: none;
-    border-top: 1px solid var(--border);
-    padding: 32px 0;
+    padding: 32px 24px;
+    min-height: auto;
   }
 }
+
+
