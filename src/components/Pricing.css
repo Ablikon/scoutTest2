@@ -36,7 +36,7 @@
 
 .pricing-header {
   text-align: center;
-  margin-bottom: 64px;
+  margin-bottom: 40px; /* Reduced to fit selector */
 }
 
 .pricing-header h2 {
@@ -45,6 +45,78 @@
   color: #fff;
   margin-bottom: 16px;
   letter-spacing: -1px;
+}
+
+/* Selector Styles */
+.period-selector-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.period-selector {
+  display: inline-flex;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 6px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  gap: 4px;
+}
+
+.period-btn {
+  padding: 10px 20px;
+  border-radius: 12px;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  min-width: 100px;
+}
+
+.period-btn:hover {
+  color: #fff;
+}
+
+.period-btn.active {
+  background: #3B82F6;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.discount-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #10B981;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 20px;
+  border: 2px solid var(--bg-primary); /* Border creates cutout effect */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popIn {
+  from { transform: scale(0); }
+  to { transform: scale(1); }
+}
+
+@media (max-width: 600px) {
+  .period-selector {
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 20px;
+  }
+  .period-btn {
+    flex: 1 1 40%;
+    min-width: auto;
+  }
 }
 
 .pricing-grid {
@@ -211,7 +283,7 @@
 }
 
 .tier-price {
-  margin-bottom: 32px;
+  margin-bottom: 8px; /* Reduced from 32px to accommodate savings text */
   display: flex;
   align-items: baseline;
   gap: 4px;
@@ -227,6 +299,17 @@
 .currency {
   font-size: 14px;
   color: var(--text-secondary);
+}
+
+.price-saving {
+  font-size: 13px;
+  color: #10B981;
+  font-weight: 600;
+  background: rgba(16, 185, 129, 0.1);
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 6px;
+  margin-bottom: 24px;
 }
 
 .tier-features {
