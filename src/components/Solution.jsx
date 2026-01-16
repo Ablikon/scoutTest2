@@ -11,7 +11,7 @@ function Solution() {
           <div className="solution-intro">
             <h2>Как начать работать?</h2>
             <p className="section-subtitle">
-              Запуск занимает 10 минут. Вам не нужно устанавливать программы — всё работает через браузер.
+              Запуск занимает 2 минуты. Вам не нужно устанавливать программы — всё работает через браузер.
             </p>
             {/* <div className="solution-cta">
               <button className="btn-start">
