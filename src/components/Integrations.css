@@ -3,6 +3,7 @@
   background: var(--bg-primary);
   border-bottom: 1px solid var(--border);
   position: relative;
+  overflow: hidden;
 }
 
 .integrations::before {
@@ -15,8 +16,40 @@
   background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.3), transparent);
 }
 
+/* Синее свечение по центру */
+.integrations::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 600px;
+  background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.integrations > .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Новый layout: текст слева, картинка справа */
+.integrations-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.integrations-content {
+  /* Левая часть */
+}
+
 .integrations-header {
-  margin-bottom: 64px;
+  margin-bottom: 40px;
+  margin: 0 auto;
 }
 
 .integrations-header h2 {
@@ -25,6 +58,116 @@
   color: #fff;
   margin-bottom: 16px;
   letter-spacing: -1px;
+}
+
+.integrations-header .subtitle {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Список фич */
+.data-features {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.data-feature {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.df-icon {
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: #fff;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.data-feature:hover .df-icon {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.df-content h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 6px 0;
+}
+
+.df-content p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Правая часть — визуал Kaspi */
+.integrations-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.kaspi-showcase {
+  position: relative;
+  text-align: center;
+}
+
+.kaspi-phone {
+  margin-top: 100px;
+  max-width: 650px;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 32px 100px rgba(0, 0, 0, 0.5);
+  display: block;
+}
+
+.kaspi-stats {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-bottom: 24px;
+}
+
+.ks-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.ks-num {
+  font-size: 28px;
+  font-weight: 800;
+  color: #F4333C; /* Kaspi red */
+}
+
+.ks-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.kaspi-caption {
+  margin-top: 20px;
+  font-size: 14px;
+  color: var(--text-secondary);
 }
 
 .platforms-wrapper {
@@ -122,5 +265,30 @@
 @media (max-width: 900px) {
   .platforms-wrapper {
     grid-template-columns: 1fr;
+  }
+
+  .integrations-layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  
+  .integrations-visual {
+    order: -1; /* Картинка сверху на мобильных */
+  }
+  
+  .kaspi-phone {
+    max-width: 340px;
+  }
+  
+  .kaspi-showcase {
+    padding: 24px;
+  }
+  
+  .kaspi-stats {
+    gap: 24px;
+  }
+  
+  .ks-num {
+    font-size: 24px;
   }
 }
