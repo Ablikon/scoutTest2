@@ -1,0 +1,146 @@
+.problem {
+  padding: 100px 0;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+  position: relative;
+}
+
+.problem::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.3), transparent);
+}
+
+.section-header {
+  margin-bottom: 64px;
+  text-align: center;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-header h2 {
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  color: #fff;
+  letter-spacing: -1px;
+}
+
+.section-subtitle {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Карусель */
+.reality-carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 8px 0; /* Добавляем отступ для эффекта hover */
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+}
+
+.reality-track {
+  display: flex;
+  gap: 32px;
+  animation: scroll 40s linear infinite;
+  width: fit-content;
+}
+
+.reality-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.reality-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 32px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  transition: all 0.3s ease;
+  min-width: 380px;
+  max-width: 380px;
+  flex-shrink: 0;
+}
+
+.reality-item:hover {
+  border-color: rgba(255, 255, 255, 0.3);место translateY */
+  transform: translateY(-4px);
+  background: rgba(39, 39, 42, 0.8);
+}
+
+.r-icon {
+  width: 48px;
+  border-radius: 12px;
+  display: flex; 12px;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px; center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);0.1);
+  color: #fff;rgba(255, 255, 255, 0.05);
+} color: #fff;
+}
+.r-content {
+  flex: 1; {
+} flex: 1;
+}
+.r-content h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff; 700;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+} letter-spacing: -0.5px;
+}
+.r-content p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.6;-secondary);
+  margin: 0;t: 1.6;
+} margin: 0;
+}
+@media (max-width: 768px) {
+  .reality-item {: 768px) {
+    min-width: 320px;
+    max-width: 320px;
+    padding: 24px;px;
+  } padding: 24px;
+  }
+  .reality-track {
+    gap: 20px;ck {
+  } gap: 20px;
+} }
+}

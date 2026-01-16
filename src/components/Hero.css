@@ -1,0 +1,368 @@
+.hero {
+  padding: 180px 0 100px;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.hero-badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  background: rgba(37, 99, 235, 0.1);
+  padding: 4px 12px;
+  border-radius: 4px;
+  margin-bottom: 24px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.hero-title {
+  font-size: 56px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -2px;
+  margin-bottom: 24px;
+  line-height: 1.1;
+}
+
+.hero-subtitle {
+  font-size: 18px;
+  color: var(--text-secondary);
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 60px;
+}
+
+.btn-primary {
+  background: #fff;
+  color: #000;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #fff;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-weight: 500;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+  border-color: #fff;
+}
+
+.hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-num {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.stat-desc {
+  font-size: 12px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 40px;
+  background: var(--border);
+}
+
+/* Новый Визуал (Симуляция) */
+.hero-visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.pricing-simulation {
+  background: #18181b;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+  width: 100%;
+  max-width: 520px; /* Было 440px, увеличили для баланса */
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sim-card {
+  background: rgba(255,255,255,0.03);
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid transparent;
+}
+
+.sim-card.dimmed {
+  opacity: 0.6;
+}
+
+.sim-card.us.active {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(37, 99, 235, 0.05));
+  border: 1px solid var(--accent);
+  position: relative;
+  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.15);
+  transform: scale(1.05);
+  z-index: 2;
+}
+
+.sim-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sim-pos {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  width: 24px;
+}
+
+.sim-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.sim-price {
+  font-family: monospace;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.sim-price.highlight {
+  color: #22c55e;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.sim-badge {
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  background: var(--accent);
+  color: white;
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 100px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.live-indicator {
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  color: #22c55e;
+  font-weight: 700;
+  background: rgba(34, 197, 94, 0.1);
+  padding: 2px 8px;
+  border-radius: 100px;
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.pulse {
+  width: 6px;
+  height: 6px;
+  background: #22c55e;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 4px rgba(34, 197, 94, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+
+.sim-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: -8px 0;
+  z-index: 1;
+}
+
+.action-line {
+  height: 20px;
+  width: 1px;
+  background: var(--border);
+}
+
+.action-tag {
+  background: #27272a;
+  border: 1px solid var(--border);
+  font-size: 11px;
+  color: var(--text-secondary);
+  padding: 4px 12px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.action-tag svg {
+  color: var(--accent);
+}
+
+/* Визуал схемы */
+.hero-visual {
+  position: relative;
+}
+
+.system-diagram {
+  background: #18181b; /* Матирует под bg-card */
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  overflow: hidden;
+}
+
+.diagram-header {
+  height: 40px;
+  background: rgba(255,255,255,0.03);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  gap: 8px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.red { background: #ef4444; }
+.yellow { background: #eab308; }
+.green { background: #22c55e; }
+
+.diagram-body {
+  padding: 32px;
+  font-family: 'Fira Code', monospace;
+  font-size: 14px;
+}
+
+.code-line {
+  margin-bottom: 8px;
+  color: #d4d4d8;
+}
+
+.code-line.indent {
+  padding-left: 24px;
+}
+
+.code-purple { color: #c084fc; }
+.code-blue { color: #60a5fa; }
+.code-yellow { color: #facc15; }
+.code-func { color: #2dd4bf; }
+.code-comment { color: #52525b; font-style: italic; }
+
+.live-status {
+  margin-top: 32px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: #22c55e;
+}
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  background: #22c55e;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(34, 197, 94, 0.4);
+}
+
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .hero-content {
+    margin: 0 auto;
+  }
+  
+  .hero-actions {
+    justify-content: center;
+  }
+  
+  .hero-stats {
+    justify-content: center;
+  }
+  
+  .system-diagram {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  
+  .hero-visual {
+    margin-top: 40px;
+  }
+}
