@@ -1,13 +1,15 @@
-/* Используем ID селектор для повышения приоритета стилей */
-#solution-section {
-  padding: 100px 0;
+/* Используем класс селектор для повышения приоритета стилей */
+.solution {
+  padding: 100px 0 !important;
   background: var(--bg-primary);
   border-bottom: 1px solid var(--border);
   position: relative;
   overflow: hidden;
+  display: block;
+  width: 100%;
 }
 
-#solution-section::before {
+.solution::before {
   content: '';
   position: absolute;
   top: 0;
