@@ -33,7 +33,7 @@
   font-size: 32px;
   font-weight: 700;
   margin-bottom: 16px;
-  color: #fff;
+  color: var(--text-heading);
   letter-spacing: -1px;
 }
 
@@ -123,19 +123,15 @@
 .feature-card h3 {
   font-size: 22px;
   font-weight: 700;
-  color: #fff;
+  color: var(--text-heading);
   margin-bottom: 16px;
 }
 
 .f-stat {
   font-size: 36px;
   font-weight: 800;
-  color: #fff;
+  color: var(--text-heading);
   margin-bottom: 16px;
-  /* Градиентный текст для цифр */
-  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255,255,255,0.7) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   letter-spacing: -1px;
 }
 
@@ -196,15 +192,15 @@
 
 .cell-icon {
   font-size: 22px;
-  color: #fff;
+  color: var(--text-heading);
   display: flex;
   align-items: center;
   justify-content: center;
   width: 44px;
   height: 44px;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--bg-secondary);
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border);
   flex-shrink: 0;
   transition: all 0.3s ease;
 }
@@ -212,7 +208,7 @@
 .table-cell h3 {
   font-size: 17px;
   font-weight: 600;
-  color: #fff;
+  color: var(--text-heading);
   margin: 0;
   line-height: 1.3;
   transition: color 0.3s ease;
@@ -267,22 +263,22 @@
 
 .cap-icon {
   font-size: 28px;
-  color: #fff;
+  color: var(--text-heading);
   margin-bottom: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 56px;
   height: 56px;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--bg-secondary);
   border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid var(--border);
 }
 
 .cap-card h3 {
   font-size: 20px;
   font-weight: 700;
-  color: #fff;
+  color: var(--text-heading);
   margin-bottom: 16px;
   letter-spacing: -0.5px;
   line-height: 1.3;
@@ -693,7 +689,7 @@
 .c-header h3 {
   font-size: 22px;
   font-weight: 700;
-  color: #fff;
+  color: var(--text-heading);
   margin-bottom: 8px;
 }
 
@@ -704,7 +700,7 @@
 }
 
 .bot .c-price {
-  color: #fff;
+  color: var(--text-heading);
   font-weight: 700;
 }
 
@@ -744,7 +740,7 @@
 }
 
 .bot b {
-  color: #fff;
+  color: var(--text-heading);
   font-weight: 700;
 }
 
@@ -821,7 +817,7 @@
 .tc-header h3 {
   font-size: 20px;
   font-weight: 600;
-  color: #fff;
+  color: var(--text-heading);
   margin: 0;
   letter-spacing: -0.5px;
 }
@@ -846,13 +842,13 @@
 }
 
 .spec-val {
-  color: #fff;
-  font-family: monospace; /* Технический стиль, как в коде */
+  color: var(--text-heading);
+  font-family: monospace;
   font-weight: 600;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--bg-secondary);
   padding: 4px 8px;
   border-radius: 4px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border);
 }
 
 .tc-desc {
@@ -962,7 +958,7 @@
 
 .sb-text h3 {
   font-size: 18px;
-  color: #fff;
+  color: var(--text-heading);
   margin-bottom: 8px;
   font-weight: 600;
 }

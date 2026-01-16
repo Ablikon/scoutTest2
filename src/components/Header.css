@@ -5,7 +5,7 @@
   right: 0;
   height: 72px;
   z-index: 1000;
-  background: rgba(9, 9, 11, 0.8);
+  background: var(--bg-header);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
 }
@@ -20,7 +20,7 @@
 .logo {
   font-size: 18px;
   font-weight: 700;
-  color: #fff;
+  color: var(--text-heading);
   display: flex;
   align-items: center;
   gap: 8px;
@@ -47,7 +47,7 @@
 }
 
 .nav a:hover {
-  color: #fff;
+  color: var(--text-heading);
 }
 
 .header-actions {
@@ -56,18 +56,36 @@
   gap: 16px;
 }
 
+.theme-toggle {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle:hover {
+  border-color: var(--text-heading);
+  transform: scale(1.05);
+}
+
 .btn-text {
   background: none;
   border: none;
-  color: #fff;
+  color: var(--text-heading);
   font-size: 14px;
   cursor: pointer;
   padding: 8px 16px;
 }
 
 .btn-primary {
-  background-color: #fff;
-  color: #000;
+  background-color: var(--bg-button-primary);
+  color: var(--bg-button-primary-text);
   border: none;
   padding: 10px 20px;
   border-radius: 6px;
@@ -78,7 +96,7 @@
 }
 
 .btn-primary:hover {
-  background-color: #e4e4e7;
+  opacity: 0.9;
 }
 
 .btn-primary.small {

@@ -23,7 +23,7 @@
 .results-header h2 {
   font-size: 32px;
   font-weight: 700;
-  color: #fff;
+  color: var(--text-heading);
   margin-bottom: 16px;
   letter-spacing: -1px;
 }
@@ -49,7 +49,7 @@
 }
 
 .case-card:hover {
-  border-color: #fff;
+  border-color: var(--text-heading);
   transform: translateY(-4px);
 }
 
@@ -74,14 +74,14 @@
 .res-icon {
   width: 48px;
   height: 48px;
-  background: #27272a;
+  background: var(--bg-secondary);
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 24px;
-  color: #fff;
-  border: 1px solid rgba(255,255,255,0.05);
+  color: var(--text-heading);
+  border: 1px solid var(--border);
 }
 
 .case-result {
@@ -133,7 +133,7 @@
 
 .calc-content h3 {
   font-size: 24px;
-  color: #fff;
+  color: var(--text-heading);
   margin-bottom: 8px;
 }
 
@@ -215,9 +215,9 @@ input[type=range]::-webkit-slider-runnable-track {
 .loss-amount {
   font-size: 36px;
   font-weight: 700;
-  color: #fff;
+  color: var(--text-heading);
   margin-bottom: 4px;
-  font-variant-numeric: tabular-nums; /* Цифры одной ширины */
+  font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
 

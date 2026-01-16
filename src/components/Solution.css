@@ -46,7 +46,7 @@ main .solution {
 .solution-intro h2 {
   font-size: 42px;
   font-weight: 800;
-  color: #fff;
+  color: var(--text-heading);
   margin-bottom: 24px;
   line-height: 1.1;
   letter-spacing: -1px;
@@ -60,8 +60,8 @@ main .solution {
 }
 
 .btn-start {
-  background: #fff;
-  color: #000;
+  background: var(--bg-button-primary);
+  color: var(--bg-button-primary-text);
   font-weight: 600;
   padding: 16px 32px;
   border-radius: 12px;
@@ -72,8 +72,8 @@ main .solution {
   align-items: center;
   gap: 12px;
   transition: all 0.2s;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-  width: fit-content; /* Чтобы кнопка не растягивалась */
+  box-shadow: 0 4px 20px var(--card-shadow);
+  width: fit-content;
 }
 
 /* Правая колонка - Шаги */
@@ -104,15 +104,15 @@ main .solution {
 .step-num {
   font-size: 14px;
   font-weight: 700;
-  color: #fff;
-  background: #18181b;
+  color: var(--text-heading);
+  background: var(--bg-card);
   width: 40px;
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.15);
+  border: 1px solid var(--border);
   position: relative;
   z-index: 2;
   transition: all 0.3s ease;
@@ -152,8 +152,8 @@ main .solution {
 .step-item:hover .step-content {
   border-color: rgba(59, 130, 246, 0.4);
   transform: translateX(8px);
-  background: rgba(39, 39, 42, 0.6);
-  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+  background: var(--bg-secondary);
+  box-shadow: 0 10px 40px var(--card-shadow);
 }
 
 .step-item:hover .step-num {
@@ -164,11 +164,11 @@ main .solution {
 
 .step-icon {
   font-size: 32px;
-  color: #ffffff;
+  color: var(--text-heading);
   margin-bottom: 16px;
   width: 56px;
   height: 56px;
-  background: #27272a;
+  background: var(--bg-secondary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -179,7 +179,7 @@ main .solution {
 .step-content h3 {
   font-size: 20px;
   font-weight: 700;
-  color: #fff;
+  color: var(--text-heading);
   margin-bottom: 12px;
 }
 
@@ -242,7 +242,7 @@ main .solution {
   font-size: 32px;
   font-weight: 700;
   margin-bottom: 16px;
-  color: #fff;
+  color: var(--text-heading);
   letter-spacing: -1px;
 }
 
@@ -272,7 +272,7 @@ main .solution {
 }
 
 .process-card:hover {
-  border-color: #fff;
+  border-color: var(--text-heading);
   transform: translateY(-4px);
 }
 
@@ -297,21 +297,21 @@ main .solution {
 .icon-box {
   width: 48px;
   height: 48px;
-  background: #27272a;
+  background: var(--bg-secondary);
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 24px;
-  color: #fff;
+  color: var(--text-heading);
   margin-bottom: 32px;
-  border: 1px solid rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
 }
 
 .card-inner h3 {
   font-size: 20px;
   font-weight: 600;
-  color: #fff;
+  color: var(--text-heading);
   margin-bottom: 16px;
 }
 

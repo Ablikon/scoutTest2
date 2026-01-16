@@ -42,7 +42,7 @@
 .pricing-header h2 {
   font-size: 48px;
   font-weight: 700;
-  color: #fff;
+  color: var(--text-heading);
   margin-bottom: 16px;
   letter-spacing: -1px;
 }
@@ -78,7 +78,7 @@
 }
 
 .period-btn:hover {
-  color: #fff;
+  color: var(--text-heading);
 }
 
 .period-btn.active {
@@ -140,7 +140,7 @@
 
 .pricing-card:hover {
   transform: translateY(-4px);
-  border-color: #fff;
+  border-color: var(--text-heading);
 }
 
 .pricing-card.popular {
@@ -178,7 +178,7 @@
   font-size: 24px;
   font-weight: 800;
   margin-bottom: 20px;
-  color: white;
+  color: var(--text-heading);
   letter-spacing: -0.5px;
 }
 
@@ -272,7 +272,7 @@
 .tier-header h3 {
   font-size: 18px;
   font-weight: 600;
-  color: #fff;
+  color: var(--text-heading);
   margin-bottom: 8px;
 }
 
@@ -292,7 +292,7 @@
 .amount {
   font-size: 32px;
   font-weight: 700;
-  color: #fff;
+  color: var(--text-heading);
   letter-spacing: -1px;
 }
 
@@ -347,24 +347,23 @@
 }
 
 .tier-btn.primary {
-  background: #fff;
-  color: #000;
-  border: 1px solid #fff;
+  background: var(--bg-button-primary);
+  color: var(--bg-button-primary-text);
+  border: 1px solid var(--bg-button-primary);
 }
 
 .tier-btn.primary:hover {
-  background: #e4e4e7;
-  border-color: #e4e4e7;
+  opacity: 0.9;
 }
 
 .tier-btn.outline {
   background: transparent;
   border: 1px solid var(--border);
-  color: #fff;
+  color: var(--text-heading);
 }
 
 .tier-btn.outline:hover {
-  border-color: #fff;
+  border-color: var(--text-heading);
 }
 
 @media (max-width: 1100px) {

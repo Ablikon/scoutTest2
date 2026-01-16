@@ -1,8 +1,26 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import './Header.css'
 
 function Header() {
   const progressBarRef = useRef(null)
+  const [theme, setTheme] = useState(() => {
+    // Check localStorage or default to dark
+    return localStorage.getItem('theme') || 'dark'
+  })
+
+  // Apply theme to document
+  useEffect(() => {
+    if (theme === 'light') {
+      document.documentElement.setAttribute('data-theme', 'light')
+    } else {
+      document.documentElement.removeAttribute('data-theme')
+    }
+    localStorage.setItem('theme', theme)
+  }, [theme])
+
+  const toggleTheme = () => {
+    setTheme(prev => prev === 'dark' ? 'light' : 'dark')
+  }
 
   useEffect(() => {
     let requestRunning = null;
@@ -50,6 +68,13 @@ function Header() {
           <a href="#faq">Вопросы</a>
         </nav>
         <div className="header-actions">
+          <button
+            className="theme-toggle"
+            onClick={toggleTheme}
+            aria-label="Toggle theme"
+          >
+            {theme === 'dark' ? '☀️' : '🌙'}
+          </button>
           <button className="btn-primary small">Попробовать бесплатно</button>
         </div>
       </div>

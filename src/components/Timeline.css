@@ -33,7 +33,7 @@
 
 .timeline h2 {
   font-size: 48px;
-  color: #fff;
+  color: var(--text-heading);
   margin-bottom: 16px;
 }
 
@@ -101,8 +101,8 @@
 }
 
 .timeline-item:hover .timeline-node {
-  border-color: #fff;
-  color: #fff;
+  border-color: var(--text-heading);
+  color: var(--text-heading);
 }
 
 .timeline-node.active {
@@ -150,7 +150,7 @@
 
 .timeline-content h3 {
   font-size: 20px;
-  color: #fff;
+  color: var(--text-heading);
   margin-bottom: 12px;
 }
 
@@ -254,31 +254,31 @@
 
 .security-card:hover {
   transform: translateY(-4px);
-  border-color: #fff;
-  background: var(--bg-card); 
+  border-color: var(--text-heading);
+  background: var(--bg-card);
 }
 
 .sec-icon {
-  font-size: 24px; /* Уменьшаем до 24 как везде */
-  color: #ffffff;
+  font-size: 24px;
+  color: var(--text-heading);
   margin-bottom: 24px;
   width: 48px;
   height: 48px;
-  background: #27272a;
+  background: var(--bg-secondary);
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.05);
-  box-sizing: border-box; 
+  border: 1px solid var(--border);
+  box-sizing: border-box;
   padding: 0;
 }
 
 .security-card h3 {
   font-size: 20px;
-  color: #fff;
+  color: var(--text-heading);
   margin-bottom: 16px;
-  font-weight: 700; /* Жирность как везде */
+  font-weight: 700;
 }
 
 .security-card p {
