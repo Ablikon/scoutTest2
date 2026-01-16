@@ -37,7 +37,7 @@ function Results() {
     <section className="results">
       <div className="container">
         <div className="results-header">
-          <h2>Реальные результаты</h2>
+          <h2>Результаты</h2>
           <p className="subtitle">Мы замеряли эффективность на реальных клиентах</p>
         </div>
 

@@ -8,7 +8,7 @@ function Integrations() {
         {/* Заголовок по центру сверху */}
         <div className="integrations-header">
           <h2>Работа с данными</h2>
-          <p className="subtitle">Полный контроль над товарами через удобный интерфейс</p>
+          <p className="subtitle">Контроль над товарами через удобный интерфейс</p>
         </div>
 
         <div className="integrations-layout">

@@ -41,7 +41,7 @@ function HowItWorks() {
         <div className="section-header">
           <h2>Возможности</h2>
           <p className="section-subtitle">
-            Полная автоматизация магазина на Kaspi.kz: от мониторинга цен до сбора отзывов
+            Полная настройка магазина на Kaspi.kz: от мониторинга цен до сбора отзывов
           </p>
         </div>
 

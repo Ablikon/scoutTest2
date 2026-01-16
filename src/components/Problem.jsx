@@ -41,7 +41,7 @@ function Problem() {
         <div className="section-header">
           <h2>Реальность рынка</h2>
           <p className="section-subtitle">
-            Kaspi — это не просто витрина, а жесткая алгоритмическая система. <br/>Выигрывает тот, кто понимает правила.
+Выигрывает тот, кто понимает правила.
           </p>
         </div>
 

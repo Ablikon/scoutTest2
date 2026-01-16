@@ -23,7 +23,7 @@ function App() {
           <Solution />
         </div>
         <HowItWorks />
-        <Timeline />
+        {/* <Timeline /> */}
         <div id="integration">
           <Integrations />
         </div>
