@@ -26,8 +26,8 @@ function HowItWorks() {
       description: "Цена конкурента упала ниже вашей себестоимости. Бот активирует защиту и не уходит в минус.",
       competitorPrice: "11 000 ₸",
       yourPrice: "12 500 ₸",
-      compHeight: 30,
-      yourHeight: 45, // Застрял выше
+      compHeight: 30, // Увеличили размер. Теперь явно ниже порога (45%)
+      yourHeight: 45, // Выровняли по линии нового порога (45%)
       showLimitLine: true,
       status: "ЗАЩИТА",
       statusType: "warning",
@@ -56,7 +56,7 @@ function HowItWorks() {
         <div className="section-header">
           <h2>Алгоритм принятия решений</h2>
           <p className="section-subtitle">
-            Сервис не просто меняет цифры, он анализирует ситуацию. Выберите сценарий, чтобы увидеть логику бота.
+            Сервис не просто меняет цифры, он анализирует ситуацию. <span className="interactive-hint"> Выберите сценарий</span>, чтобы увидеть логику бота.
           </p>
         </div>
 
@@ -99,13 +99,13 @@ function HowItWorks() {
               <div className="monitor-body">
                 {/* Графическая зона */}
                 <div className="chart-wrapper">
-                  {current.showLimitLine && (
-                    <div className="limit-line-dashed">
-                      <span className="limit-label">Минимальный порог</span>
-                    </div>
-                  )}
-                  
                   <div className="chart-bars">
+                    {current.showLimitLine && (
+                      <div className="limit-line-dashed">
+                        <span className="limit-label">Минимальный порог</span>
+                      </div>
+                    )}
+                    
                     {/* Бар Конкурента */}
                     <div className="bar-column">
                       <div className="bar-val-wrapper" style={{ height: `${current.compHeight}%` }}>
