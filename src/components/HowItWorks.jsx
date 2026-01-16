@@ -23,7 +23,7 @@ function HowItWorks() {
       id: 1,
       title: "Защита от убытка",
       icon: <IoShieldCheckmarkOutline />,
-      description: "Цена конкурента упала ниже вашей себестоимости. Бот активирует Stop-Loss и не уходит в минус.",
+      description: "Цена конкурента упала ниже вашей себестоимости. Бот активирует защиту и не уходит в минус.",
       competitorPrice: "11 000 ₸",
       yourPrice: "12 500 ₸",
       compHeight: 30,
@@ -56,7 +56,7 @@ function HowItWorks() {
         <div className="section-header">
           <h2>Алгоритм принятия решений</h2>
           <p className="section-subtitle">
-            TopPrice не просто меняет цифры, он анализирует ситуацию. Выберите сценарий, чтобы увидеть логику бота.
+            Сервис не просто меняет цифры, он анализирует ситуацию. Выберите сценарий, чтобы увидеть логику бота.
           </p>
         </div>
 
