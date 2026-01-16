@@ -15,9 +15,9 @@ function HowItWorks() {
       yourPrice: "14 499 ₸",
       compHeight: 60,
       yourHeight: 58,
-      status: "TOP-1",
+      status: "ТОП-1",
       statusType: "success",
-      log: "> DETECTED: Competitor price drop (-500 ₸)\n> ACTION: Adjusting price to 14 499 ₸\n> RESULT: Position #1 secured"
+      log: "> СИТУАЦИЯ: Конкурент снизил цену (-500 ₸)\n> РЕАКЦИЯ: Снижаем вашу цену до 14 499 ₸\n> ИТОГ: Вы заняли 1-е место в выдаче"
     },
     {
       id: 1,
@@ -29,9 +29,9 @@ function HowItWorks() {
       compHeight: 30,
       yourHeight: 45, // Застрял выше
       showLimitLine: true,
-      status: "STOP-LOSS",
+      status: "ЗАЩИТА",
       statusType: "warning",
-      log: "> ALERT: Competitor price below minlimit\n> LOGIC: Stop-loss protection activated\n> ACTION: Holding price at 12 500 ₸"
+      log: "> ОПАСНОСТЬ: Цена конкурента ниже вашей закупки\n> РЕШЕНИЕ: Включаем защиту от убытка\n> ИТОГ: Держим 12 500 ₸. Вы не теряете деньги."
     },
     {
       id: 2,
@@ -42,9 +42,9 @@ function HowItWorks() {
       yourPrice: "18 000 ₸",
       compHeight: 0,
       yourHeight: 90,
-      status: "MAX PROFIT",
+      status: "ПРИБЫЛЬ",
       statusType: "success",
-      log: "> SCAN: Competitor out of stock\n> OPPORTUNITY: Low competition detected\n> ACTION: Increasing price to Max Limit"
+      log: "> СИТУАЦИЯ: Конкурент распродался (нет в наличии)\n> ШАНС: Конкуренции нет, можно заработать больше\n> ИТОГ: Поднимаем цену до 18 000 ₸ (Максимум)"
     }
   ]
 
@@ -56,7 +56,7 @@ function HowItWorks() {
         <div className="section-header">
           <h2>Алгоритм принятия решений</h2>
           <p className="section-subtitle">
-            SaleScout не просто меняет цифры, он анализирует ситуацию. Выберите сценарий, чтобы увидеть логику бота.
+            TopPrice не просто меняет цифры, он анализирует ситуацию. Выберите сценарий, чтобы увидеть логику бота.
           </p>
         </div>
 
@@ -90,7 +90,7 @@ function HowItWorks() {
                   <span></span><span></span><span></span>
                 </div>
                 <div className="monitor-title">
-                  <IoTerminalOutline className="term-icon"/> SALE_SCOUT_CORE_V2.1
+                  <IoTerminalOutline className="term-icon"/> TopPrice
                 </div>
                 <div className="monitor-status online">ONLINE</div>
               </div>
@@ -101,7 +101,7 @@ function HowItWorks() {
                 <div className="chart-wrapper">
                   {current.showLimitLine && (
                     <div className="limit-line-dashed">
-                      <span className="limit-label">Min Threshold</span>
+                      <span className="limit-label">Минимальный порог</span>
                     </div>
                   )}
                   
@@ -123,14 +123,14 @@ function HowItWorks() {
                            <div className="bar-glow"></div>
                         </div>
                       </div>
-                      <div className="bar-name active">Вы (SaleScout)</div>
+                      <div className="bar-name active">Вы</div>
                     </div>
                   </div>
                 </div>
 
                 {/* Консоль логов */}
                 <div className="monitor-console">
-                  <div className="console-header">SYSTEM LOG</div>
+                  <div className="console-header">ЖУРНАЛ ДЕЙСТВИЙ</div>
                   <div className="console-content">
                     {current.log.split('\n').map((line, i) => (
                       <div key={i} className="log-line">
