@@ -87,17 +87,28 @@
 .case-result {
   font-size: 42px;
   font-weight: 700;
-  color: #fff;
   margin-bottom: 16px;
   line-height: 1;
   letter-spacing: -1px;
 }
 
-.case-desc {
-  font-size: 15px;
-  color: var(--text-secondary);
-  margin: 0;
-  line-height: 1.6;
+/* Цветовые варианты для результатов */
+.case-result.growth {
+  background: linear-gradient(135deg, #10B981, #059669);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.case-result.highlight {
+  background: linear-gradient(135deg, #3B82F6, #2563EB);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.case-result.savings {
+  background: linear-gradient(135deg, #F59E0B, #D97706);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* Calculator Styles */

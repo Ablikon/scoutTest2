@@ -13,18 +13,21 @@ function Results() {
     {
       role: "Новый продавец",
       result: "x4 Рост",
+      resultClass: "growth", // Зелёный
       desc: "За первые 10 дней использования сервиса продажи выросли в 4 раза благодаря удержанию позиций в топе.",
       icon: IoTrendingUpOutline
     },
     {
       role: "Опытный магазин",
       result: "x2 Рост",
+      resultClass: "highlight", // Синий
       desc: "Уже действующий магазин увеличил продажи в 2 раза за месяц за счёт автоматического обновления цен.",
       icon: IoWalletOutline
     },
     {
       role: "Экономия",
       result: "-50%",
+      resultClass: "savings", // Оранжевый
       desc: "Сокращение расходов на зарплату менеджеров. Бот стоит дешевле и работает эффективнее человека.",
       icon: IoTimeOutline
     }
@@ -47,7 +50,7 @@ function Results() {
                   <item.icon />
                 </div>
               </div>
-              <div className="case-result">{item.result}</div>
+              <div className={`case-result ${item.resultClass}`}>{item.result}</div>
               <p className="case-desc">{item.desc}</p>
             </div>
           ))}
