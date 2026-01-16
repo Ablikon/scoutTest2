@@ -1,4 +1,5 @@
-.solution {
+/* Используем ID селектор для повышения приоритета стилей */
+#solution-section {
   padding: 100px 0;
   background: var(--bg-primary);
   border-bottom: 1px solid var(--border);
@@ -6,7 +7,7 @@
   overflow: hidden;
 }
 
-.solution::before {
+#solution-section::before {
   content: '';
   position: absolute;
   top: 0;
@@ -41,7 +42,7 @@
   display: flex;
   justify-content: space-between;
   align-items: stretch;
-  gap: 32px; /* Было 24px, приводим к стандарту */
+  gap: 32px;
   position: relative;
 }
 
@@ -49,10 +50,10 @@
   flex: 1;
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 12px; /* Было 8px */
+  border-radius: 12px;
   position: relative;
   overflow: hidden;
-  transition: all 0.3s ease; /* Стандартная анимация */
+  transition: all 0.3s ease;
 }
 
 .process-card:hover {
@@ -82,7 +83,7 @@
   width: 48px;
   height: 48px;
   background: #27272a;
-  border-radius: 12px; /* Было 8px, унификация */
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -103,7 +104,6 @@
   font-size: 14px;
   color: var(--text-secondary);
   line-height: 1.6;
-  margin-bottom: 32px;
   flex: 1;
 }
 
