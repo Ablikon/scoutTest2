@@ -1,6 +1,6 @@
 /* Используем класс селектор для повышения приоритета стилей */
 .solution {
-  padding: 100px 0 !important;
+  padding: 80px 0 !important;
   background: var(--bg-primary);
   border-bottom: 1px solid var(--border);
   position: relative;
@@ -8,6 +8,12 @@
   display: block;
   width: 100%;
 }
+
+main .solution {
+  /* extra specificity to win against global section rules on prod */
+  padding: 100px 0 !important;
+}
+
 
 .solution::before {
   content: '';
