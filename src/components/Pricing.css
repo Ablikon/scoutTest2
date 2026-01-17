@@ -426,6 +426,9 @@
 }
 
 .tier-btn.primary:hover {
+  color: #ffffff;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
   opacity: 0.9;
 }
 
@@ -436,6 +439,8 @@
 }
 
 .tier-btn.outline:hover {
+  background: #ffffff;
+  color: var(--bg-primary);
   border-color: var(--border-hover);
 }
 

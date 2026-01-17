@@ -1109,6 +1109,11 @@
   top: 0;
   bottom: 0;
   width: 4px;
+  background: #3B82F6;
+}
+
+/* Light mode: active line uses palette color */
+[data-theme="light"] .sim-btn.active::before {
   background: #11212D;
 }
 
@@ -1128,6 +1133,13 @@
 }
 
 .sim-btn.active .sb-icon-wrap {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3B82F6;
+  border-color: rgba(59, 130, 246, 0.2);
+}
+
+/* Light mode: active icon uses palette color */
+[data-theme="light"] .sim-btn.active .sb-icon-wrap {
   background: rgba(6, 20, 27, 0.1);
   color: #11212D;
   border-color: rgba(6, 20, 27, 0.2);
