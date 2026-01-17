@@ -1,0 +1,84 @@
+#root {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-primary);
+  transition: background-color 0.3s ease;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Global section glow effect */
+section {
+  position: relative;
+  overflow: hidden;
+}
+
+section::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 600px;
+  background: radial-gradient(ellipse at center, var(--glow-color) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+section > .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Light mode cards get white background */
+[data-theme="light"] .pricing-card,
+[data-theme="light"] .case-card,
+[data-theme="light"] .process-card,
+[data-theme="light"] .tech-card,
+[data-theme="light"] .feature-card,
+[data-theme="light"] .use-case-card {
+  background: #ffffff;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Light mode hover states */
+[data-theme="light"] .pricing-card:hover,
+[data-theme="light"] .case-card:hover,
+[data-theme="light"] .process-card:hover,
+[data-theme="light"] .tech-card:hover,
+[data-theme="light"] .feature-card:hover {
+  box-shadow: var(--shadow-md);
+}

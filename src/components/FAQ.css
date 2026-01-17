@@ -1,0 +1,136 @@
+.faq {
+  padding: 100px 0;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border);
+  width: 100%;
+  position: relative;
+}
+
+.faq::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-glow), transparent);
+}
+
+.faq .container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.faq h2 {
+  font-size: 32px;
+  color: var(--text-primary);
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+.faq-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faq-row {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s;
+  box-shadow: var(--shadow-sm);
+}
+
+.faq-head {
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.faq-head h4 {
+  font-size: 16px;
+  color: var(--text-primary);
+  font-weight: 500;
+  margin: 0;
+  padding-right: 20px;
+}
+
+.faq-icon {
+  color: var(--text-secondary);
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.faq-row.open .faq-icon {
+  transform: rotate(180deg);
+}
+
+.faq-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s cubic-bezier(0, 0, 0.2, 1);
+  padding: 0 24px;
+}
+
+.faq-row.open .faq-body {
+  max-height: 200px;
+  padding-bottom: 24px;
+}
+
+.faq-body p {
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+}
+
+.faq-row:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-md);
+}
+
+/* Light mode specific */
+[data-theme="light"] .faq-row {
+  background: #ffffff;
+}
+
+[data-theme="light"] .faq-body p {
+  border-top-color: rgba(155, 168, 171, 0.3);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 600px) {
+  .faq .container {
+    padding: 0 20px;
+  }
+
+  .faq h2 {
+    font-size: 28px;
+  }
+
+  .faq-head {
+    padding: 16px 20px;
+  }
+
+  .faq-head h4 {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .faq-list {
+    grid-template-columns: 1fr;
+  }
+}

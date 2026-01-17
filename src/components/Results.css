@@ -1,0 +1,495 @@
+.results {
+  padding: 100px 0;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+
+.results::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-glow), transparent);
+}
+
+.results-header {
+  margin-bottom: 64px;
+}
+
+.results-header h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  letter-spacing: -1px;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ============================================
+   CASE CARDS
+   ============================================ */
+.cases-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.case-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 32px;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.case-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.case-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.case-role {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  padding: 6px 12px;
+  border-radius: 100px;
+  font-weight: 500;
+}
+
+.res-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--icon-bg);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: var(--text-primary);
+  border: 1px solid var(--icon-border);
+}
+
+.case-result {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+/* Result color variants */
+.case-result.growth {
+  background: linear-gradient(135deg, #10B981, #059669);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.case-result.highlight {
+  background: linear-gradient(135deg, #3B82F6, #2563EB);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Light mode version of highlight is already defined, no blue gradient */
+
+.case-result.savings {
+  background: linear-gradient(135deg, #F59E0B, #D97706);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Light mode adjustments for result colors - NO GREEN, use palette */
+[data-theme="light"] .case-result.growth {
+  background: linear-gradient(135deg, #11212D, #253745);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+[data-theme="light"] .case-result.highlight {
+  background: linear-gradient(135deg, #11212D, #253745);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+[data-theme="light"] .case-result.savings {
+  background: linear-gradient(135deg, #d97706, #b45309);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.case-desc {
+  color: var(--text-secondary);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* ============================================
+   LOSS CALCULATOR - Premium Redesign
+   ============================================ */
+.calculator-wrapper {
+  margin-top: 60px;
+}
+
+.calc-card {
+  background: var(--bg-card-elevated);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle glow effect behind calc card */
+.calc-card::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, var(--glow-color) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.calc-content {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.calc-content h3 {
+  font-size: 24px;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.calc-content p {
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+}
+
+/* Sliders Group */
+.sliders-group {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.slider-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.slider-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.slider-label .val {
+  color: var(--accent);
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
+  font-size: 16px;
+  font-variant-numeric: tabular-nums;
+  min-width: 100px;
+  text-align: right;
+  font-weight: 600;
+}
+
+/* ============================================
+   RANGE SLIDER - Clean Professional Style
+   NO GREEN - Using palette colors only
+   ============================================ */
+input[type=range] {
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* Track */
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 6px;
+  cursor: pointer;
+  background: var(--slider-track);
+  border-radius: 3px;
+}
+
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 6px;
+  cursor: pointer;
+  background: var(--slider-track);
+  border-radius: 3px;
+}
+
+/* Thumb - Using palette accent (#11212D in light mode) */
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  border: 2px solid var(--bg-card);
+  height: 22px;
+  width: 22px;
+  border-radius: 50%;
+  background: var(--slider-thumb);
+  cursor: pointer;
+  margin-top: -8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+input[type=range]::-moz-range-thumb {
+  border: 2px solid var(--bg-card);
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  background: var(--slider-thumb);
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+input[type=range]::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=range]:focus::-webkit-slider-thumb {
+  box-shadow: 0 0 0 3px var(--accent-light);
+}
+
+/* Light mode specific slider adjustments */
+[data-theme="light"] input[type=range]::-webkit-slider-runnable-track {
+  background: #9BA8AB;
+}
+
+[data-theme="light"] input[type=range]::-webkit-slider-thumb {
+  background: #11212D;
+  border-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(6, 20, 27, 0.2);
+}
+
+[data-theme="light"] input[type=range]::-webkit-slider-thumb:hover {
+  box-shadow: 0 4px 12px rgba(6, 20, 27, 0.3);
+}
+
+/* ============================================
+   CALCULATOR RESULT BOX
+   ============================================ */
+.calc-result {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+  width: 350px;
+  flex-shrink: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Light mode: elevated card with subtle shadow */
+[data-theme="light"] .calc-result {
+  background: #ffffff;
+  border: 1px solid rgba(155, 168, 171, 0.4);
+  box-shadow: 0 4px 20px rgba(6, 20, 27, 0.06);
+}
+
+.loss-label {
+  color: var(--error);
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.loss-amount {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.loss-period {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+/* ============================================
+   RESULTS SECTION TITLE
+   ============================================ */
+.results h2 {
+  font-size: 48px;
+  font-weight: 800;
+  text-align: center;
+  letter-spacing: -1.5px;
+  color: var(--text-primary);
+}
+
+/* Dark mode gradient text */
+:root .results h2 {
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255,255,255,0.7) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Light mode solid color */
+[data-theme="light"] .results h2 {
+  background: linear-gradient(180deg, #06141B 0%, #11212D 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ============================================
+   REALTIME STATS (if used)
+   ============================================ */
+.realtime-stats {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-bottom: 120px;
+  flex-wrap: wrap;
+}
+
+.rt-item {
+  background: linear-gradient(135deg, #3B82F6, #2563EB);
+  padding: 56px 64px;
+  border-radius: 24px;
+  text-align: center;
+  color: white;
+  flex: 1;
+  min-width: 360px;
+  max-width: 550px;
+  box-shadow: 0 16px 48px rgba(59, 130, 246, 0.4);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Light mode: replace blue gradient with palette (already defined) */
+[data-theme="light"] .rt-item {
+  background: linear-gradient(135deg, #11212D, #253745);
+  box-shadow: 0 16px 48px rgba(17, 33, 45, 0.2);
+}
+
+.rt-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(255,255,255,0.2), transparent);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.rt-item:hover::before {
+  opacity: 1;
+}
+
+.rt-item:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 24px 64px rgba(59, 130, 246, 0.5);
+}
+
+/* Light mode: no blue shadows */
+[data-theme="light"] .rt-item:hover {
+  box-shadow: 0 24px 64px rgba(17, 33, 45, 0.25);
+}
+
+.rt-val {
+  font-size: 64px;
+  font-weight: 900;
+  margin-bottom: 12px;
+  letter-spacing: -3px;
+}
+
+.rt-label {
+  font-size: 12px;
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.rt-desc {
+  font-size: 16px;
+  opacity: 0.95;
+  line-height: 1.6;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 900px) {
+  .results .container {
+    padding: 0 20px;
+  }
+
+  .cases-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .calc-card {
+    flex-direction: column;
+    gap: 32px;
+    padding: 24px;
+  }
+
+  .calc-card::before {
+    display: none;
+  }
+
+  .calc-result {
+    width: 100%;
+  }
+}

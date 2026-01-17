@@ -1,0 +1,218 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* ============================================
+     DARK MODE (Default)
+     ============================================ */
+  --bg-primary: #09090b;
+  --bg-secondary: #0F1419;
+  --bg-card: #18181b;
+  --bg-card-elevated: #1c1c1e;
+  --bg-card-hover: rgba(39, 39, 42, 0.8);
+
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1aa;
+  --text-muted: #71717a;
+  --text-inverse: #000000;
+
+  --accent: #2563EB;
+  --accent-hover: #1d4ed8;
+  --accent-light: rgba(37, 99, 235, 0.1);
+  --accent-glow: rgba(59, 130, 246, 0.3);
+
+  --border: rgba(255, 255, 255, 0.1);
+  --border-strong: rgba(255, 255, 255, 0.2);
+  --border-hover: rgba(255, 255, 255, 0.3);
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.5);
+  --shadow-accent: 0 8px 24px rgba(59, 130, 246, 0.3);
+
+  --glow-color: rgba(59, 130, 246, 0.06);
+  --header-bg: rgba(9, 9, 11, 0.8);
+  --icon-bg: #27272a;
+  --icon-border: rgba(255, 255, 255, 0.05);
+
+  --slider-track: #333;
+  --slider-thumb: var(--accent);
+
+  --success: #10B981;
+  --success-bg: rgba(16, 185, 129, 0.1);
+  --warning: #F59E0B;
+  --warning-bg: rgba(245, 158, 11, 0.1);
+  --error: #ef4444;
+  --error-bg: rgba(239, 68, 68, 0.1);
+
+  --cta-gradient: linear-gradient(90deg, #1e3a8a 0%, #2563eb 100%);
+  --cta-btn-bg: #ffffff;
+  --cta-btn-color: #2563eb;
+
+  --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* ============================================
+   LIGHT MODE - Strict Palette
+   #06141B - Darkest (Primary text/headings)
+   #11212D - Dark (Secondary text/active states)
+   #253745 - Medium Dark (Borders/subtle accents)
+   #4A5C6A - Medium (Muted text/icons)
+   #9BA8AB - Light Accent (Card borders/secondary bg)
+   #CCD0CF - Lightest (Main background)
+   ============================================ */
+[data-theme="light"] {
+  /* Primary Backgrounds - Cool #CCD0CF palette */
+  --bg-primary: #CCD0CF;
+  --bg-secondary: #c0c5c4;
+  --bg-card: #ffffff;
+  --bg-card-elevated: #ffffff;
+  --bg-card-hover: rgba(255, 255, 255, 0.95);
+
+  /* Typography - High contrast with #06141B */
+  --text-primary: #06141B;
+  --text-secondary: #4A5C6A;
+  --text-muted: #9BA8AB;
+  --text-inverse: #ffffff;
+
+  /* Accent - Using palette's darker blues */
+  --accent: #11212D;
+  --accent-hover: #253745;
+  --accent-light: rgba(17, 33, 45, 0.06);
+  --accent-glow: rgba(17, 33, 45, 0.15);
+
+  /* Borders - Using #9BA8AB and #253745 */
+  --border: rgba(155, 168, 171, 0.5);
+  --border-strong: rgba(37, 55, 69, 0.25);
+  --border-hover: rgba(17, 33, 45, 0.3);
+
+  /* Shadows - Soft, elegant shadows */
+  --shadow-sm: 0 2px 8px rgba(6, 20, 27, 0.06);
+  --shadow-md: 0 8px 24px rgba(6, 20, 27, 0.08);
+  --shadow-lg: 0 20px 40px rgba(6, 20, 27, 0.1);
+  --shadow-accent: 0 8px 24px rgba(17, 33, 45, 0.12);
+
+  /* Glow effects - Subtle palette-based glow */
+  --glow-color: rgba(74, 92, 106, 0.08);
+  --header-bg: rgba(204, 208, 207, 0.88);
+  --icon-bg: #f5f7f7;
+  --icon-border: rgba(155, 168, 171, 0.3);
+
+  /* Slider styling */
+  --slider-track: #9BA8AB;
+  --slider-thumb: #11212D;
+
+  /* Status colors - NO GREEN in light mode, use palette accent */
+  --success: #11212D;
+  --success-bg: rgba(17, 33, 45, 0.08);
+  --warning: #d97706;
+  --warning-bg: rgba(217, 119, 6, 0.1);
+  --error: #dc2626;
+  --error-bg: rgba(220, 38, 38, 0.08);
+
+  /* CTA - Elegant gradient using palette */
+  --cta-gradient: linear-gradient(135deg, #11212D 0%, #253745 50%, #4A5C6A 100%);
+  --cta-btn-bg: #ffffff;
+  --cta-btn-color: #11212D;
+}
+
+/* ============================================
+   GLOBAL STYLES
+   ============================================ */
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button {
+  border-radius: 12px;
+  border: none;
+  padding: 16px 36px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+button.primary {
+  background: var(--accent);
+  color: var(--text-inverse);
+  box-shadow: var(--shadow-accent);
+}
+
+button.primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 4px;
+}
+
+[data-theme="light"] ::-webkit-scrollbar-thumb {
+  background: #9BA8AB;
+}
+
+/* ============================================
+   THEME TRANSITION SMOOTHING
+   ============================================ */
+*,
+*::before,
+*::after {
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Exclude elements that need instant transitions */
+input[type="range"],
+input[type="range"]::-webkit-slider-thumb,
+.scroll-progress-bar {
+  transition: none;
+}

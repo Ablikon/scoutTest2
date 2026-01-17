@@ -1,0 +1,374 @@
+/* Используем класс селектор для повышения приоритета стилей */
+.solution {
+  padding: 80px 0 !important;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+  display: block;
+  width: 100%;
+}
+
+main .solution {
+  /* extra specificity to win against global section rules on prod */
+  padding: 100px 0 !important;
+}
+
+.solution::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.3), transparent);
+}
+
+/* Light mode: replace blue gradient line with palette */
+[data-theme="light"] .solution::before {
+  background: linear-gradient(90deg, transparent, rgba(17, 33, 45, 0.2), transparent);
+}
+
+/* Новый Layout */
+.solution-wrapper {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 80px;
+  align-items: center; /* Центрируем левую часть по вертикали относительно правой */
+}
+
+/* Левая колонка - Sticky */
+/* Убираем sticky, так как при выравнивании по центру (align-items: center) sticky ведет себя иначе.
+   Если контента мало, лучше просто отцентровать. */
+.solution-intro {
+  /* position: sticky; */
+  /* top: 120px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.solution-intro h2 {
+  font-size: 42px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.solution-intro .section-subtitle {
+  font-size: 17px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.btn-start {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  font-weight: 600;
+  padding: 16px 32px;
+  border-radius: 12px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.2s;
+  box-shadow: var(--shadow-md);
+  width: fit-content;
+}
+
+/* Правая колонка - Шаги */
+.solution-steps {
+  display: flex;
+  flex-direction: column;
+}
+
+.step-item {
+  display: flex;
+  gap: 24px; /* Компактнее зазор */
+  position: relative;
+  padding-bottom: 24px; /* Компактнее отступ между карточками */
+}
+
+.step-item:last-child {
+  padding-bottom: 0;
+}
+
+.step-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 40px; /* Чуть уже */
+}
+
+.step-num {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  background: var(--bg-card);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+  margin-top: 45px;
+}
+
+.step-line {
+  width: 2px;
+  flex-grow: 1;
+  background: linear-gradient(to bottom,
+    rgba(59, 130, 246, 0.5) 0%,
+    rgba(59, 130, 246, 0.1) 100%
+  );
+  margin-top: 8px;
+  margin-bottom: 8px;
+  /* Убрали min-height, чтобы линия адаптировалась под высоту контента */
+}
+
+/* Light mode: replace blue step-line with palette */
+[data-theme="light"] .step-line {
+  background: linear-gradient(to bottom,
+    rgba(17, 33, 45, 0.4) 0%,
+    rgba(17, 33, 45, 0.1) 100%
+  );
+}
+
+.step-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px; /* Компактнее внутренние отступы (было 32px) */
+  flex-grow: 1;
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex; /* Флекс для иконки и текста */
+  align-items: center; /* Выравнивание по центру вертикально */
+  gap: 20px;
+}
+
+/* Hover эффекты */
+.step-item:hover .step-content {
+}
+
+/* Hover эффекты */
+.step-item:hover .step-content {
+  border-color: var(--border-hover);
+  transform: translateX(8px);
+  background: var(--bg-card-hover);
+  box-shadow: var(--shadow-md);
+}
+
+.step-item:hover .step-num {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--text-inverse);
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+.step-icon {
+  font-size: 32px;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  width: 56px;
+  height: 56px;
+  background: var(--icon-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  padding: 8px;
+}
+
+.step-content h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.step-content p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Адаптив */
+@media (max-width: 900px) {
+  .solution-wrapper {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  
+  .solution-intro {
+    position: static;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  .solution-intro h2 {
+    font-size: 36px;
+  }
+
+  .solution-intro .section-subtitle {
+    margin: 0 auto 32px;
+    max-width: 500px;
+  }
+
+  /* Скрываем линию на мобильных, делаем просто список */
+  .step-line {
+    display: none;
+  }
+  
+  .step-marker {
+    display: none; /* Можно скрыть номер или оставить, но без линии */
+  }
+
+  .step-item {
+    padding-bottom: 24px;
+  }
+  
+  .step-content {
+    padding: 24px;
+    /* Если маркер скрыт, убираем отступ от него */
+    margin-left: 0; 
+  }
+}
+
+.section-header.center {
+  text-align: center;
+  margin: 0 auto 80px;
+  max-width: 800px;
+}
+
+.section-header h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+  letter-spacing: -1px;
+}
+
+.section-subtitle {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Process Grid */
+.process-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 32px;
+  position: relative;
+}
+
+.process-card {
+  flex: 1;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.process-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.step-number {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  font-family: monospace;
+  font-size: 14px;
+  color: var(--text-secondary);
+  opacity: 0.5;
+}
+
+.card-inner {
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.icon-box {
+  width: 48px;
+  height: 48px;
+  background: var(--icon-bg);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: var(--text-primary);
+  margin-bottom: 32px;
+  border: 1px solid var(--icon-border);
+}
+
+.card-inner h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.card-inner p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.tech-tag {
+  display: inline-block;
+  font-size: 12px;
+  font-family: monospace;
+  color: var(--text-secondary); /* Сделали серым как в нижних блоках */
+  background: rgba(255, 255, 255, 0.02); /* Убрали синий фон */
+  padding: 4px 12px;
+  border: 1px solid var(--border); /* Серая рамка вместо синей */
+  border-radius: 100px;
+  align-self: flex-start;
+}
+
+/* Connector Lines */
+.process-connector {
+  width: 32px;
+  height: 1px;
+  background: var(--border);
+  align-self: center;
+}
+
+@media (max-width: 900px) {
+  .process-grid {
+    flex-direction: column;
+  }
+  
+  .process-connector {
+    width: 1px;
+    height: 32px;
+    margin: 0 auto;
+  }
+
+  .process-card:hover {
+    transform: none;
+  }
+}

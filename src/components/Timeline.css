@@ -1,0 +1,367 @@
+.timeline {
+  padding: 100px 0; /* Было 120px */
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.3), transparent);
+}
+
+/* Light mode: replace blue gradient line with palette */
+[data-theme="light"] .timeline::before {
+  background: linear-gradient(90deg, transparent, rgba(17, 33, 45, 0.2), transparent);
+}
+
+/* Удаляем специфичный контейнер, чтобы использовался стандартный (1280px) как везде */
+/* .timeline .container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 40px;
+} */
+
+.timeline .section-header {
+  margin-bottom: 64px;
+  text-align: center;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.timeline h2 {
+  font-size: 48px;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.timeline-track {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.timeline-track::before {
+  content: '';
+  position: absolute;
+  left: 24px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--border);
+}
+
+.timeline-item {
+  display: flex;
+  gap: 48px;
+  margin-bottom: 64px;
+  position: relative;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.timeline-marker {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #3B82F6, #2563EB);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  color: white;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 8px rgba(59, 130, 246, 0.2);
+  position: relative;
+  z-index: 1;
+}
+
+/* Light mode: replace blue marker with palette */
+[data-theme="light"] .timeline-marker {
+  background: linear-gradient(135deg, #11212D, #253745);
+  box-shadow: 0 0 0 8px rgba(17, 33, 45, 0.15);
+}
+
+.timeline-node {
+  width: 48px;
+  height: 48px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  font-size: 20px;
+  z-index: 2;
+  transition: all 0.3s;
+}
+
+.timeline-item:hover .timeline-node {
+  border-color: #fff;
+  color: #fff;
+}
+
+.timeline-node.active {
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+.timeline-content {
+  flex: 1;
+  padding-top: 4px;
+  background: rgba(26, 31, 46, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 32px 40px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.4s;
+}
+
+.timeline-content:hover {
+  transform: translateY(-8px);
+  border-color: rgba(59, 130, 246, 0.3);
+  box-shadow: 0 20px 60px rgba(59, 130, 246, 0.2);
+}
+
+/* Light mode: replace blue hover with palette */
+[data-theme="light"] .timeline-content:hover {
+  border-color: rgba(17, 33, 45, 0.25);
+  box-shadow: 0 20px 60px rgba(17, 33, 45, 0.1);
+}
+
+.timeline-year {
+  display: inline-block;
+  background: rgba(59, 130, 246, 0.15);
+  color: #3B82F6;
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+/* Light mode: replace blue timeline-year with palette */
+[data-theme="light"] .timeline-year {
+  background: rgba(17, 33, 45, 0.1);
+  color: #11212D;
+  border-color: rgba(17, 33, 45, 0.2);
+}
+
+.timeline-date {
+  display: inline-block;
+  font-family: monospace;
+  font-size: 14px;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.timeline-content h3 {
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.timeline-content p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.timeline-stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(37, 99, 235, 0.2));
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #3B82F6;
+  font-weight: 600;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+/* Light mode: replace blue timeline-stat with palette */
+[data-theme="light"] .timeline-stat {
+  background: linear-gradient(135deg, rgba(17, 33, 45, 0.12), rgba(37, 55, 69, 0.12));
+  color: #11212D;
+  border-color: rgba(17, 33, 45, 0.2);
+}
+
+.timeline-stat svg {
+  font-size: 16px;
+}
+
+.timeline-stat.success {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(5, 150, 105, 0.2));
+  color: #10B981;
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+/* Light mode: replace green success stat with palette accent */
+[data-theme="light"] .timeline-stat.success {
+  background: linear-gradient(135deg, rgba(17, 33, 45, 0.1), rgba(37, 55, 69, 0.1));
+  color: #11212D;
+  border-color: rgba(17, 33, 45, 0.25);
+}
+
+.timeline-stat.highlight {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(251, 191, 36, 0.2));
+  color: #F59E0B;
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+.future-vision {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(5, 150, 105, 0.05));
+  padding: 48px;
+  border-radius: 24px;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  text-align: center;
+  position: relative;
+  margin-top: 40px;
+}
+
+/* Light mode: replace green future-vision with palette colors */
+[data-theme="light"] .future-vision {
+  background: linear-gradient(135deg, rgba(17, 33, 45, 0.06), rgba(37, 55, 69, 0.03));
+  border-color: rgba(17, 33, 45, 0.2);
+}
+
+.vision-badge {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #10B981, #059669);
+  color: white;
+  padding: 6px 20px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Light mode: replace green vision-badge with palette accent */
+[data-theme="light"] .vision-badge {
+  background: linear-gradient(135deg, #11212D, #253745);
+}
+
+.vision-badge svg {
+  font-size: 16px;
+}
+
+.future-vision h3 {
+  font-size: 28px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 12px;
+}
+
+.future-vision p {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.7;
+}
+
+.security-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.security-card {
+  background: var(--bg-card); /* Было жестко #18181b */
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 32px; /* Унификация */
+  text-align: left; /* В других блоках текст слева, выравниваем */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* В других блоках слева */
+  transition: all 0.3s ease;
+}
+
+.security-card:hover {
+  transform: translateY(-4px);
+  border-color: #fff;
+  background: var(--bg-card); 
+}
+
+.sec-icon {
+  font-size: 24px; /* Уменьшаем до 24 как везде */
+  color: #ffffff;
+  margin-bottom: 24px;
+  width: 48px;
+  height: 48px;
+  background: #27272a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.05);
+  box-sizing: border-box; 
+  padding: 0;
+}
+
+.security-card h3 {
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 16px;
+  font-weight: 700; /* Жирность как везде */
+}
+
+.security-card p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .security-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline-track::before {
+    left: 20px;
+  }
+  
+  .timeline-item {
+    flex-direction: row !important;
+    padding-left: 100px;
+    gap: 24px;
+  }
+  
+  .timeline-marker {
+    position: absolute;
+    left: 0;
+  }
+
+  .timeline-node {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+}
