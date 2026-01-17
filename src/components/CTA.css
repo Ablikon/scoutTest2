@@ -173,9 +173,16 @@
   transition: all 0.2s ease;
 }
 
-.cta-action button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+/* Only apply hover on hover-capable devices */
+@media (hover: hover) {
+  .cta-action button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.cta-action button:active {
+  transform: scale(0.98);
 }
 
 /* ============================================
@@ -238,9 +245,17 @@
   transition: all 0.2s ease;
 }
 
-.btn-primary:hover {
-  opacity: 0.9;
-  transform: translateY(-1px);
+/* Only apply hover on hover-capable devices */
+@media (hover: hover) {
+  .btn-primary:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+  }
+}
+
+.btn-primary:active {
+  opacity: 0.85;
+  transform: scale(0.98);
 }
 
 .btn-secondary {
@@ -254,8 +269,15 @@
   transition: all 0.2s ease;
 }
 
-.btn-secondary:hover {
-  border-color: var(--border-hover);
+/* Only apply hover on hover-capable devices */
+@media (hover: hover) {
+  .btn-secondary:hover {
+    border-color: var(--border-hover);
+    background: var(--accent-light);
+  }
+}
+
+.btn-secondary:active {
   background: var(--accent-light);
 }
 
@@ -266,10 +288,18 @@
   box-shadow: var(--shadow-sm);
 }
 
-.secondary:hover {
+/* Only apply hover on hover-capable devices */
+@media (hover: hover) {
+  .secondary:hover {
+    background: var(--accent-light);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+}
+
+.secondary:active {
   background: var(--accent-light);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  transform: scale(0.98);
 }
 
 .sub-desc {
@@ -301,12 +331,22 @@
    RESPONSIVE
    ============================================ */
 @media (max-width: 768px) {
+  .cta {
+    padding: 100px 0;
+  }
+
+  .cta .container {
+    padding: 0 20px;
+  }
+
   .cta h2 {
-    font-size: 32px;
+    font-size: clamp(28px, 6vw, 36px);
+    margin-bottom: 20px;
   }
 
   .cta p {
     font-size: 16px;
+    margin-bottom: 32px;
   }
 
   .cta-buttons {
@@ -318,6 +358,8 @@
     width: 100%;
     max-width: 360px;
     min-width: unset;
+    /* Minimum 44px touch target */
+    min-height: 56px;
   }
 
   .cta-bar {
@@ -325,25 +367,86 @@
     text-align: center;
     padding: 32px 24px;
     border-radius: 16px;
+    gap: 24px;
   }
 
   .cta-text {
     text-align: center;
   }
 
+  .cta-text h3 {
+    font-size: 22px;
+  }
+
+  .cta-text p {
+    font-size: 15px;
+  }
+
   .cta-action button {
     width: 100%;
     justify-content: center;
+    /* Minimum 44px touch target */
+    min-height: 56px;
+    padding: 14px 24px;
+  }
+
+  .footer-note {
+    margin-top: 40px;
+    font-size: 14px;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 480px) {
+  .cta {
+    padding: 80px 0;
+  }
+
+  .cta .container {
+    padding: 0 16px;
+  }
+
+  .cta h2 {
+    font-size: clamp(24px, 6vw, 30px);
+  }
+
+  .cta p {
+    font-size: 15px;
+  }
+
+  .cta-bar {
+    padding: 24px 20px;
+    border-radius: 14px;
+    gap: 20px;
+  }
+
+  .cta-text h3 {
+    font-size: 20px;
+  }
+
+  .cta-text p {
+    font-size: 14px;
+  }
+
   .cta-actions {
     flex-direction: column;
+    gap: 12px;
   }
 
   .btn-primary,
   .btn-secondary {
     width: 100%;
+    padding: 14px 24px;
+    font-size: 15px;
+  }
+
+  .sub-desc {
+    font-size: 14px;
+    margin-bottom: 32px;
+  }
+
+  .footer-note {
+    margin-top: 32px;
+    font-size: 13px;
+    line-height: 1.6;
   }
 }

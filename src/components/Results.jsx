@@ -1,44 +1,42 @@
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import './Results.css'
 import { IoTrendingUpOutline, IoTimeOutline, IoWalletOutline } from 'react-icons/io5'
 
 function Results() {
+  const { t, i18n } = useTranslation()
   const [margin, setMargin] = useState(3000)
   const [sales, setSales] = useState(5)
-  
-  // 95% продаж забирает топ-1. Значит потеря = Маржа * (Продажи * 30 дней) * 0.95
-  const monthlyLoss = (margin * sales * 30 * 0.95).toLocaleString('ru-RU')
 
-  const cases = [
-    {
-      role: "Новый продавец",
-      result: "x4 Рост",
-      resultClass: "growth", // Зелёный
-      desc: "За первые 10 дней использования сервиса продажи выросли в 4 раза благодаря удержанию позиций в топе.",
-      icon: IoTrendingUpOutline
-    },
-    {
-      role: "Опытный магазин",
-      result: "x2 Рост",
-      resultClass: "highlight", // Синий
-      desc: "Уже действующий магазин увеличил продажи в 2 раза за месяц за счёт автоматического обновления цен.",
-      icon: IoWalletOutline
-    },
-    {
-      role: "Экономия",
-      result: "-50%",
-      resultClass: "savings", // Оранжевый
-      desc: "Сокращение расходов на зарплату менеджеров. Бот стоит дешевле и работает эффективнее человека.",
-      icon: IoTimeOutline
+  const getLocale = () => {
+    switch (i18n.language) {
+      case 'en': return 'en-US'
+      case 'kk': return 'kk-KZ'
+      default: return 'ru-RU'
     }
-  ]
+  }
+
+  const monthlyLoss = (margin * sales * 30 * 0.95).toLocaleString(getLocale())
+
+  const icons = [IoTrendingUpOutline, IoWalletOutline, IoTimeOutline]
+  const resultClasses = ['growth', 'highlight', 'savings']
+
+  const translatedCases = t('results.cases', { returnObjects: true })
+
+  const cases = translatedCases.map((item, index) => ({
+    role: item.role,
+    result: item.result,
+    resultClass: resultClasses[index],
+    desc: item.description,
+    icon: icons[index]
+  }))
 
   return (
     <section className="results">
       <div className="container">
         <div className="results-header">
-          <h2>Результаты</h2>
-          <p className="subtitle">Мы замеряли эффективность на реальных клиентах</p>
+          <h2>{t('results.title')}</h2>
+          <p className="subtitle">{t('results.subtitle')}</p>
         </div>
 
         <div className="cases-grid">
@@ -56,41 +54,40 @@ function Results() {
           ))}
         </div>
 
-        {/* Интерактивный элемент для разнообразия */}
         <div className="calculator-wrapper">
           <div className="calc-card">
             <div className="calc-content">
-              <h3>Калькулятор потерь</h3>
-              <p>Сколько прибыли вы отдаете конкурентам, пока не на 1-м месте?</p>
-              
+              <h3>{t('results.calculator.title')}</h3>
+              <p>{t('results.calculator.subtitle')}</p>
+
               <div className="sliders-group">
                 <div className="slider-row">
                   <div className="slider-label">
-                    <span>Маржа с товара</span>
-                    <span className="val">{margin.toLocaleString()} ₸</span>
+                    <span>{t('results.calculator.margin')}</span>
+                    <span className="val">{margin.toLocaleString(getLocale())} ₸</span>
                   </div>
-                  <input 
-                    type="range" min="500" max="50000" step="500" 
-                    value={margin} onChange={e => setMargin(Number(e.target.value))} 
+                  <input
+                    type="range" min="500" max="50000" step="500"
+                    value={margin} onChange={e => setMargin(Number(e.target.value))}
                   />
                 </div>
                 <div className="slider-row">
                   <div className="slider-label">
-                    <span>Возможных продаж в день</span>
-                    <span className="val">{sales} шт.</span>
+                    <span>{t('results.calculator.salesPerDay')}</span>
+                    <span className="val">{sales} {t('results.calculator.pieces')}</span>
                   </div>
-                  <input 
-                    type="range" min="1" max="50" step="1" 
-                    value={sales} onChange={e => setSales(Number(e.target.value))} 
+                  <input
+                    type="range" min="1" max="50" step="1"
+                    value={sales} onChange={e => setSales(Number(e.target.value))}
                   />
                 </div>
               </div>
             </div>
 
             <div className="calc-result">
-              <span className="loss-label">Упущенная прибыль</span>
+              <span className="loss-label">{t('results.calculator.lostProfit')}</span>
               <span className="loss-amount">-{monthlyLoss} ₸</span>
-              <span className="loss-period">в месяц</span>
+              <span className="loss-period">{t('results.calculator.perMonth')}</span>
             </div>
           </div>
         </div>

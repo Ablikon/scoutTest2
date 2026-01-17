@@ -157,23 +157,34 @@ main .solution {
   gap: 20px;
 }
 
-/* Hover эффекты */
-.step-item:hover .step-content {
+/* Hover effects - only on hover-capable devices */
+@media (hover: hover) {
+  .step-item:hover .step-content {
+    border-color: var(--border-hover);
+    transform: translateX(8px);
+    background: var(--bg-card-hover);
+    box-shadow: var(--shadow-md);
+  }
 }
 
-/* Hover эффекты */
-.step-item:hover .step-content {
-  border-color: var(--border-hover);
-  transform: translateX(8px);
-  background: var(--bg-card-hover);
-  box-shadow: var(--shadow-md);
-}
+/* Light mode: step-content premium hover - only on hover-capable devices */
+@media (hover: hover) {
+  [data-theme="light"] .step-item:hover .step-content {
+    border-color: #253745;
+    box-shadow:
+      0 18px 45px rgba(17, 33, 45, 0.12),
+      0 0 30px rgba(37, 55, 69, 0.08),
+      0 0 0 1px rgba(37, 55, 69, 0.18),
+      inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    background: linear-gradient(180deg, #ffffff 0%, #fafbfb 100%);
+  }
 
-.step-item:hover .step-num {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: var(--text-inverse);
-  box-shadow: 0 0 20px var(--accent-glow);
+  .step-item:hover .step-num {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--text-inverse);
+    box-shadow: 0 0 20px var(--accent-glow);
+  }
 }
 
 .step-icon {
@@ -285,10 +296,27 @@ main .solution {
   transition: all 0.3s ease;
 }
 
-.process-card:hover {
-  border-color: var(--border-hover);
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
+/* Only apply hover on hover-capable devices */
+@media (hover: hover) {
+  .process-card:hover {
+    border-color: var(--border-hover);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+}
+
+/* Light mode: process-card premium hover - only on hover-capable devices */
+@media (hover: hover) {
+  [data-theme="light"] .process-card:hover {
+    border-color: #253745;
+    transform: translateY(-6px);
+    box-shadow:
+      0 20px 50px rgba(17, 33, 45, 0.14),
+      0 0 35px rgba(37, 55, 69, 0.08),
+      0 0 0 1px rgba(37, 55, 69, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    background: linear-gradient(180deg, #ffffff 0%, #fafbfb 100%);
+  }
 }
 
 .step-number {
@@ -361,14 +389,116 @@ main .solution {
   .process-grid {
     flex-direction: column;
   }
-  
+
   .process-connector {
     width: 1px;
     height: 32px;
     margin: 0 auto;
   }
+}
 
-  .process-card:hover {
-    transform: none;
+@media (max-width: 768px) {
+  .solution {
+    padding: 60px 0 !important;
+  }
+
+  main .solution {
+    padding: 60px 0 !important;
+  }
+
+  .solution-wrapper {
+    gap: 40px;
+  }
+
+  .solution-intro h2 {
+    font-size: clamp(26px, 6vw, 36px);
+    margin-bottom: 20px;
+  }
+
+  .solution-intro .section-subtitle {
+    font-size: 15px;
+    margin-bottom: 24px;
+  }
+
+  .btn-start {
+    padding: 14px 28px;
+    font-size: 15px;
+    width: 100%;
+    justify-content: center;
+    /* Minimum 44px touch target */
+    min-height: 52px;
+  }
+
+  .step-content {
+    padding: 20px;
+    gap: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .step-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 24px;
+    margin-bottom: 0;
+  }
+
+  .step-content h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .step-content p {
+    font-size: 14px;
+  }
+
+  .card-inner {
+    padding: 32px 24px;
+  }
+
+  .card-inner h3 {
+    font-size: 18px;
+  }
+
+  .icon-box {
+    width: 44px;
+    height: 44px;
+    font-size: 22px;
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .solution {
+    padding: 50px 0 !important;
+  }
+
+  main .solution {
+    padding: 50px 0 !important;
+  }
+
+  .solution-intro h2 {
+    font-size: clamp(24px, 6vw, 30px);
+  }
+
+  .step-item {
+    padding-bottom: 16px;
+  }
+
+  .step-content {
+    padding: 16px;
+  }
+
+  .step-content h3 {
+    font-size: 17px;
+  }
+
+  .card-inner {
+    padding: 24px 20px;
+  }
+
+  .tech-tag {
+    font-size: 11px;
+    padding: 3px 10px;
   }
 }

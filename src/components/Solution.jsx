@@ -1,26 +1,22 @@
+import { useTranslation } from 'react-i18next'
 import './Solution.css'
-import { IoLogInOutline, IoOptionsOutline, IoRocketOutline, IoArrowForward } from 'react-icons/io5'
+import { IoLogInOutline, IoOptionsOutline, IoRocketOutline } from 'react-icons/io5'
 
 function Solution() {
+  const { t } = useTranslation()
+
   return (
     <section className="solution" id="solution-section">
       <div className="container">
-        
+
         <div className="solution-wrapper">
-          {/* Левая часть - Заголовок и CTA */}
           <div className="solution-intro">
-            <h2>Как начать работать?</h2>
+            <h2>{t('solution.title')}</h2>
             <p className="section-subtitle">
-              Запуск занимает 2 минуты. Вам не нужно устанавливать программы — всё работает через браузер.
+              {t('solution.subtitle')}
             </p>
-            {/* <div className="solution-cta">
-              <button className="btn-start">
-                Попробовать бесплатно <IoArrowForward />
-              </button>
-            </div> */}
           </div>
 
-          {/* Правая часть - Вертикальные шаги */}
           <div className="solution-steps">
             <div className="step-item">
               <div className="step-marker">
@@ -32,10 +28,8 @@ function Solution() {
                   <IoLogInOutline />
                 </div>
                 <div className="step-text">
-                  <h3>Подключение</h3>
-                  <p>
-                    Регистрируетесь на сайте и добавляете свой магазин Kaspi. Товары подгружаются автоматически за пару минут.
-                  </p>
+                  <h3>{t('solution.step1.title')}</h3>
+                  <p>{t('solution.step1.description')}</p>
                 </div>
               </div>
             </div>
@@ -50,10 +44,8 @@ function Solution() {
                   <IoOptionsOutline />
                 </div>
                 <div className="step-text">
-                  <h3>Настройка</h3>
-                  <p>
-                     Устанавливаете "Минимальную цену" — порог, ниже которого бот не опустится. Это защищает вас от торговли в минус.
-                  </p>
+                  <h3>{t('solution.step2.title')}</h3>
+                  <p>{t('solution.step2.description')}</p>
                 </div>
               </div>
             </div>
@@ -61,17 +53,14 @@ function Solution() {
             <div className="step-item">
               <div className="step-marker">
                 <span className="step-num">03</span>
-                {/* Линия здесь не нужна, так как это последний шаг */}
               </div>
               <div className="step-content">
                 <div className="step-icon">
                   <IoRocketOutline />
                 </div>
                 <div className="step-text">
-                  <h3>Автопилот включен</h3>
-                  <p>
-                    Активируете бота. Теперь он мониторит конкурентов 24/7 и меняет цены, чтобы вы всегда были на первом месте.
-                  </p>
+                  <h3>{t('solution.step3.title')}</h3>
+                  <p>{t('solution.step3.description')}</p>
                 </div>
               </div>
             </div>

@@ -1,18 +1,21 @@
+import { useTranslation } from 'react-i18next'
 import './CTA.css'
 import { IoLogoWhatsapp } from 'react-icons/io5'
 
 function CTA() {
+  const { t } = useTranslation()
+
   return (
     <section className="cta-slim">
       <div className="container">
         <div className="cta-bar">
           <div className="cta-text">
-            <h3>Остались вопросы перед стартом?</h3>
-            <p>Напишите нам в WhatsApp. Менеджер бесплатно проконсультирует и поможет настроить стратегию под вашу нишу.</p>
+            <h3>{t('cta.title')}</h3>
+            <p>{t('cta.subtitle')}</p>
           </div>
           <div className="cta-action">
             <button className="btn-primary">
-              <IoLogoWhatsapp style={{ fontSize: '1.2em' }} /> Написать менеджеру
+              <IoLogoWhatsapp style={{ fontSize: '1.2em' }} /> {t('cta.button')}
             </button>
           </div>
         </div>

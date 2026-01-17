@@ -1,64 +1,56 @@
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import './Pricing.css'
 import { IoCheckmark } from 'react-icons/io5'
 
 function Pricing() {
+  const { t, i18n } = useTranslation()
   const [period, setPeriod] = useState(1)
 
+  const getLocale = () => {
+    switch (i18n.language) {
+      case 'en': return 'en-US'
+      case 'kk': return 'kk-KZ'
+      default: return 'ru-RU'
+    }
+  }
+
   const periods = [
-    { value: 1, label: '1 месяц', discount: 0 },
-    { value: 3, label: '3 месяца', discount: 0.10 },
-    { value: 6, label: '6 месяцев', discount: 0.15 },
-    { value: 12, label: '1 год', discount: 0.25 },
+    { value: 1, label: t('pricing.periods.1month'), discount: 0 },
+    { value: 3, label: t('pricing.periods.3months'), discount: 0.10 },
+    { value: 6, label: t('pricing.periods.6months'), discount: 0.15 },
+    { value: 12, label: t('pricing.periods.1year'), discount: 0.25 },
   ]
 
   const formatPrice = (price) => {
-    return new Intl.NumberFormat('ru-RU').format(Math.round(price))
+    return new Intl.NumberFormat(getLocale()).format(Math.round(price))
   }
 
   const getPrice = (basePrice) => {
     if (basePrice === 'Custom') return 'Custom'
     const discount = periods.find(p => p.value === period).discount
     const discounted = basePrice * (1 - discount)
-    // Округляем до сотен
     return formatPrice(Math.round(discounted / 100) * 100)
   }
 
-  const tiers = [
-    {
-      name: "Start",
-      basePrice: 35000,
-      desc: "Для небольших магазинов",
-      features: ["До 50 товаров мониторинга"]
-    },
-    {
-      name: "Standard",
-      basePrice: 50000,
-      desc: "Оптимальный для роста",
-      features: ["До 500 товаров мониторинга"],
-      highlight: true
-    },
-    {
-      name: "Pro",
-      basePrice: 80000,
-      desc: "Для крупных игроков",
-      features: ["До 800 товаров мониторинга"]
-    },
-    {
-      name: "Индивидуальный",
-      basePrice: 'Custom',
-      desc: "Более 1300 товаров?",
-      features: ["Безлимит товаров"]
-    }
-  ]
+  const tierKeys = ['start', 'standard', 'pro', 'custom']
+  const basePrices = [35000, 50000, 80000, 'Custom']
+
+  const tiers = tierKeys.map((key, index) => ({
+    name: t(`pricing.tiers.${key}.name`),
+    basePrice: basePrices[index],
+    desc: t(`pricing.tiers.${key}.description`),
+    features: t(`pricing.tiers.${key}.features`, { returnObjects: true }),
+    highlight: key === 'standard'
+  }))
 
   return (
     <section className="pricing">
       <div className="container">
         <div className="pricing-header">
-          <h2>Тарифы</h2>
+          <h2>{t('pricing.title')}</h2>
           <p className="subtitle">
-            Честная цена за рост продаж. Платите только за то количество товаров, которое нужно мониторить.
+            {t('pricing.subtitle')}
           </p>
         </div>
 
@@ -88,12 +80,12 @@ function Pricing() {
               </div>
               <div className="tier-price">
                 <span className="amount">{getPrice(tier.basePrice)}</span>
-                {tier.basePrice !== 'Custom' && <span className="currency">₸ / мес</span>}
+                {tier.basePrice !== 'Custom' && <span className="currency">₸ {t('pricing.perMonth')}</span>}
               </div>
-              
+
               {period > 1 && tier.basePrice !== 'Custom' && (
                 <div className="price-saving">
-                  Экономия {formatPrice((tier.basePrice - parseInt(getPrice(tier.basePrice).replace(/\s/g, ''))) * period)} ₸
+                  {t('pricing.savings')} {formatPrice((tier.basePrice - parseInt(getPrice(tier.basePrice).replace(/\s/g, ''))) * period)} ₸
                 </div>
               )}
 
@@ -106,7 +98,7 @@ function Pricing() {
                 ))}
               </div>
               <button className={`tier-btn ${tier.highlight ? 'primary' : 'outline'}`}>
-                {tier.basePrice === 'Custom' ? 'Связаться' : 'Выбрать'}
+                {tier.basePrice === 'Custom' ? t('pricing.contact') : t('pricing.select')}
               </button>
             </div>
           ))}

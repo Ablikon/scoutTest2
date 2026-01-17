@@ -1,7 +1,10 @@
+import { useTranslation } from 'react-i18next'
 import './Footer.css'
 import { IoLogoInstagram, IoLogoWhatsapp } from 'react-icons/io5'
 
 function Footer() {
+  const { t } = useTranslation()
+
   return (
     <footer className="footer">
       <div className="container">
@@ -11,38 +14,38 @@ function Footer() {
               <span className="logo-symbol">///</span> TopPrice
             </div>
             <p className="footer-desc">
-                Сервис управления продажами на маркетплейсах
+              {t('footer.description')}
             </p>
             <div className="footer-socials">
               <a href="#" className="social-link"><IoLogoInstagram /></a>
               <a href="#" className="social-link"><IoLogoWhatsapp /></a>
             </div>
           </div>
-          
+
           <div className="footer-links-group">
             <div className="footer-col">
-              <h4>Продукт</h4>
-              <a href="#technology">Возможности</a>
-              <a href="#pricing">Тарифы</a>
+              <h4>{t('footer.product')}</h4>
+              <a href="#technology">{t('footer.features')}</a>
+              <a href="#pricing">{t('footer.pricing')}</a>
               <a href="#faq">FAQ</a>
             </div>
-            
+
             <div className="footer-col">
-              <h4>Компания</h4>
-              <a href="#">О нас</a>
-              <a href="#">Контакты</a>
-              <a href="#">Партнерская программа</a>
+              <h4>{t('footer.company')}</h4>
+              <a href="#">{t('footer.aboutUs')}</a>
+              <a href="#">{t('footer.contacts')}</a>
+              <a href="#">{t('footer.affiliate')}</a>
             </div>
           </div>
         </div>
-        
+
         <div className="footer-bottom">
           <div className="copyright">
-            © 2025 TopPrice. Все права защищены.
+            {t('footer.copyright')}
           </div>
           <div className="legal-links">
-            <a href="#">Публичная оферта</a>
-            <a href="#">Политика конфиденциальности</a>
+            <a href="#">{t('footer.publicOffer')}</a>
+            <a href="#">{t('footer.privacyPolicy')}</a>
           </div>
         </div>
       </div>

@@ -122,6 +122,11 @@
 /* ============================================
    GLOBAL STYLES
    ============================================ */
+html {
+  /* Prevent horizontal overflow */
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   min-width: 320px;
@@ -132,7 +137,11 @@ body {
   font-family: var(--font-main);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   transition: background-color 0.3s ease, color 0.3s ease;
+  /* Prevent text size adjustment on orientation change */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 button {
@@ -145,6 +154,10 @@ button {
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
+  /* Ensure minimum touch target on mobile */
+  min-height: 44px;
+  /* Remove tap highlight on mobile */
+  -webkit-tap-highlight-color: transparent;
 }
 
 button.primary {
@@ -153,10 +166,19 @@ button.primary {
   box-shadow: var(--shadow-accent);
 }
 
-button.primary:hover {
+/* Only apply hover effects on devices that support hover */
+@media (hover: hover) {
+  button.primary:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+}
+
+/* Active state for touch devices */
+button.primary:active {
   background: var(--accent-hover);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  transform: scale(0.98);
 }
 
 @keyframes fadeInUp {
@@ -215,4 +237,58 @@ input[type="range"],
 input[type="range"]::-webkit-slider-thumb,
 .scroll-progress-bar {
   transition: none;
+}
+
+/* ============================================
+   GLOBAL MOBILE RESPONSIVE STYLES
+   ============================================ */
+
+/* Ensure all interactive elements have minimum touch targets */
+a, button, input, select, textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Global responsive container adjustments */
+@media (max-width: 768px) {
+  h1 {
+    font-size: clamp(28px, 8vw, 48px);
+  }
+
+  h2 {
+    font-size: clamp(24px, 6vw, 36px);
+  }
+
+  h3 {
+    font-size: clamp(18px, 4vw, 24px);
+  }
+
+  /* Ensure buttons don't overflow on small screens */
+  button {
+    max-width: 100%;
+    word-wrap: break-word;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: clamp(24px, 7vw, 36px);
+  }
+
+  h2 {
+    font-size: clamp(22px, 5.5vw, 32px);
+  }
+
+  h3 {
+    font-size: clamp(16px, 4vw, 22px);
+  }
+}
+
+/* ============================================
+   SAFE AREA INSETS (for notched devices)
+   ============================================ */
+@supports (padding: max(0px)) {
+  body {
+    padding-left: max(0px, env(safe-area-inset-left));
+    padding-right: max(0px, env(safe-area-inset-right));
+  }
 }

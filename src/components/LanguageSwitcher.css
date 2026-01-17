@@ -1,0 +1,331 @@
+/* ============================================
+   LANGUAGE SWITCHER - Modern Dropdown
+   Supports Dark & Light themes with proper contrast
+   ============================================ */
+
+.language-switcher {
+  position: relative;
+  z-index: 100;
+}
+
+/* ============================================
+   TOGGLE BUTTON - Dark Mode (Default)
+   ============================================ */
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--icon-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--text-primary);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.lang-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--border-hover);
+}
+
+.lang-toggle.active {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--accent);
+}
+
+.lang-toggle:focus {
+  outline: none;
+}
+
+.lang-toggle:focus-visible {
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+.globe-icon {
+  font-size: 16px;
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
+}
+
+.lang-toggle:hover .globe-icon {
+  color: var(--text-primary);
+}
+
+.current-lang {
+  letter-spacing: 0.5px;
+  color: var(--text-primary);
+}
+
+.chevron {
+  font-size: 14px;
+  color: var(--text-secondary);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.lang-toggle:hover .chevron {
+  color: var(--text-primary);
+}
+
+.chevron.rotated {
+  transform: rotate(180deg);
+}
+
+/* ============================================
+   DROPDOWN MENU - Dark Mode (Default)
+   ============================================ */
+.lang-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 170px;
+  background: #1c1c1e;
+  border: 1px solid var(--border-strong);
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  animation: dropdownFadeIn 0.2s ease;
+}
+
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   LANGUAGE OPTIONS - Dark Mode (Default)
+   ============================================ */
+.lang-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-align: left;
+}
+
+/* Hover effect - Dimming/darkening for interactivity */
+.lang-option:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Active (selected) option */
+.lang-option.active {
+  background: var(--accent);
+}
+
+.lang-option.active:hover {
+  background: var(--accent-hover);
+}
+
+/* Language code badge */
+.lang-code {
+  font-size: 11px;
+  font-weight: 700;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+  padding: 4px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+  min-width: 32px;
+  text-align: center;
+  transition: all 0.15s ease;
+}
+
+.lang-option:hover .lang-code {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.lang-option.active .lang-code {
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+/* Language name */
+.lang-name {
+  font-size: 14px;
+  color: #a1a1aa;
+  font-weight: 500;
+  transition: color 0.15s ease;
+}
+
+.lang-option:hover .lang-name {
+  color: #ffffff;
+}
+
+.lang-option.active .lang-name {
+  color: #ffffff;
+}
+
+/* ============================================
+   LIGHT MODE OVERRIDES
+   ============================================ */
+
+/* Toggle button - Light mode */
+[data-theme="light"] .lang-toggle {
+  background: #ffffff;
+  border-color: rgba(155, 168, 171, 0.5);
+  color: #06141B;
+}
+
+[data-theme="light"] .lang-toggle:hover {
+  background: #f5f7f7;
+  border-color: #9BA8AB;
+}
+
+[data-theme="light"] .lang-toggle.active {
+  background: #f0f2f2;
+  border-color: var(--accent);
+}
+
+[data-theme="light"] .globe-icon {
+  color: #4A5C6A;
+}
+
+[data-theme="light"] .lang-toggle:hover .globe-icon {
+  color: #06141B;
+}
+
+[data-theme="light"] .current-lang {
+  color: #06141B;
+}
+
+[data-theme="light"] .chevron {
+  color: #4A5C6A;
+}
+
+[data-theme="light"] .lang-toggle:hover .chevron {
+  color: #06141B;
+}
+
+/* Dropdown - Light mode */
+[data-theme="light"] .lang-dropdown {
+  background: #ffffff;
+  border-color: rgba(155, 168, 171, 0.4);
+  box-shadow: 0 12px 40px rgba(6, 20, 27, 0.12);
+}
+
+/* Options - Light mode */
+[data-theme="light"] .lang-option:hover {
+  background: rgba(155, 168, 171, 0.15);
+}
+
+[data-theme="light"] .lang-option.active {
+  background: #11212D;
+}
+
+[data-theme="light"] .lang-option.active:hover {
+  background: #253745;
+}
+
+/* Language code - Light mode */
+[data-theme="light"] .lang-code {
+  color: #06141B;
+  background: rgba(155, 168, 171, 0.25);
+}
+
+[data-theme="light"] .lang-option:hover .lang-code {
+  background: rgba(155, 168, 171, 0.35);
+}
+
+[data-theme="light"] .lang-option.active .lang-code {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+/* Language name - Light mode */
+[data-theme="light"] .lang-name {
+  color: #4A5C6A;
+}
+
+[data-theme="light"] .lang-option:hover .lang-name {
+  color: #06141B;
+}
+
+[data-theme="light"] .lang-option.active .lang-name {
+  color: #ffffff;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  .lang-toggle {
+    padding: 8px 10px;
+    min-height: 40px;
+    min-width: 40px;
+  }
+
+  .globe-icon {
+    font-size: 16px;
+  }
+
+  .current-lang {
+    font-size: 12px;
+  }
+
+  .lang-dropdown {
+    min-width: 160px;
+  }
+
+  .lang-option {
+    padding: 14px 16px;
+    min-height: 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  .current-lang {
+    display: none;
+  }
+
+  .chevron {
+    display: none;
+  }
+
+  .lang-toggle {
+    padding: 10px;
+    border-radius: 50%;
+  }
+
+  .globe-icon {
+    font-size: 18px;
+  }
+
+  .lang-dropdown {
+    right: -20px;
+  }
+}
+
+/* ============================================
+   TOUCH DEVICE OPTIMIZATIONS
+   ============================================ */
+@media (hover: none) {
+  .lang-toggle:active {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  [data-theme="light"] .lang-toggle:active {
+    background: #f0f2f2;
+  }
+
+  .lang-option:active {
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  [data-theme="light"] .lang-option:active {
+    background: rgba(155, 168, 171, 0.2);
+  }
+}

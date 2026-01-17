@@ -30,6 +30,19 @@
   box-sizing: border-box;
 }
 
+/* Mobile container adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+}
+
 /* Smooth scroll */
 html {
   scroll-behavior: smooth;
@@ -43,6 +56,8 @@ body {
 section {
   position: relative;
   overflow: hidden;
+  /* Prevent horizontal overflow from pseudo-elements */
+  max-width: 100vw;
 }
 
 section::after {
@@ -74,11 +89,28 @@ section > .container {
   box-shadow: var(--shadow-sm);
 }
 
-/* Light mode hover states */
-[data-theme="light"] .pricing-card:hover,
-[data-theme="light"] .case-card:hover,
-[data-theme="light"] .process-card:hover,
-[data-theme="light"] .tech-card:hover,
-[data-theme="light"] .feature-card:hover {
-  box-shadow: var(--shadow-md);
+/* Light mode hover states - only on hover-capable devices */
+@media (hover: hover) {
+  [data-theme="light"] .pricing-card:hover,
+  [data-theme="light"] .case-card:hover,
+  [data-theme="light"] .process-card:hover,
+  [data-theme="light"] .tech-card:hover,
+  [data-theme="light"] .feature-card:hover {
+    box-shadow: var(--shadow-md);
+  }
+}
+
+/* ============================================
+   MOBILE CARD ACTIVE STATES
+   ============================================ */
+@media (hover: none) {
+  .pricing-card:active,
+  .case-card:active,
+  .process-card:active,
+  .tech-card:active,
+  .feature-card:active,
+  .use-case-card:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
 }

@@ -1,0 +1,241 @@
+{
+  "header": {
+    "howItWorks": "How it works",
+    "results": "Results",
+    "pricing": "Pricing",
+    "faq": "FAQ",
+    "tryFree": "Try for free",
+    "switchToLight": "Switch to light theme",
+    "switchToDark": "Switch to dark theme"
+  },
+  "hero": {
+    "title": "Capture 95% of sales on Kaspi.kz",
+    "subtitle": "Our service is an automatic price reduction bot. It checks competitors every 3 minutes and sets your price 1 tenge lower, so you're always first in the seller list. No human intervention, 24/7.",
+    "tryFree3Days": "Try 3 days for free",
+    "howItWorks": "How it works",
+    "competitor": "Competitor",
+    "botReduces": "Bot reduces by 1 ₸",
+    "you": "You",
+    "yourStore": "Your store",
+    "inTop": "In top",
+    "otherSeller": "Other seller"
+  },
+  "problem": {
+    "title": "Market reality",
+    "subtitle": "The one who understands the rules wins.",
+    "items": [
+      {
+        "title": "2nd place = 0 sales",
+        "description": "Buyers almost never open the full seller list. 95% of orders go to whoever is first and visible on the main button. Being second means being invisible."
+      },
+      {
+        "title": "Speed beats price dumping",
+        "description": "You don't need to set the lowest price all day and lose margin. Just be 1 tenge cheaper than competitors at the exact moment the customer visits."
+      },
+      {
+        "title": "War of algorithms",
+        "description": "Your competitors have already automated their processes. Trying to outrun a bot manually by constantly refreshing the page is like racing a car on foot."
+      },
+      {
+        "title": "Every minute = lost customer",
+        "description": "While you sleep, have breakfast, or are busy with other things — competitors are capturing your buyers. The market doesn't wait, it works 24/7."
+      },
+      {
+        "title": "Manual management kills profit",
+        "description": "Constant price monitoring and manual changes are not just a waste of time, but inevitable mistakes that cost you real money."
+      },
+      {
+        "title": "Invisibility = marketplace failure",
+        "description": "If you're not in the top of Kaspi search results at the moment of search — you simply don't exist for the buyer. The algorithm is harsh and impartial."
+      }
+    ]
+  },
+  "solution": {
+    "title": "How to get started?",
+    "subtitle": "Setup takes 2 minutes. You don't need to install any software — everything works through the browser.",
+    "step1": {
+      "title": "Connection",
+      "description": "Register on the site and add your Kaspi store. Products are loaded automatically in a couple of minutes."
+    },
+    "step2": {
+      "title": "Setup",
+      "description": "Set the \"Minimum price\" — the threshold below which the bot won't go. This protects you from selling at a loss."
+    },
+    "step3": {
+      "title": "Autopilot enabled",
+      "description": "Activate the bot. Now it monitors competitors 24/7 and changes prices so you're always in first place."
+    }
+  },
+  "howItWorks": {
+    "title": "Decision-making algorithm",
+    "subtitle": "The service doesn't just change numbers, it analyzes the situation.",
+    "selectScenario": "Select a scenario",
+    "toSeeLogic": " to see the bot's logic.",
+    "competitor": "Competitor",
+    "you": "You",
+    "minThreshold": "Minimum threshold",
+    "actionLog": "ACTION LOG",
+    "scenarios": [
+      {
+        "title": "Instant reaction",
+        "description": "Competitor lowered the price. The bot notices this within 3 minutes and sets your price exactly 1 step lower.",
+        "competitorPrice": "14,500 ₸",
+        "yourPrice": "14,499 ₸",
+        "status": "TOP-1",
+        "log": "> SITUATION: Competitor lowered price (-500 ₸)\n> REACTION: Lowering your price to 14,499 ₸\n> RESULT: You took 1st place in search results"
+      },
+      {
+        "title": "Loss protection",
+        "description": "Competitor's price dropped below your cost. The bot activates protection and doesn't go into the red.",
+        "competitorPrice": "11,000 ₸",
+        "yourPrice": "12,500 ₸",
+        "status": "PROTECTED",
+        "log": "> DANGER: Competitor's price is below your purchase cost\n> SOLUTION: Activating loss protection\n> RESULT: Holding at 12,500 ₸. You don't lose money."
+      },
+      {
+        "title": "Smart price increase",
+        "description": "Competitor sold out. The bot sees this and instantly raises the price to maximum for increased profit.",
+        "competitorPrice": "Out of stock",
+        "yourPrice": "18,000 ₸",
+        "status": "PROFIT",
+        "log": "> SITUATION: Competitor sold out (out of stock)\n> OPPORTUNITY: No competition, can earn more\n> RESULT: Raising price to 18,000 ₸ (Maximum)"
+      }
+    ]
+  },
+  "integrations": {
+    "title": "Data management",
+    "subtitle": "Control over products through a convenient interface",
+    "features": [
+      {
+        "title": "Price list upload",
+        "description": "Set minimum prices, stock levels, and auto-reduction step via Excel — upload back in one file"
+      },
+      {
+        "title": "Data export",
+        "description": "Download current settings for all products or only published ones in XLSX format"
+      },
+      {
+        "title": "Status filtering",
+        "description": "Published, in first place, below min. price, auto-update off, archive — 6 filters"
+      },
+      {
+        "title": "Change history",
+        "description": "View when and to what price the bot changed a product. Full transparency of actions"
+      }
+    ],
+    "kaspiAlt": "Kaspi.kz — the largest marketplace in Kazakhstan"
+  },
+  "results": {
+    "title": "Results",
+    "subtitle": "We measured effectiveness on real clients",
+    "cases": [
+      {
+        "role": "New seller",
+        "result": "x4 Growth",
+        "description": "In the first 10 days of using the service, sales grew 4 times thanks to holding positions in the top."
+      },
+      {
+        "role": "Experienced store",
+        "result": "x2 Growth",
+        "description": "An existing store doubled sales in a month through automatic price updates."
+      },
+      {
+        "role": "Savings",
+        "result": "-50%",
+        "description": "Reduction in manager salary costs. The bot costs less and works more efficiently than a human."
+      }
+    ],
+    "calculator": {
+      "title": "Loss calculator",
+      "subtitle": "How much profit are you giving to competitors while not in 1st place?",
+      "margin": "Product margin",
+      "salesPerDay": "Possible sales per day",
+      "pieces": "pcs",
+      "lostProfit": "Lost profit",
+      "perMonth": "per month"
+    }
+  },
+  "pricing": {
+    "title": "Pricing",
+    "subtitle": "Fair price for sales growth. Pay only for the number of products you need to monitor.",
+    "periods": {
+      "1month": "1 month",
+      "3months": "3 months",
+      "6months": "6 months",
+      "1year": "1 year"
+    },
+    "perMonth": "/ mo",
+    "savings": "Savings",
+    "contact": "Contact us",
+    "select": "Select",
+    "tiers": {
+      "start": {
+        "name": "Start",
+        "description": "For small stores",
+        "features": ["Up to 50 products monitoring"]
+      },
+      "standard": {
+        "name": "Standard",
+        "description": "Optimal for growth",
+        "features": ["Up to 500 products monitoring"]
+      },
+      "pro": {
+        "name": "Pro",
+        "description": "For large players",
+        "features": ["Up to 800 products monitoring"]
+      },
+      "custom": {
+        "name": "Custom",
+        "description": "More than 1300 products?",
+        "features": ["Unlimited products"]
+      }
+    }
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "items": [
+      {
+        "question": "Why do you need my Kaspi login and password?",
+        "answer": "For the bot to change prices, it must authorize as a manager. This is safe: we don't ask for access to bank accounts or digital signatures. You can create a separate \"Electronic Manager\" with limited rights."
+      },
+      {
+        "question": "Is this legal? Will I get blocked?",
+        "answer": "This is absolutely legal. The bot does the same thing as a human, just faster. We don't hack the Kaspi site, we work through the official seller dashboard."
+      },
+      {
+        "question": "What if a competitor also uses a bot?",
+        "answer": "You set a minimum price (cost price) below which you can't go. The bot will lower the price to this threshold. If a competitor goes lower — the bot will stop."
+      },
+      {
+        "question": "Can I manage multiple stores?",
+        "answer": "Yes, you can add multiple stores in one TopPrice account."
+      },
+      {
+        "question": "How often are prices updated?",
+        "answer": "Standard speed is checking every 3 minutes. This is enough to stay ahead of 99% of competitors."
+      },
+      {
+        "question": "How can I try it for free?",
+        "answer": "We give 3 days of free access to all features. No card required. Just register and test."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Have questions before starting?",
+    "subtitle": "Write to us on WhatsApp. A manager will consult for free and help set up a strategy for your niche.",
+    "button": "Message manager"
+  },
+  "footer": {
+    "description": "Marketplace sales management service",
+    "product": "Product",
+    "features": "Features",
+    "pricing": "Pricing",
+    "company": "Company",
+    "aboutUs": "About us",
+    "contacts": "Contacts",
+    "affiliate": "Affiliate program",
+    "copyright": "© 2025 TopPrice. All rights reserved.",
+    "publicOffer": "Public offer",
+    "privacyPolicy": "Privacy policy"
+  }
+}
