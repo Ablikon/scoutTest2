@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Theme Debug</title>
+</head>
+<body>
+    <h1>Theme Debugger</h1>
+    <p>Open browser console (F12) and paste this code:</p>
+    <pre>
+// Check current theme
+console.log('HTML data-theme:', document.documentElement.getAttribute('data-theme'));
+console.log('LocalStorage theme:', localStorage.getItem('theme'));
+
+// Force set light theme
+document.documentElement.setAttribute('data-theme', 'light');
+localStorage.setItem('theme', 'light');
+
+// Verify
+console.log('After setting - HTML:', document.documentElement.getAttribute('data-theme'));
+    </pre>
+</body>
+</html>

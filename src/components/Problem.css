@@ -29,7 +29,7 @@
   margin-right: auto;
 }
 
-.section-header h2 {
+.problem .section-header h2 {
   font-size: 36px;
   font-weight: 800;
   margin-bottom: 16px;
@@ -41,6 +41,15 @@
   font-size: 16px;
   color: var(--text-secondary);
   line-height: 1.6;
+}
+
+/* Light mode: specific color for "Реальность рынка" title */
+[data-theme="light"] .problem .section-header h2 {
+  background: #06141B;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #06141B;
 }
 
 /* Карусель */
@@ -130,7 +139,7 @@
 @media (hover: hover) {
   [data-theme="light"] .reality-item:hover {
     border-color: #253745;
-    background: #eae9e9;
+    background: #ffffff88;
     box-shadow: var(--shadow-md);
     transform: translateY(-4px);
     /* transition совпадает с обычным состоянием */
@@ -158,6 +167,10 @@
 
   .section-header h2 {
     font-size: clamp(24px, 6vw, 32px);
+  }
+
+  [data-theme="light"] .problem .section-header h2 {
+    color: #06141B !important;
   }
 
   .section-subtitle {

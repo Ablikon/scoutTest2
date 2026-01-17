@@ -1,9 +1,11 @@
 import { useTranslation } from 'react-i18next'
+import { useTheme } from '../context/ThemeContext'
 import './Problem.css'
 import { IoAlertCircleOutline, IoRocketOutline, IoGitNetworkOutline, IoTimeOutline, IoTrendingDownOutline, IoEyeOffOutline } from 'react-icons/io5'
 
 function Problem() {
   const { t } = useTranslation()
+  const { theme } = useTheme()
 
   const icons = [
     <IoAlertCircleOutline key="alert" />,
@@ -24,7 +26,7 @@ function Problem() {
     <section className="problem">
       <div className="container">
         <div className="section-header">
-          <h2>{t('problem.title')}</h2>
+          <h2 style={theme === 'light' ? { color: '#06141B', fontSize: '48px' } : {}}>{t('problem.title')}</h2>
           <p className="section-subtitle">
             {t('problem.subtitle')}
           </p>
